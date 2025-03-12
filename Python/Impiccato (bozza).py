@@ -1,37 +1,102 @@
 import random
 
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 word_list = ["arancia", "babbuino", "cammello"]
 
-parola_scelta = random.choice(word_list)
-print(parola_scelta)
+# TODO-1: - Crea una variabile chiamata 'lives' che tenga traccia del numero di vite rimaste.
+#  Assegna a 'lives' il valore 6.
 
-segnaposto = ""
-lungh_parola = len(parola_scelta)
-for posizione in range(lungh_parola):
-    segnaposto += "_"
-print(segnaposto)
+chosen_word = random.choice(word_list)
+print(chosen_word)
 
-tentativo = ""
-display = segnaposto
-lettere_indovinate = set()
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
 
-while "_" in display:
-    while not tentativo.isalpha() or len(tentativo) != 1 or tentativo in lettere_indovinate:
-        tentativo = input("Indovina la lettera: ").lower()
+game_over = False
+correct_letters = []
 
-    lettere_indovinate.add(tentativo)
+while not game_over:
+    guess = input("Indovina la lettera: ").lower()
 
-    new_display = ""
-    for index in range(len(parola_scelta)):
-        lettera = parola_scelta[index]
-        if lettera == tentativo:
-            new_display += lettera
+    display = ""
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
         else:
-            new_display += display[index]
+            display += "_"
 
-    display = new_display
     print(display)
 
-print("Hai vinto!")
+    # TODO-2: - Se guess non è una lettera in chosen_word, riduci di 1 il valore di 'lives'.
+    #  Se 'lives' arriva a 0 il gioco deve terminare e stampare a schermo 'Hai perso.'
 
+    if "_" not in display:
+        game_over = True
+        print("You win.")
+
+    # TODO-3: - visualizza l'ASCII art di 'stages'
+    #  corrispondente al numero di vite rimaste al giocatore.
 
