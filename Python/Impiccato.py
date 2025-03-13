@@ -101,7 +101,4 @@ while not game_over:
         game_over = True
         print("You win.")
 
-    # TODO-3: - visualizza l'ASCII art di 'stages'
-    #  corrispondente al numero di vite rimaste al giocatore.
-
     print(stages[lives])
