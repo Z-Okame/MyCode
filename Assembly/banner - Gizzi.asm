@@ -1,7 +1,3 @@
-;GIZZI MANUEL 3CINF 18/02/2025
-;Problema con il programma: il msg1 viene stampato nel ciclo e sovrascrive la scritta ciao
-
-
 ;Programma che richiede una parola in input
 ; e un intero N tra 0 e 100
 ; Il programma cancella lo schermo e scrive N volte la
@@ -16,8 +12,8 @@
 data segment
     ; add your data here!
     str db 10, ?, 10 dup(?)   
-    msg1 db "$"
-    msg2 db 10,13, "Inserire il numero intero: $" 
+    msg1 db "Inserire una parola:$"
+    msg2 db "Inserire il numero intero$" 
     N db 10  
     seed dw ?  
     righe dw 25
@@ -45,66 +41,21 @@ start:
     mov es, ax
 
 ;Input della stringa 
-    lea dx, msg1
+    lea dx, str
+    mov ah, 0Ah
+    int 21h
+   
+    
+;input di N 
+    lea dx, msg2
     mov ah, 09h
     int 21h
 
-    lea dx, str
+    lea dx, N
     mov ah, 0Ah
-    int 21h 
-
-                 
-;input di N 
-; Mostra msg2 e richiede input
-lea dx, msg2
-mov ah, 09h
-int 21h
-
-mov cl, 3     ; Lunghezza massima dell'input
-mov bh, 10    ; utilizzo 10 come moltiplicatore     
-
-;converto da intero a stringa
-conversione:
-    mov ah, 01h  ;prendo un carattere da tastiera  
     int 21h
-    dec cl       ;decremento cl
-    
-    cmp al, 0Dh              ;controllo se e' un invio, nel caso salvo il risultato a 1 o 2 cifre
-    je risultato_meno_3
-    
-    sub al, '0'  
-                             
-    add al,bl                ;aggiungo ad al la prima cifra (o niente)
-    mov ch,al                ;salvo il risultato in ch
-    
-    cmp al,100               ;controllo se e' piu' grande o uguale a 100, nel caso vado al risultato
-    jg risultato
-    cmp al,100
-    je risultato
-    
-moltiplico:                  
-    mul bh                   ;moltiplico per 10
-                             ;((cifra1*10+cifra2)*10+cifra3)
-
-;nel caso fossero meno di 3 cifre prendo il risultato prima che venga moltiplicato per 10
-risultato_meno_3:
-    mov bl, ch                  
-    
-    cmp al, 0Dh
-    je fin
-
-risultato:   
-    mov bl,al
-    
-    cmp cl, 0
-    jne conversione
-
-  
-
-fin:    
-mov N, bl    ; Memorizzo il risultato finale in N
-    
-      
+    mov ah, 01h
+     
     call cls
     call srand  
        
@@ -132,46 +83,12 @@ mov N, bl    ; Memorizzo il risultato finale in N
     inc si         
     mov CL, [si] 
      
-; ciclare N volte la stampa 
-ciclo:
+; ciclare N volte la stampa
     
-    ;Stampo parola  a x,y usando mov ah, 13h int 10h
-    mov ah, 2  ;imposto il cursore su una determinata riga e colonna
-    mov dh, byte ptr [x]  ; imposto la riga  specificando che sia un byte
-    mov dl, byte ptr [y]  ; imposto la colonna specificando che sia un byte
-    mov bh, 0
-    int 10h
+    ;Stampo parola  a x,y
 
-    ;stampo la stringa
-    mov ah, 09h
-    lea dx,str+2
-    int 21h
     
-
-    ; DL = casuale.tra(0,25) --> genero nuovamente la colonna
-    xor ax,ax
-    push ax
-    push colonne
-    call casuale_tra
-    pop x
-
-    ; DH = casuale.tra(0,80) --> genero nuovamente la riga
-    xor ax,ax
-    push ax
-    push righe
-    call casuale_tra
-    pop y
-    
-    ;reimposto le variabili
-    mov DX, x
-    mov AX, y
-    mov DH, AL
-
-    dec N
-    cmp N, 0
-    jne ciclo
-
-    mov ax, 4c00h ;finisce il programma
+    mov ax, 4c00h ; exit to operating system.
     int 21h    
 ends
 
@@ -273,4 +190,6 @@ cls PROC
     INT 10h      ; Chiamata all'interrupt video      
     RET
 cls ENDP    
-end start ; set entry point and stop the assembler.
+end start ; set entry point and stop the assembler. 
+
+
