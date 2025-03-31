@@ -104,7 +104,7 @@ while macchinetta:
         macchinetta = False
     elif richiesta in main.MENU:
         print(f"Un {richiesta} costa {main.MENU[richiesta]['cost']:.2f}€")
-        if verifica_risorse(richiesta) == True:
+        if verifica_risorse(richiesta):
             if pagamento(richiesta) == 1:
                 prepara_caffe(richiesta)
                 print(f"Ecco il tuo {richiesta}. Buona degustazione!")
