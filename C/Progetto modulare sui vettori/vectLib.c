@@ -100,12 +100,6 @@ void shuffle_vec(double *v, size_t dim) {
 }
 
 void rshft_vec(double *v, size_t step, size_t dim) { 
-    if (step >= dim) {
-        for (size_t i = 0; i < dim; i++) {
-            v[i] = 0;
-        }
-        return;
-    }
     for (size_t i = dim - 1; i >= step; i--) {
         v[i] = v[i - step];
     }
@@ -114,13 +108,9 @@ void rshft_vec(double *v, size_t step, size_t dim) {
     }
 }
 
+
+
 void lshft_vec(double *v, size_t step, size_t dim) { 
-    if (step >= dim) {
-        for (size_t i = 0; i < dim; i++) {
-            v[i] = 0;
-        }
-        return;
-    }
     for (size_t i = 0; i < dim - step; i++) {
         v[i] = v[i + step];
     }
@@ -130,9 +120,6 @@ void lshft_vec(double *v, size_t step, size_t dim) {
 }
 
 void rrot_vec(double *v, size_t step, size_t dim) {
-    if (step >= dim) {
-        return;
-    }
     for (size_t j = 0; j < step; j++) {
         double temp = v[dim - 1];
         for (size_t i = dim - 1; i > 0; i--) {
@@ -143,9 +130,6 @@ void rrot_vec(double *v, size_t step, size_t dim) {
 }
 
 void lrot_vec(double *v, size_t step, size_t dim) {
-    if (step >= dim) {
-        return;
-    }
     for (size_t j = 0; j < step; j++) {
         double temp = v[0];
         for (size_t i = 0; i < dim - 1; i++) {
@@ -242,10 +226,8 @@ void map_vec(double *v, size_t dim, double (*func)(double)) {
 
 double norm_vec(const double *v, size_t dim) {
     double sum = 0.0;
-    double norm = 0.0;
     for (size_t i = 0; i < dim; i++) {
         sum += v[i] * v[i];
     }
-    norm = sqrt(sum);
-    return norm;
+    return sqrt(sum);
 }
