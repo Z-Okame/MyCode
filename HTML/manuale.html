@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuale HTML e CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .layout {
+            display: flex;
+            gap: 20px;
+        }
+        nav {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        main {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Esempio di Card -->
+        <div class="card">
+            <img src="esempio-card.jpg" alt="Esempio di immagine per la card">
+            <h2>Titolo della Card</h2>
+            <p>Questa è una semplice card con un titolo e un paragrafo.</p>
+        </div>
+
+        <!-- Esempio di Tabella -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonna 1</th>
+                    <th>Colonna 2</th>
+                    <th>Colonna 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Esempio di Container con Main e Nav -->
+        <div class="layout">
+            <nav>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h2>Contenuto Principale</h2>
+                <p>Questo è il contenuto principale del sito.</p>
+                <img src="esempio-main.jpg" alt="Esempio di immagine per il contenuto principale">
+            </main>
+        </div>
+    </div>
+</body>
+</html>
