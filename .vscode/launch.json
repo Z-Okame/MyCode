@@ -2,6 +2,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Punto",
+            "request": "launch",
+            "mainClass": "Java.Punto.Punto",
+            "projectName": "Compiti_3d0263f5"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Java.Cerchio.Main",
+            "projectName": "Compiti_3d0263f5"
+        },
+        {
+            "type": "java",
+            "name": "Cerchio",
+            "request": "launch",
+            "mainClass": "Java.Cerchio.Cerchio",
+            "projectName": "Compiti_3d0263f5"
+        },
+        {
             "name": "C/C++ Runner: Debug Session",
             "type": "cppdbg",
             "request": "launch",
