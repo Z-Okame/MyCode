@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Libro",
+            "request": "launch",
+            "mainClass": "Libro",
+            "projectName": "Compiti_3d0263f5"
+        },
+        {
+            "type": "java",
             "name": "Punto",
             "request": "launch",
             "mainClass": "Java.Punto.Punto",
