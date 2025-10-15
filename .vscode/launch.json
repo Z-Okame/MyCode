@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CD",
+            "request": "launch",
+            "mainClass": "Java.CD.CD",
+            "projectName": "Compiti_595c9e58"
+        },
+        {
+            "type": "java",
             "name": "Punto",
             "request": "launch",
             "mainClass": "Java.Punto.Punto",
