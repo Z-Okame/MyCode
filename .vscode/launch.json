@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestOrario",
+            "request": "launch",
+            "mainClass": "Java.Orario.TestOrario",
+            "projectName": "Compiti_595c9e58"
+        },
+        {
+            "type": "java",
             "name": "Punto",
             "request": "launch",
             "mainClass": "Java.Punto.Punto",
