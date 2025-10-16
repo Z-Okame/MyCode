@@ -1,5 +1,3 @@
-package Java.Orario;
-
 public class Orario {
     int ore;
     int minuti;
@@ -46,7 +44,7 @@ public class Orario {
     }
     public void setSecondi(int secondi) {
         if (secondi <= 59 && secondi >=0) {
-            this.secondi = secondi;
+            this.secondi = secondi; 
         }
         else
             this.secondi = 0;
@@ -65,8 +63,8 @@ public class Orario {
 
     void aggiungiMinuti(int m) {
         setOre(getOre() + ((getOre() + m)/60) % 24);
-        setMinuti(getMinuti() + ((getMinuti() + minuti) % 60));
-        }
+        setMinuti(getMinuti() + ((getMinuti() + m) % 60));
+    }
     
 
     String mostra() {
