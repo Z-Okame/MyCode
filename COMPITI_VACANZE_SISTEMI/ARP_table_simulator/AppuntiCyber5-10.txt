@@ -1,0 +1,23 @@
+ripasso comandi utili su linux:
+
+ls -> elenca i file della directory
+exiftool -> con un png ci permette di analizzare tutti i metadati di un immagine.
+codifica appplicata ad una maggior parte di flag è base64, ricorda == o = alla fine per riconoscerlo
+
+grep o strings --> permette di estrarre le stringhe e caratteri stampabili
+cat --> per visualizzare dentro il file di testo
+
+
+ricorda la crittografia simmetrica.
+
+CyberChef:
+schermata di input e output, seleziona un operazione e decodifica.
+
+categorie CTF:
+- misc
+- web
+- crypto
+- forensics
+- osint
+- android
+
