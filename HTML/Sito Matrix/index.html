@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Film Matrix</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    h2 {
+      color: #0d7e2b;
+      font-size: 2em;
+      text-align: center;
+      margin: 40px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #introduzione {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #0d7e2b;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(13, 126, 43, 0.3);
+    }
+
+    .personaggi-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #0a0a0a;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      border: 1px solid #0d7e2b;
+      width: 280px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(13, 126, 43, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 2px solid #0d7e2b;
+    }
+
+    .descrizione {
+      padding: 15px;
+      text-align: center;
+    }
+
+    table {
+      width: 80%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      border: 2px solid #0d7e2b;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #0d7e2b;
+    }
+
+    th {
+      background-color: #0d7e2b33;
+      color: #0d7e2b;
+    }
+
+    tr:hover {
+      background-color: #00ff4411;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .dettaglio-personaggio {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .dettaglio-header {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+
+    .dettaglio-img {
+      flex-shrink: 0;
+    }
+
+    .dettaglio-img img {
+      width: 350px;
+      height: 450px;
+      object-fit: cover;
+      border: 2px solid #0d7e2b;
+      border-radius: 8px;
+    }
+
+    .dettaglio-info {
+      flex: 1;
+    }
+
+    .dettaglio-info h2 {
+      margin-top: 0;
+      text-align: left;
+    }
+
+    .dettaglio-content {
+      border: 1px solid #0d7e2b;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(13, 126, 43, 0.3);
+    }
+
+    .dettaglio-content h3 {
+      color: #0d7e2b;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: #0d7e2b;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #0a5e21;
+    }
+
+    @media (max-width: 768px) {
+      .dettaglio-header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dettaglio-img img {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .dettaglio-info h2 {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+  
+  <!-- Pagina principale -->
+  <div id="home-page" class="page active">
+    <img src="Intro.jpg" alt="MATRIX" style="display: block; margin: 0 auto; max-width: 600px;">
+
+    <div id="introduzione">
+      <h2>INTRODUZIONE</h2>
+      <p style="color: #ffffff; line-height: 1.6; text-align: justify;">
+        La trilogia di The Matrix è ambientata in un futuro distopico dove l'umanità vive inconsapevolmente in una realtà simulata chiamata Matrix, creata dalle macchine per controllare gli esseri umani. Dopo una guerra tra uomini e intelligenze artificiali, le macchine hanno vinto e usano gli umani come fonte di energia. Alcuni ribelli, guidati da Morpheus e Trinity, cercano di liberare la mente delle persone. Neo, un hacker, scopre di essere l'Eletto, colui destinato a porre fine al dominio delle macchine. La trilogia esplora temi filosofici sulla realtà, il libero arbitrio e il destino, mescolando azione, cyberpunk e riferimenti mitologici.
+      </p>
+    </div>
+
+    <h2>PERSONAGGI</h2>
+    <div class="personaggi-container">
+      <div class="card" onclick="showPage('neo-page')">
+        <img src="Neo.jpeg" alt="Neo">
+        <div class="descrizione">
+          <h3>Neo</h3>
+          <p>Neo, l'Eletto, è un ex hacker destinato a salvare l'umanità dal controllo delle macchine e dalla realtà simulata di Matrix.</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="showPage('morpheus-page')">
+        <img src="Morpheus.jpg" alt="Morpheus">
+        <div class="descrizione">
+          <h3>Morpheus</h3>
+          <p>Morpheus è il leader visionario della resistenza, mentore di Neo e guida spirituale nella lotta contro il dominio delle macchine.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="showPage('trinity-page')">
+        <img src="Trinity.jpg" alt="Trinity">
+        <div class="descrizione">
+          <h3>Trinity</h3>
+          <p>Trinity è una combattente esperta e hacker straordinaria, leale compagna di Neo e figura chiave nella resistenza contro le macchine.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="showPage('smith-page')">
+        <img src="Agente_Smith.WebP" alt="Agente Smith">
+        <div class="descrizione">
+          <h3>Agente Smith</h3>
+          <p>L'agente Smith è un programma antivirus spietato e l'antagonista principale, determinato a eliminare Neo e i ribelli umani.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>TRILOGIA</h2>
+    <table>
+      <tr>
+        <th>Film</th>
+        <th>Anno</th>
+      </tr>
+      <tr>
+        <td>The Matrix</td>
+        <td>1999</td>
+      </tr>
+      <tr>
+        <td>The Matrix Reloaded</td>
+        <td>2003</td>
+      </tr>
+      <tr>
+        <td>The Matrix Revolutions</td>
+        <td>2003</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Pagina Neo -->
+  <div id="neo-page" class="page">
+    <div class="dettaglio-personaggio">
+      <span class="back-button" onclick="showPage('home-page')">← Torna alla Home</span>
+      
+      <div class="dettaglio-header">
+        <div class="dettaglio-img">
+          <img src="Neo.jpeg" alt="Neo">
+        </div>
+        <div class="dettaglio-info">
+          <h2>Neo - L'Eletto</h2>
+          <p style="font-size: 1.1em; line-height: 1.6;">
+            Thomas A. Anderson, meglio conosciuto come Neo, è il protagonista della trilogia di Matrix. 
+            Di giorno è un programmatore per una rispettabile società di software, di notte è un hacker 
+            informatico conosciuto con lo pseudonimo di "Neo".
+          </p>
+        </div>
+      </div>
+
+      <div class="dettaglio-content">
+        <h3>Storia</h3>
+        <p>
+          Neo vive una doppia vita: programmatore di software di giorno e hacker underground di notte. 
+          La sua ricerca della verità su "Matrix" lo porta a Morpheus, che gli rivela la realtà scioccante: 
+          il mondo che conosce è una simulazione creata dalle macchine per controllare l'umanità.
+        </p>
+
+        <h3>Poteri e Abilità</h3>
+        <p>
+          Come l'Eletto, Neo possiede abilità straordinarie all'interno di Matrix. Può manipolare il 
+          codice della simulazione, permettendogli di fermare proiettili, volare e combattere con una 
+          forza sovrumana. La sua comprensione di Matrix evolve nel corso della trilogia, portandolo 
+          a sviluppare abilità ancora più potenti, inclusa la capacità di vedere il codice stesso.
+        </p>
+
+        <h3>Evoluzione del Personaggio</h3>
+        <p>
+          Neo passa da essere un hacker scettico e insicuro a diventare il salvatore dell'umanità. 
+          Il suo viaggio è caratterizzato dalla crescente accettazione del suo destino e dal sacrificio 
+          finale per salvare sia gli umani che le macchine, portando a una pace temporanea tra i due mondi.
+        </p>
+
+        <h3>Interpretazione</h3>
+        <p>
+          Il personaggio è interpretato da Keanu Reeves, la cui performance iconica ha definito Neo 
+          come uno dei più memorabili eroi della fantascienza cinematografica.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagina Morpheus -->
+  <div id="morpheus-page" class="page">
+    <div class="dettaglio-personaggio">
+      <span class="back-button" onclick="showPage('home-page')">← Torna alla Home</span>
+      
+      <div class="dettaglio-header">
+        <div class="dettaglio-img">
+          <img src="Morpheus.jpg" alt="Morpheus">
+        </div>
+        <div class="dettaglio-info">
+          <h2>Morpheus - Il Mentore</h2>
+          <p style="font-size: 1.1em; line-height: 1.6;">
+            Morpheus è il capitano della Nabucodonosor e uno dei leader più rispettati della resistenza umana. 
+            Il suo nome deriva dal dio greco dei sogni, appropriato per colui che aiuta le persone a svegliarsi 
+            dal sogno di Matrix.
+          </p>
+        </div>
+      </div>
+
+      <div class="dettaglio-content">
+        <h3>Ruolo nella Resistenza</h3>
+        <p>
+          Morpheus è una figura leggendaria nella resistenza umana. La sua fede incrollabile nella profezia 
+          dell'Eletto lo ha portato a dedicare la sua vita alla ricerca di Neo. È un leader carismatico, 
+          combattente esperto e pensatore filosofico che ispira coloro che lo seguono.
+        </p>
+
+        <h3>Filosofia e Credenze</h3>
+        <p>
+          La sua fede nella profezia dell'Oracolo è assoluta. Morpheus crede fermamente che Neo sia l'Eletto 
+          destinato a liberare l'umanità. Questa convinzione lo guida in tutte le sue decisioni, anche quando 
+          altri membri della resistenza dubitano.
+        </p>
+
+        <h3>Abilità di Combattimento</h3>
+        <p>
+          All'interno di Matrix, Morpheus è uno dei combattenti più formidabili della resistenza. Le sue 
+          abilità nel kung-fu e nella manipolazione dell'ambiente virtuale sono impressionanti, e funge da 
+          maestro e allenatore per Neo.
+        </p>
+
+        <h3>Interpretazione</h3>
+        <p>
+          Morpheus è interpretato magistralmente da Laurence Fishburne, che porta gravità, saggezza e 
+          carisma al personaggio, rendendolo una delle figure più iconiche della trilogia.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagina Trinity -->
+  <div id="trinity-page" class="page">
+    <div class="dettaglio-personaggio">
+      <span class="back-button" onclick="showPage('home-page')">← Torna alla Home</span>
+      
+      <div class="dettaglio-header">
+        <div class="dettaglio-img">
+          <img src="Trinity.jpg" alt="Trinity">
+        </div>
+        <div class="dettaglio-info">
+          <h2>Trinity - La Guerriera</h2>
+          <p style="font-size: 1.1em; line-height: 1.6;">
+            Trinity è una delle figure più rispettate e temute della resistenza umana. Hacker di talento 
+            eccezionale e combattente formidabile, è nota per essere stata la prima persona a violare 
+            il sistema dell'IRS (Internal Revenue Service).
+          </p>
+        </div>
+      </div>
+
+      <div class="dettaglio-content">
+        <h3>Abilità e Competenze</h3>
+        <p>
+          Trinity è una delle hacker più abili della resistenza, capace di infiltrarsi nei sistemi più 
+          sicuri. Le sue abilità di combattimento sono straordinarie, combina arti marziali con acrobazie 
+          impressionanti. È anche un'esperta pilota e una tattica eccezionale.
+        </p>
+
+        <h3>Relazione con Neo</h3>
+        <p>
+          La relazione tra Trinity e Neo è centrale nella trilogia. Inizialmente scettica, Trinity sviluppa 
+          una profonda connessione con Neo che diventa amore. La profezia dell'Oracolo predice che lei si 
+          innamorerà dell'Eletto, e il suo amore diventa una forza cruciale nel viaggio di Neo.
+        </p>
+
+        <h3>Coraggio e Sacrificio</h3>
+        <p>
+          Trinity dimostra ripetutamente un coraggio eccezionale, mettendo la sua vita a rischio per la 
+          resistenza e per Neo. La sua determinazione e lealtà sono incrollabili, e il suo sacrificio finale 
+          sottolinea la profondità del suo carattere.
+        </p>
+
+        <h3>Interpretazione</h3>
+        <p>
+          Carrie-Anne Moss porta intensità, grazia e forza al ruolo di Trinity, creando un personaggio 
+          femminile che è diventato un'icona dell'action cinema e un modello di personaggio forte e complesso.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagina Agente Smith -->
+  <div id="smith-page" class="page">
+    <div class="dettaglio-personaggio">
+      <span class="back-button" onclick="showPage('home-page')">← Torna alla Home</span>
+      
+      <div class="dettaglio-header">
+        <div class="dettaglio-img">
+          <img src="Agente_Smith.WebP" alt="Agente Smith">
+        </div>
+        <div class="dettaglio-info">
+          <h2>Agente Smith - L'Antagonista</h2>
+          <p style="font-size: 1.1em; line-height: 1.6;">
+            L'Agente Smith è il principale antagonista della trilogia di Matrix. Inizialmente un programma 
+            di sicurezza creato dalle Macchine per mantenere l'ordine all'interno di Matrix, evolve in 
+            qualcosa di molto più pericoloso.
+          </p>
+        </div>
+      </div>
+
+      <div class="dettaglio-content">
+        <h3>Natura e Scopo</h3>
+        <p>
+          Smith inizia come uno dei tanti Agenti, programmi senzienti progettati per eliminare le minacce 
+          a Matrix. Indossa sempre un completo nero con cravatta, occhiali da sole scuri e un auricolare. 
+          Gli Agenti possiedono forza sovrumana, velocità e la capacità di impossessarsi del corpo di 
+          qualsiasi persona connessa a Matrix.
+        </p>
+
+        <h3>Evoluzione del Personaggio</h3>
+        <p>
+          Dopo il suo primo scontro con Neo, Smith subisce una trasformazione fondamentale. Liberato dai 
+          vincoli del suo programmazione originale, diventa un virus rinnegato con la capacità di replicarsi 
+          infinitamente. Il suo odio per l'umanità e per Matrix stesso cresce, trasformandolo in una minaccia 
+          sia per gli umani che per le Macchine.
+        </p>
+
+        <h3>Filosofia e Motivazioni</h3>
+        <p>
+          Smith vede l'umanità come una malattia, un cancro che infesta il pianeta. Esprime profondo disgusto 
+          per gli esseri umani e per la loro natura. Paradossalmente, la sua evoluzione lo porta a diventare 
+          esattamente ciò che disprezza: un virus che si replica senza controllo, minacciando di distruggere 
+          l'intera Matrix.
+        </p>
+
+        <h3>Interpretazione</h3>
+        <p>
+          Hugo Weaving offre una performance memorabile come Agente Smith, bilanciando freddezza meccanica 
+          con momenti di emozione intensa. La sua recitazione ha reso Smith uno dei villain più iconici 
+          della fantascienza moderna, particolarmente memorabile per il suo tono sarcastico e il suo disprezzo 
+          eloquente per l'umanità.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Matrix rain effect
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const alphabet = katakana + latin + nums;
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const rainDrops = [];
+
+    for (let x = 0; x < columns; x++) {
+      rainDrops[x] = Math.random() * canvas.height / fontSize;
+    }
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+
+    setInterval(draw, 30);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Page navigation
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      
+      document.getElementById(pageId).classList.add('active');
+      
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
