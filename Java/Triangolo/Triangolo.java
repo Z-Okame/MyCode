@@ -29,7 +29,7 @@ public class Triangolo {
     public Punto getC() {
         return c;
     }
-
+    
     //metodi
 
     /**
