@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore</title>
+    <script src="Contatore1.js"></script>
+</head>
+<body>
+    <style>
+    .buttons{
+        display: flex;
+        padding-top: 12px;
+    }
+    .container{
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        padding-left: 20px;
+        padding-top: 15px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 12px;
+        height: 150px;
+        width: 250px;
+    }
+    body{   
+        background-color: rgb(241, 219, 179);
+        padding-left: 600px;
+        padding-top: 100px;
+    }
+    h2{
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 55px;
+    }
+    input{
+        text-align: center;
+        width: 230px;
+        height: 20px;
+        border-radius: 5px;
+    }
+    button{
+        margin-right: 10px;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    </style>
+
+    <div class="container">
+        <h2>Contatore</h2>
+        <input type="text" id="text-box">
+        <br>
+        <div class="buttons">
+                <button onclick="handleButton(-1)">- Decrementa</button>
+                <button onclick="handleButton(+1)">+ Incrementa</button>
+        </div>
+    </div>
+    
+</body>
+</html>
