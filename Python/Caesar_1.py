@@ -10,7 +10,7 @@
 #  message.
 
 def encrypt(original_text, shift_amount):
-    
+
     shift_text = ""
     
     for letter in original_text:
