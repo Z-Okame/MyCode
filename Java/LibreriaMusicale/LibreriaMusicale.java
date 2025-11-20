@@ -34,6 +34,7 @@ public class LibreriaMusicale {
                 throw new IllegalArgumentException("Il brano è già presente nella libreria.");
             }
         } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return false;
         }
 
@@ -60,6 +61,7 @@ public class LibreriaMusicale {
             }
         }
         catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return false;
         }
         
@@ -101,8 +103,17 @@ public class LibreriaMusicale {
      * @param genere
      * @return una lista di brani del genere specificato.
      */
-    public ArrayList<Brano> braniPerGenere(String genere) {
+    public ArrayList<Brano> braniPerGenere(String genere) throws IllegalArgumentException {
         ArrayList<Brano> braniGenere = new ArrayList<Brano>();
+
+        try {
+            if (genere == null) {
+                throw new IllegalArgumentException("Il genere non può essere nullo.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return braniGenere;
+        }
 
         if (brani.isEmpty())
             return braniGenere;
@@ -121,10 +132,19 @@ public class LibreriaMusicale {
      * @param artista
      * @return il numero di brani dell'artista specificato, -1 se la libreria è vuota.
      */
-    public int contaBraniPerArtista(String artista) {
+    public int contaBraniPerArtista(String artista) throws IllegalArgumentException {
         int numeroBrani = 0;
 
-        //Try catch per lista vuota
+        try {
+            if (artista == null) {
+                throw new IllegalArgumentException("L'artista non può essere nullo.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return -1;
+        }
+
+        
         if (brani.isEmpty())
             return -1;
 
@@ -166,10 +186,22 @@ public class LibreriaMusicale {
      * @param durataMax
      * @return una lista di brani mescolati casualmente.
      */
-    public ArrayList<Brano> shuffleConSeed(String genere, int durataMax) {
+    public ArrayList<Brano> shuffleConSeed(String genere, int durataMax) throws IllegalArgumentException {
         ArrayList<Brano> shuffled_list = new ArrayList<Brano>();
         int sommaDurata = 0;
         
+        try {
+            if (genere == null) {
+                throw new IllegalArgumentException("Il genere non può essere nullo.");
+            }
+            if (durataMax <= 0) {
+                throw new IllegalArgumentException("La durata massima deve essere maggiore di zero.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return shuffled_list;
+        }
+
         if (brani.isEmpty())
             return shuffled_list;
 
