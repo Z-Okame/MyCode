@@ -1,4 +1,4 @@
-    import java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Pubblicazione {
     protected static int num = 0;
@@ -18,7 +18,7 @@ public class Pubblicazione {
         this.RecapitoLettore = RecapitoLettore;
         this.numPagine = numPagine;
         num++;
-    }
+    }\
 
     //getter e setter
     public String getTitolo() {
