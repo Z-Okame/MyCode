@@ -18,7 +18,7 @@ public class Pubblicazione {
         this.RecapitoLettore = RecapitoLettore;
         this.numPagine = numPagine;
         num++;
-    }\
+    }
 
     //getter e setter
     public String getTitolo() {
@@ -57,8 +57,8 @@ public class Pubblicazione {
         return dataRestituzione;
     }
 
-    public void setDataRestituzione(LocalDate dataRestituzione) {
-        this.dataRestituzione = dataRestituzione;
+    public void setDataRestituzione() {
+        this.dataRestituzione = null;
     }
 
     public String getRecapitoLettore() {
@@ -68,6 +68,7 @@ public class Pubblicazione {
     public void setRecapitoLettore(String recapitoLettore) {
         RecapitoLettore = recapitoLettore;
     }
+
 
     //metodo
     public String toString() {

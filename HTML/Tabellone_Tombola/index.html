@@ -6,15 +6,29 @@
     <title>Tombola</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>TOMBOLA</h1>
+<body>    
+    <div class="estrazione">
+        <div class="container">
+            <div class="mostraNumero" id="mostraNumero"></div>
+            <div class="Scritta">
+                <span id="ScrittaNapoletana"></span>
+                <br>
+                <span id="ScrittaItaliana"></span>
+                <br>
+            </div>
+        </div>
 
-    <div>
-        <div id="tabella"></div>
-        <button id="genera">Genera</button>
-        <br>
-        <button id="reset">Reset</button>
+        <button id="estrai" class="estrai">Estrai</button>
+        <button id="reset" class="reset">Reset</button>
     </div>
+
+    <div id="tabella" class="tabella"></div>
+
+    <div class="cartelle-section">
+        <h2>Cartelle</h2>
+        <div id="cartelle" class="cartelle-container"></div>     
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
