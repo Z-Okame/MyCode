@@ -3,10 +3,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
-/*
+/*  Tutorial JavaFX – FlowPane vs TilePane
+
     FlowPane e TilePane sembrano simili, ma servono a cose diverse.
 
         FlowPane = flusso libero (come testo)
@@ -60,7 +60,7 @@ public class FlowTilePaneDemo extends Application {
 
         // aggiungiamo molti pulsanti
         for (int i = 1; i <= 20; i++) {
-            flow.getChildren().add(new Button("Bottons " + i));
+            flow.getChildren().add(new Button("Btn " + i));
         }
         // Aggiungi un pulsante più lungo per vedere la differenza
         //flow.getChildren().add(new Button("Bottone Lungo"));

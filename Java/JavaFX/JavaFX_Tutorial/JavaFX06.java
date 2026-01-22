@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class JavaFX06 extends Application{
     @Override
         public void start(Stage stage) {
+        // Il nodo nel CENTER viene ridimensionato per occupare tutto lo spazio disponibile
         BorderPane root = new BorderPane();
 
         ToolBar toolbar = new ToolBar(new Button("Nuovo"), new Button("Apri"));

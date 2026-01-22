@@ -12,7 +12,7 @@ public class JavaFX03 extends Application{
         Label lbl = new Label();
         Button btn = new Button("Saluta");
 
-        btn.setOnAction(e -> lbl.setText("Ciao" + txt.getText() + "!"));
+        btn.setOnAction(e -> lbl.setText("Ciao " + txt.getText() + "!"));
 
         // VBox con spaziatura di 10 pixel tra i nodi
         VBox root = new VBox(10, txt, btn, lbl);
