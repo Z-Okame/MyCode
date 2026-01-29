@@ -21,4 +21,17 @@ const cittaPerRegione = {
   "Veneto": ["Venezia", "Verona", "Padova", "Vicenza", "Treviso", "Rovigo", "Belluno"]
 };
 
-document.getElementById("Regioni").addEventListener("change", filtra);
+function aggiornaProvince() {
+  
+    const Regione = document.getElementById("Regioni").value;
+    const province = cittaPerRegione[Regione];
+    let options = "";
+    for (let i = 0; i < province.length; i++) {
+        options += `<option>${province[i]}</option>`;
+      }
+      document.getElementById("Province").innerHTML = options;
+}
+   
+document.getElementById("Regioni").addEventListener("change", aggiornaProvince);
+
+
