@@ -8,6 +8,7 @@ public class Pubblicazione {
     protected int numPagine;
     protected String RecapitoLettore;
     protected boolean disponibile;
+    protected Utente utente;
     
     //costruttore
     public Pubblicazione(String titolo, LocalDate dataPubblicazione, LocalDate dataRestituzione, boolean disponibile, String RecapitoLettore, int numPagine) {
@@ -71,6 +72,17 @@ public class Pubblicazione {
 
 
     //metodo
+
+    public void presta(Utente utente) {
+        if (this.disponibile) {
+            this.disponibile = false;
+            this.utente = utente;
+            utente.getPubblicazioni_in_prestito().add(this);
+        }
+    }
+
+
+
     public String toString() {
         return " titolo=" + titolo + ", dataPubblicazione=" + dataPubblicazione + ", numPagine=" + numPagine + ", dataRestituzione=" + dataRestituzione + ", disponibile=" + disponibile + ", RecapitoLettore=" + RecapitoLettore;
     }
