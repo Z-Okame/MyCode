@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Form" class="Form">
+        <h1>Form di Login</h1>
+        <div id="Nominativo" class="Nominativo">
+             <label>Nominativo</label>
+             <input type="text" id="username">
+             <label id="errorUsername" class="errorUsername"></label>
+        </div>
+
+        <div id="Password" class="Password">
+                <label>Password</label>
+                <input type="password" id="password"> <button id="showPassword" class="showPassword">Show</button>
+                    <div id="eyesContainer" class="eyesContainer">
+                        <img src="gif/eyes.gif" class="eyesGif"> 
+                    </div>
+                <label id="errorPassword" class="errorPassword"></label>
+                </div>
+
+        <div id="Anni" class="Anni">
+            <label>Età</label>
+            <input type="number" id="age">
+            <label id="errorAge" class="errorAge"></label>
+        </div>
+
+        <div id="Consenso" class="Consenso">
+            <label>Consento l'utilizzo dei dati personali</label> <br>
+            <input type="checkbox" id="consent" class="consent">
+            <label id="errorConsent" class="errorConsent"></label>
+        </div>
+
+        <div id="Invia" class="Invia">
+            <button id="submit" class="submit">Invia</button>
+        </div>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
