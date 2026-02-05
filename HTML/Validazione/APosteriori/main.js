@@ -5,13 +5,21 @@ let speciali="!@#$%^&*-_";
 
 function controlloNominativo() {
     let username = document.getElementById("username").value;
+    
+    if (username == "") {
+        document.getElementById("errorUsername").innerText = "\nIl nominativo è obbligatorio";
+        return false;
+    }
+    
     for (let i = 0; i < username.length; i++) {
-        if ((!lettereMinuscole.includes(username[i]) && !lettereMaiuscole.includes(username[i])) || username[i] !== " ") {
-            document.getElementById("errorUsername").innerText = "Il nominativo può solo contenere lettere e spazi";
-            return;
+        if (!lettereMinuscole.includes(username[i]) && !lettereMaiuscole.includes(username[i]) && username[i] !== " ") {
+            document.getElementById("errorUsername").innerText = "\nIl nominativo può solo contenere lettere e spazi";
+            return false;
         }
     }
+    
     document.getElementById("errorUsername").innerText = "";
+    return true;
 }
 
 function controlloPassword() {
@@ -24,7 +32,7 @@ function controlloPassword() {
     let minLength = 8;
 
     if (password.length < minLength) {
-        errorPassword += "La password deve essere lunga almeno " + minLength + " caratteri.\n";
+        errorPassword += "\nLa password deve essere lunga almeno " + minLength + " caratteri.\n";
     }
 
     for (let i = 0; i < password.length; i++) {
@@ -35,37 +43,68 @@ function controlloPassword() {
     }
 
     if (!hasLetter) {
-        document.getElementById("errorPassword").innerText += "La password deve contenere almeno una lettera minuscola.\n";
+        errorPassword += "\nLa password deve contenere almeno una lettera minuscola.\n";
     }
     if (!hasCaps) {
-        document.getElementById("errorPassword").innerText += "La password deve contenere almeno una lettera maiuscola.\n";
+        errorPassword += "\nLa password deve contenere almeno una lettera maiuscola.\n";
     }
     if (!hasNumber) {
-        document.getElementById("errorPassword").innerText += "La password deve contenere almeno un numero.\n";
+        errorPassword += "\nLa password deve contenere almeno un numero.\n";
     }
     if (!hasSpecial) {
-        document.getElementById("errorPassword").innerText += "La password deve contenere almeno un carattere speciale.\n";
+        errorPassword += "\nLa password deve contenere almeno un carattere speciale.\n";
     }
     
-    document.getElementById("errorPassword").innerText = "";
-
+    document.getElementById("errorPassword").innerText = errorPassword;
+    
+    if (errorPassword == "") {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function controlloAnni() {
     let anni = document.getElementById("age").value;
-    let errorAge = "";
-    if (anni < 0) {
-        errorAge += "L'età non può essere negativa.\n";
-    }
-    else if (anni > 100) {
-        errorAge += "L'età non può essere superiore a 100.\n";
+    
+    if (anni == "") {
+        document.getElementById("errorAge").innerText = "\nL'età è obbligatoria";
+        return false;
+    } else if (anni < 18) {
+        document.getElementById("errorAge").innerText = "\nDevi avere almeno 18 anni";
+        return false;
+    } else if (anni > 100) {
+        document.getElementById("errorAge").innerText = "\nL'età non può essere superiore a 100 anni";
+        return false;
     }
 
-    if (!(anni >= 18 && anni <= 100)) {
-        errorAge += "L'età deve essere compresa tra 18 e 100 anni.\n";
-    }
+    document.getElementById("errorAge").innerText = "";
+    return true;
+}
 
-    document.getElementById("errorAge").innerText = errorAge;
+function controlloConsenso() {
+    let consent = document.getElementById("consent").checked;
+    let errorConsent = "";
+    
+    if (!consent) {
+        errorConsent = "\nDevi acconsentire all'utilizzo dei dati personali";
+    }
+    
+    document.getElementById("errorConsent").innerText = errorConsent;
+    return consent;
+}
+
+function validaForm(e) {
+    e.preventDefault();
+    
+    let isNominativoValid = controlloNominativo();
+    let isPasswordValid = controlloPassword();
+    let isAnniValid = controlloAnni();
+    let isConsensoValid = controlloConsenso();
+    
+    if (isNominativoValid && isPasswordValid && isAnniValid && isConsensoValid) {
+        window.location.href = "success.html";
+    }
 }
 
 function ShowPassword() {
@@ -84,7 +123,5 @@ function ShowPassword() {
     }
 }
 
-document.getElementById("submit").addEventListener("click", controlloPassword);
-document.getElementById("submit").addEventListener("click", controlloNominativo);
-document.getElementById("submit").addEventListener("click", controlloAnni);
+document.getElementById("submit").addEventListener("click", validaForm);
 document.getElementById("showPassword").addEventListener("click", ShowPassword);

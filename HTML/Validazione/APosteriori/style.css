@@ -70,6 +70,10 @@ body {
     padding: 10px;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+}
 
 button {
     cursor: pointer;
