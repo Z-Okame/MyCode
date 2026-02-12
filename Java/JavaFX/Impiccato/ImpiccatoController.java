@@ -97,7 +97,7 @@ public class ImpiccatoController {
     }
 
     /**
-     *  Funzione che inizializza la label con la parola da indovinare
+     * Funzione che inizializza la label con la parola da indovinare
      */
     private void InizializzaLabel() {
         ParolaSconosciuta = new StringBuilder();

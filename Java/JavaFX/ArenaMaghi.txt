@@ -1,0 +1,45 @@
+Tornei dei Maghi:
+
+Mago Pippo:
+	HP: 50
+	Mana: 18
+	Potenza: 5
+	Velocità: 7
+	
+Mago Pluto:
+	HP: 34
+	Difesa:8
+	
+	
+Pippo lancia incantesimo Palla di Fuoco a Pluto fa danno base 7 costa 5 mana
+
+danno: 7 + 5 - 8 = 4
+
+Pluto: 34 - 4
+Pippo: mana = 18 - 5
+
+
+-----------
+
+Classi di maghi attacco, tank, healer
+Ribilanciamento del riposo in base ai valori
+
+
+l'arena è il tuo controller
+ordice deciso in base alla spd
+
+lista dell'ordine dei maghi
+3 opzioni per il primo mago
+AoE??? 
+
+															SELEZIONA MAGHI:	
+															>Merlino<
+															Melina
+															Paolo
+															...
+		
+		  MAGO:   
+			 O          1 --> Attacca					2--> Curati				3-->Riposa(o attacco base
+			/I\         >Fireball (-5 Mana)             >Cura (-5 Mana)         >Attacco(infligge 1 hp, ottieni 2 Mana)
+			 I          >Ice Spear (-2 Mana)                                    Oppure
+			/ \         >Electro Strike(-7 Mana)                                >Standby (salta il turno e ottieni 2 Mana)
