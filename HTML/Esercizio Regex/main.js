@@ -1,4 +1,4 @@
-const regexNomeCompleto = /^.{3,}$/;
+const regexNomeCompleto = /^[a-zA-Z ]{3,}$/;
 const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexTelefono = /^\d{10}$/;
 const regexBudget = /^[1-9]\d*$/;
@@ -7,7 +7,7 @@ function controlloNomeCompleto() {
     let nomeCompleto = document.getElementById("nomeCompleto").value;
     
     if (!regexNomeCompleto.test(nomeCompleto)) {
-        alert("Il nome completo deve avere almeno 3 caratteri");
+        alert("Il nome completo deve avere almeno 3 caratteri e deve contenere solo lettere e spazi");
         return false;
     }
     
@@ -63,7 +63,6 @@ function controlloServizi() {
 }
 
 function validaForm(e) {
-    e.preventDefault();
 
     let isNomeCompletoValid = controlloNomeCompleto();
     let isEmailValid = controlloEmail();
@@ -81,7 +80,7 @@ function mostraRiepilogo() {
     let email = document.getElementById("email").value;
     let telefono = document.getElementById("telefono").value;
     let budget = document.getElementById("budget").value;
-    let servizi = [];
+    const servizi = [];
     let costo = 0;
 
     
@@ -105,7 +104,6 @@ function mostraRiepilogo() {
         servizi.push("C++ (€40/ora)");
         costo += 40 * 10;
     }
-
 
 
     let riepilogo = `
