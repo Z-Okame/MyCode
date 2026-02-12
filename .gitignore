@@ -8,3 +8,11 @@ Wordle1/
 Platformer/
 JavaTetris/
 Java/Swing/
+*.dll
+*.zip
+ADDITIONAL_LICENSE*
+ASSEMBLY*
+LICENSE*
+*.md
+*.jar
+*.properties
