@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventivo Servizio Azienda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Form" class="Form">
+        <h1>Preventivo Servizio Azienda</h1>
+        
+        <div id="NomeCompleto" class="NomeCompleto">
+            <label>Nome completo</label>
+            <input type="text" id="nomeCompleto">
+        </div>
+
+        <div id="Email" class="Email">
+            <label>Email</label>
+            <input type="text" id="email">
+        </div>
+
+        <div id="Telefono" class="Telefono">
+            <label>Telefono</label>
+            <input type="number" id="telefono">
+        </div>
+
+        <div id="Budget" class="Budget">
+            <label>Budget</label>
+            <input type="number" id="budget">
+        </div>
+
+        <div id="Servizi" class="Servizi">
+            <h3>Servizi</h3>
+            <div>
+                <input type="checkbox" id="html">
+                <label>HTML - €20/ora</label>
+            </div>
+            <div>
+                <input type="checkbox" id="php">
+                <label>PHP - €25/ora</label>
+            </div>
+            <div>
+                <input type="checkbox" id="asp">
+                <label>ASP - €30/ora</label>
+            </div>
+            <div>
+                <input type="checkbox" id="java">
+                <label>Java - €35/ora</label>
+            </div>
+            <div>
+                <input type="checkbox" id="cpp">
+                <label>C++ - €40/ora</label>
+            </div>
+        </div>
+
+        <div id="Riepilogo" class="Riepilogo">
+            <h3>Premi invio per il riepilogo</h3>
+            <div id="riepilogoDati"></div>
+        </div>
+
+        <div id="Invia" class="Invia">
+            <button id="submit" class="submit">Invio</button>
+        </div>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
