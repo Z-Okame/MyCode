@@ -1,7 +1,7 @@
 const regexNomeCompleto = /^[a-zA-Z ]{3,}$/;
 const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexTelefono = /^\d{10}$/;
-const regexBudget = /^[1-9]\d*$/;
+const regexBudget = /^[1-9]\d*$/; 
 
 function controlloNomeCompleto() {
     let nomeCompleto = document.getElementById("nomeCompleto").value;

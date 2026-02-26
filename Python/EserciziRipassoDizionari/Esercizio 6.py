@@ -13,10 +13,10 @@ while(play):
         numero=input("Numero del contatto: ")
         Rubrica[nome]=numero
     elif scelta == 2:
-        ricerca=input("Scrivi il nome del contatto: ")
-        for i in Rubrica:
+        ricerca=input("Scrivi il numero del contatto: ")
+        for i in Rubrica.values():
             if i == ricerca:
-                print(f"Contatto trovato, numero: {Rubrica[i]}")
+                print(f"Contatto trovato, nome: {Rubrica.keys(i)}")
     elif scelta == 3:
         for i in Rubrica:
             print(f"\n{i} : ", Rubrica[i])
