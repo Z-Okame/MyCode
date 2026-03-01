@@ -112,5 +112,3 @@ while macchinetta:
             print("Risorse insufficienti. Riprova.")
     else:
         print("Scelta non valida. Riprova.")
-
-
