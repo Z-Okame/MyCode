@@ -45,7 +45,10 @@ public class Triangolo {
      * @return (double) area
      */
     public double area() {
-        return Math.sqrt((perimetro()/2) * ((perimetro()/2) - a.distanza(b)) * ((perimetro()/2) - b.distanza(c)) * ((perimetro()/2) - c.distanza(a)));
+        return Math.sqrt((perimetro()/2) * 
+        ((perimetro()/2) - a.distanza(b)) * 
+        ((perimetro()/2) - b.distanza(c)) * 
+        ((perimetro()/2) - c.distanza(a)));
     }
 
     /**
