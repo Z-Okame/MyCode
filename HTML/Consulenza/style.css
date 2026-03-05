@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4c84c9;
+    padding: 20px;
+}
+
+.Form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgb(187, 203, 231);
+    padding: 30px;
+    border-radius: 8px;
+    border: #333 solid 1px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.Credenziali {
+    margin-bottom: 20px;
+}
+
+.Contatti {
+    margin-bottom: 20px;
+}
+
+.DettagliOrganizzazione {
+    margin-bottom: 20px;
+}
+
+.AmbitoConsulenza {
+    margin-bottom: 20px;
+}
+
+.Tempistiche {
+    margin-bottom: 20px;
+}
+
+.Riepilogo {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #ddd;
+}
+
+.errorNomeUtente {
+    color: red;
+}
+
+.errorPassword {
+    color: red;
+}
+
+.errorTelefono {
+    color: red;
+}
+
+.errorSitoWeb {
+    color: red;
+}
+
+.errorConsulenze {
+    color: red;
+}
+
+.errorData {
+    color: red;
+}
+
+.errorRiepilogo {
+    color: red;
+}

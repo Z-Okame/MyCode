@@ -4,33 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema di Prenotazione Consulenza Informatica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div  id="Form" class="Form">
-    <div id="Credenziali" class="Credenziali">
-        <div id="CampoNomeUtente">
-            <label>Nome Utente</label>
-            <input type="text" id="nomeUtente">
+    <div id="Form" class="Form">
+        <h1>Modulo di Prenotazione Consulenza Informatica</h1>
+        
+        <div id="consulenzaForm">
+     
+            <div id="Credenziali" class="Credenziali">
+                <h2>Credenziali</h2>
+                <div id="CampoNomeUtente">
+                    <label>Nome Utente</label>
+                    <input type="text" id="nomeUtente" required>
+                    <label id="errorNomeUtente" class="errorNomeUtente"></label>
+                </div>
+
+                <div id="Password">
+                    <label>Password</label>
+                    <input type="password" id="password" required>
+                    <label id="errorPassword" class="errorPassword"></label>
+                </div>
+            </div>
+
+            <div id="Contatti" class="Contatti">
+                <h2>Contatti</h2>
+                <div id="CampoTelefono">
+                    <label>Numero di Telefono</label>
+                    <input type="tel" id="telefono" required>
+                    <label id="errorTelefono" class="errorTelefono"></label>
+                </div>
+                <div id="CampoSitoWeb">
+                    <label>Sito Web dell'Organizzazione</label>
+                    <input type="url" id="sitoWeb" required>
+                    <label id="errorSitoWeb" class="errorSitoWeb"></label>
+                </div>
+            </div>
+
+   
+            <div id="DettagliOrganizzazione" class="DettagliOrganizzazione">
+                <h2>Dettagli Organizzazione</h2>
+                <div id="CampoNomeOrganizzazione">
+                    <label>Nome dell'Ente o Azienda</label>
+                    <input type="text" id="nomeOrganizzazione" required>
+                </div>
+            </div>
+
+     
+            <div id="AmbitoConsulenza" class="AmbitoConsulenza">
+                <h2>Ambito di Consulenza</h2>
+                <p>Seleziona uno o più ambiti:</p>
+                <div id="CampoLinux">
+                    <input type="checkbox" id="linux" value="Linux">
+                    <label>Linux</label>
+                </div>
+                <div id="CampoWindows">
+                    <input type="checkbox" id="windows" value="Windows">
+                    <label>Windows</label>
+                </div>
+                <div id="CampoAndroid">
+                    <input type="checkbox" id="android" value="Android">
+                    <label>Android</label>
+                </div>
+                <div id="CampoDatabase">
+                    <input type="checkbox" id="database" value="Database">
+                    <label>Database</label>
+                </div>
+                <label id="errorConsulenze" class="errorConsulenze"></label>
+            </div>
+
+            <!-- Tempistiche -->
+            <div id="Tempistiche" class="Tempistiche">
+                <h2>Tempistiche</h2>
+                <div id="CampoData">
+                    <label>Data d'Invio della Richiesta</label>
+                    <input type="date" id="dataRichiesta" required>
+                    <label id="errorData" class="errorData"></label>
+                </div>
+            </div>
+
+            <!-- Bottone Submit -->
+            <div id="CampoSubmit">
+                <button type="button" id="submitBtn">Invia Richiesta</button>
+            </div>
         </div>
 
-        <div id="Password">
-            <label>Password</label>
-            <input type="password" id="password">
+        <!-- Riepilogo Risultati -->
+        <div id="Riepilogo" class="Riepilogo">
+            <h2>Riepilogo della Richiesta</h2>
+            <div id="risultatiContent"></div>
         </div>
-    <div id="Contatti" class="Contatti">
-        <div type=""></div>
     </div>
 
-    <div id="DettagliOrganizzazione" class="DettagliOrganizzazione">
-
-    </div>
-
-    <div id="AmbitoConsulenza" class="AmbitoConsulenza">
-
-    </div>
-
-    <div id="Tempistiche" class="Tempistiche">
-
-    </div>
+    <script src="main.js"></script>
 </body>
 </html>
