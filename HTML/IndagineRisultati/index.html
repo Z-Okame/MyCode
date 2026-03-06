@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indagine sui Risultati dei Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Container" class="Container">
+        <h1>Quiz di Valutazione - Portale Educativo</h1>
+        
+        <div id="quizForm" class="quizForm">
+            <hr>
+            <div id="DatiStudente" class="DatiStudente">
+                <h2>Dati Studente</h2>
+                <div id="CampoNomeCognome">
+                    <label>Nome e Cognome</label>
+                    <input type="text" id="nomeCognome" placeholder="Es. Mario Rossi">
+                    <label id="errorNomeCognome" class="errorNomeCognome"></label>
+                </div>
+
+                <div id="CampoClasse">
+                    <label>Classe</label>
+                    <input type="text" id="classe" placeholder="Es. 1A, 2A, 3A">
+                    <label id="errorClasse" class="errorClasse"></label>
+                </div>
+            </div>
+
+            <div id="Domande" class="Domande">
+                <h2>Domande del Quiz</h2>
+                
+                <div id="Domanda1" class="Domanda">
+                    <h3>1. Qual è la capitale della Francia?</h3>
+                    <div class="opzione">
+                        <input type="radio" id="d1a" name="domanda1" value="a">
+                        <label for="d1a">Berlino</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d1b" name="domanda1" value="b">
+                        <label for="d1b">Madrid</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d1c" name="domanda1" value="c">
+                        <label for="d1c">Parigi</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d1d" name="domanda1" value="d">
+                        <label for="d1d">Roma</label>
+                    </div>
+                    <label id="errorDomanda1" class="errorDomanda"></label>
+                </div>
+
+                <div id="Domanda2" class="Domanda">
+                    <h3>2. Quale pianeta è conosciuto come il Pianeta Rosso?</h3>
+                    <div class="opzione">
+                        <input type="radio" id="d2a" name="domanda2" value="a">
+                        <label for="d2a">Marte</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d2b" name="domanda2" value="b">
+                        <label for="d2b">Venere</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d2c" name="domanda2" value="c">
+                        <label for="d2c">Giove</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d2d" name="domanda2" value="d">
+                        <label for="d2d">Saturno</label>
+                    </div>
+                    <label id="errorDomanda2" class="errorDomanda"></label>
+                </div>
+
+                <div id="Domanda3" class="Domanda">
+                    <h3>3. Quanto fa 5 x 6?</h3>
+                    <div class="opzione">
+                        <input type="radio" id="d3a" name="domanda3" value="a">
+                        <label for="d3a">25</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d3b" name="domanda3" value="b">
+                        <label for="d3b">30</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d3c" name="domanda3" value="c">
+                        <label for="d3c">35</label>
+                    </div>
+                    <div class="opzione">
+                        <input type="radio" id="d3d" name="domanda3" value="d">
+                        <label for="d3d">40</label>
+                    </div>
+                    <label id="errorDomanda3" class="errorDomanda"></label>
+                </div>
+            </div>
+
+            <div id="CampoSubmit">
+                <button type="button" id="submitBtn">Invia Quiz</button>
+            </div>
+        </div>
+
+        <div id="Riepilogo" class="Riepilogo">
+            <h2>Riepilogo del Quiz</h2>
+            <div id="risultatiContent"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
