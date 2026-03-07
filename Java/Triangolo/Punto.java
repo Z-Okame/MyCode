@@ -34,7 +34,8 @@ public class Punto {
 
     //metodi
     public double distanza(Punto p2) {
-        return Math.sqrt(Math.pow((this.x - p2.getX()), 2) + Math.pow((this.y - p2.getY()), 2));
+        return Math.sqrt(Math.pow((this.x - p2.getX()), 2) 
+        + Math.pow((this.y - p2.getY()), 2));
     }
 
     public boolean equals(Punto p1, Punto p2) {

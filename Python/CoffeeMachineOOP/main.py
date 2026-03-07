@@ -10,12 +10,14 @@ macchinetta = True
 
 
 while macchinetta:
-
+    
     print("=======================================================")
-    print("\n\nWelcome! Order what you want in the coffee machine!")
+    print("Welcome! Order what you want in the coffee machine!")
     print("avaible: " + Menu.get_items())
     request = input("Choose whatever you want:\n>")
-    order = Menu.find_drink(request)
+    
+    if request != "report" and request != "off":
+        order = Menu.find_drink(request)
     
     
     if request == "report":
