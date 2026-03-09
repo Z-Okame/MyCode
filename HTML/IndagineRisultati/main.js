@@ -1,4 +1,4 @@
-const regex_utente = /^[A-Za-z ]*$/;
+const regex_utente = /^[A-Za-z ]+$/;
 const regex_classe = /^[0-9][A-Z]$/;
 let punteggio = 0;
 const punteggioCorretto = 1.5;
