@@ -5,7 +5,7 @@ import pyautogui
 import time
 import os
 
-url = "https://fliphtml5.com/azsumgeicheee/lfsw/The_Husky_and_His_White_Cat_Shizun__Erha_He_Ta_De_Bai_Mao_Shizun_Vol._10/"
+url = "URL"
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
