@@ -62,6 +62,10 @@ public class Wizard  {
         return velocità;
     }
 
+    public ArrayList<Spell> getSpells() {
+        return spellList;
+    }
+
     //metodi
 
     /**
@@ -107,7 +111,7 @@ public class Wizard  {
      * @return true se ha abbastanza mana, false altrimenti
      */
     public boolean canCast(Spell s) {
-        if (mana >= s.getCostoBase()) {
+        if (mana >= s.getCostoBase() && s.hasPP()) {
             return true;
         }
         return false;
@@ -121,6 +125,7 @@ public class Wizard  {
     public void castSpell(Spell s, Wizard target) {
         if (canCast(s)) {
             mana -= s.getCostoBase();
+            s.consumaPP();
             
             if (s.getTipo().equals("ATTACCO")) {
                 int danno = potenzaMagica + s.getValoreBase();
@@ -130,7 +135,8 @@ public class Wizard  {
                 this.heal(cura);  // Cura se stesso
             }
         } else {
-            System.out.println(alias + " non ha abbastanza mana per lanciare " + s.getNome());
+            System.out.println(alias + " non puo lanciare " + s.getNome()
+                    + " (mana o PP insufficienti)");
         }
     }
 
