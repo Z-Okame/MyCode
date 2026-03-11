@@ -64,6 +64,10 @@ public class Wizard  {
 
     //metodi
 
+    /**
+     * Verifica se il mago è ancora vivo
+     * @return true se HP > 0, false altrimenti
+     */
     public boolean isAlive() {
         if (hp > 0) {
             return true;
@@ -71,6 +75,10 @@ public class Wizard  {
         return false;
     }
 
+    /**
+     * Subisce un danno riducendo gli HP (considerando la difesa)
+     * @param danno il danno ricevuto prima della difesa
+     */
     public void takeDamage(int danno) {
         int dannoSubito = danno - difesa;
         if (dannoSubito < 0) {
@@ -82,6 +90,10 @@ public class Wizard  {
         }
     }
 
+    /**
+     * Cura il mago ripristinando HP (fino al massimo)
+     * @param quantita la quantità di HP da ripristinare
+     */
     public void heal(int quantita) {
         hp += quantita;
         if (hp > hpmax) {
@@ -89,6 +101,11 @@ public class Wizard  {
         } 
     }    
 
+    /**
+     * Verifica se il mago ha abbastanza mana per lanciare l'incantesimo
+     * @param s l'incantesimo da verificare
+     * @return true se ha abbastanza mana, false altrimenti
+     */
     public boolean canCast(Spell s) {
         if (mana >= s.getCostoBase()) {
             return true;
@@ -96,22 +113,30 @@ public class Wizard  {
         return false;
     }
 
+    /**
+     * Lancia un incantesimo su un bersaglio
+     * @param s l'incantesimo da lanciare
+     * @param target il bersaglio dell'incantesimo
+     */
     public void castSpell(Spell s, Wizard target) {
         if (canCast(s)) {
             mana -= s.getCostoBase();
-            int danno = potenzaMagica + s.getValoreBase();
-            target.takeDamage(danno);
-        }
-        else if (s.getTipo().equals("CURA")) {
-            mana -= s.getCostoBase();
-            int cura = potenzaMagica + s.getValoreBase();
-            heal(cura);
-        }
-        else {
+            
+            if (s.getTipo().equals("ATTACCO")) {
+                int danno = potenzaMagica + s.getValoreBase();
+                target.takeDamage(danno);
+            } else if (s.getTipo().equals("CURA")) {
+                int cura = potenzaMagica + s.getValoreBase();
+                this.heal(cura);  // Cura se stesso
+            }
+        } else {
             System.out.println(alias + " non ha abbastanza mana per lanciare " + s.getNome());
         }
     }
 
+    /**
+     * Riposa per recuperare 5 punti mana
+     */
     public void rest() {
         mana += 5;
         if (mana > manamax) {
@@ -119,6 +144,10 @@ public class Wizard  {
         }
     }
 
+    /**
+     * Rigenera una quantità di mana (fino al massimo)
+     * @param quantita la quantità di mana da rigenerare
+     */
     public void regenMana(int quantita) {
         mana += quantita;
         if (mana > manamax) {
