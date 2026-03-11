@@ -53,13 +53,10 @@ public class Arena {
                     //Il mago ha ancora abbastanza HP per attaccare
                     Wizard target = AIController.cercaMagoConPochiHp(alive, w);
                     
-                    //veloce controllo per evitare che la variabile stringa targetName venga usata senza essere inizializzata.
-                    String targetName = target != null ? target.getNome() + " (" + target.getAlias() + ")" : "nessuno"; 
-                    
-                    System.out.println("  Scelta AI: ATTACCO -> bersaglio previsto: " + targetName);
-
                     //Il ControllerAI sceglie la spell d'attacco migliore e la usa, altrimenti il mago si riposa
                     if (target != null) {
+                        System.out.println("  Scelta AI: ATTACCO -> bersaglio previsto: " + target.getNome() + " (" + target.getAlias() + ") con HP " + target.getHp() + "/" + target.getHpmax() );
+                        
                         Spell bestAttack = AIController.attaccaConMiglioreSpeell(w, target);
                         if (bestAttack != null) {
                             System.out.println("  Spell usata: " + bestAttack.getNome()
