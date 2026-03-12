@@ -35,7 +35,6 @@ public class Arena {
         ArrayList<Wizard> alive = getAliveWizards();
         System.out.println("Maghi vivi a inizio turno: " + alive.size());
 
-        
         //Stampo le statistiche di ogni mago 
         for (Wizard w : alive) {
             System.out.println("\n- Azione di " + w.getAlias()
