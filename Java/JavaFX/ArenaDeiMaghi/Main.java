@@ -5,7 +5,8 @@ import java.util.ArrayList;
  * - Implementa la grafica dell'arena
  * - Modifica criterio del target
  * - Implementa ereditarietà nelle spell per dare PP solo alle cure
- * - Finisci di dare ID al combatimento e fai il codice
+ * - fai il codice per l'arena
+ * - Aggiorna i valori random sballati
  *  -------------------------------------------------------------------
  */
 public class Main {

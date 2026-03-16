@@ -16,9 +16,9 @@ public class Wizard  {
     public Wizard(String nome, String alias) {
         this.nome = nome;
         this.alias = alias;
-        this.hp = (int) (Math.random() * 40 + 60); 
+        this.hp = (int) (Math.random() * 40 + 60) + 40; 
         this.hpmax = this.hp;
-        this.mana = (int) (Math.random() * 20 + 40); 
+        this.mana = (int) (Math.random() * 20 + 40) + 20; 
         this.manamax = this.mana;
         this.potenzaMagica = (int) (Math.random() * 5 + 10); 
         this.difesa = (int) (Math.random() * 3 + 8); 
