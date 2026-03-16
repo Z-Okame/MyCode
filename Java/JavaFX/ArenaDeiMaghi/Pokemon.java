@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Wizard  {
+public class Pokemon  {
     private String nome;
     private String alias;
     private int hp;
@@ -10,10 +10,12 @@ public class Wizard  {
     private int potenzaMagica;
     private int difesa;
     private int velocità;
+    public static int ID = 0;
+    private final int id;
     ArrayList<Spell> spellList = new ArrayList<>();
 
     //Costruttore  
-    public Wizard(String nome, String alias) {
+    public Pokemon(String nome, String alias) {
         this.nome = nome;
         this.alias = alias;
         this.hp = (int) (Math.random() * 40 + 60) + 40; 
@@ -23,6 +25,8 @@ public class Wizard  {
         this.potenzaMagica = (int) (Math.random() * 5 + 10); 
         this.difesa = (int) (Math.random() * 3 + 8); 
         this.velocità = (int) (Math.random() * 1 + 10); 
+        ID++;
+        this.id = ID;
     }
     
     //getters
@@ -32,6 +36,10 @@ public class Wizard  {
 
     public String getAlias() {
         return alias;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getHp() {
@@ -122,7 +130,7 @@ public class Wizard  {
      * @param s l'incantesimo da lanciare
      * @param target il bersaglio dell'incantesimo
      */
-    public void castSpell(Spell s, Wizard target) {
+    public void castSpell(Spell s, Pokemon target) {
         if (canCast(s)) {
             mana -= s.getCostoBase();
             s.consumaPP();

@@ -2,6 +2,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -25,19 +26,24 @@ public class ArenaMaghiFXMLController {
     /**
      * Metodo per creare dinamicamente HBOX per ogni mago 
      */
-    public void initialize(ArrayList<Wizard> maghi) {
+    public void initialize(ArrayList<Pokemon> maghi) {
 
-        for (Wizard mago : maghi) {
+        for (Pokemon mago : maghi) {
             // Creo un HBox per ogni mago
             HBox MagoBox = new HBox();
             MagoBox.setPadding(new Insets(10));
             MagoBox.setStyle("-fx-border-color: #333; -fx-border-width: 1; -fx-background-color: #f0f0f0;");
-            
+
             // ImageView placeholder da sostituire
             ImageView imageView = new ImageView();
             imageView.setFitWidth(80);
             imageView.setFitHeight(80);
-            
+            imageView.setPreserveRatio(true);
+
+            // Caricamento diretto dalla cartella tramite file:
+            String imagePath = String.format("file:spritePokémonFront/Spr_1b_%03d.png", mago.getId());
+            imageView.setImage(new Image(imagePath));
+
             // VBox per gli attributi del mago
             VBox attributi = new VBox();
             attributi.getChildren().addAll( 
@@ -49,7 +55,7 @@ public class ArenaMaghiFXMLController {
                 new Label("Difesa: " + mago.getDifesa()),
                 new Label("Velocità: " + mago.getVelocità())
             );
-            
+
             // metto assieme 
             MagoBox.getChildren().addAll(imageView, attributi);
             tilePane.getChildren().add(MagoBox);

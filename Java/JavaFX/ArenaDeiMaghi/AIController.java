@@ -8,9 +8,9 @@ public class AIController {
      * @param wizards lista di maghi vivi
      * @return il mago con meno HP
      */
-    public Wizard cercaMagoConPochiHp(ArrayList<Wizard> wizards, Wizard caster) { //passeremo la lista dei maghi vivi
-        Wizard target = null;
-        for (Wizard w : wizards) {
+    public Pokemon cercaMagoConPochiHp(ArrayList<Pokemon> wizards, Pokemon caster) { //passeremo la lista dei maghi vivi
+        Pokemon target = null;
+        for (Pokemon w : wizards) {
             if (w == caster || !w.isAlive()) {
                 continue;
             }
@@ -26,7 +26,7 @@ public class AIController {
      * @param caster il mago che lancia l'incantesimo
      * @param target il mago bersaglio dell'attacco
      */
-    public Spell attaccaConMiglioreSpeell(Wizard caster, Wizard target) {
+    public Spell attaccaConMiglioreSpeell(Pokemon caster, Pokemon target) {
         Spell bestSpell = null;
         for (Spell s : caster.getSpells()) {
             if (caster.canCast(s) && s.getTipo().equals("ATTACCO")) { //verifico se il mago ha abbastanza mana e PP per lanciare l'incantesimo
@@ -47,7 +47,7 @@ public class AIController {
      * Se gli HP del mago sono sotto il 30%, cerca il miglior incantesimo di cura disponibile e lo lancia su se stesso, altrimenti si riposa
      * @param caster
      */
-    public void curaSeHpBasso(Wizard caster) {
+    public void curaSeHpBasso(Pokemon caster) {
             Spell bestSpell = null;
             for (Spell s : caster.getSpells()) {
                 if (caster.canCast(s) && s.getTipo().equals("CURA")) { //verifico se il mago ha abbastanza mana per lanciare l'incantesimo e se l'incantesimo è di tipo cura

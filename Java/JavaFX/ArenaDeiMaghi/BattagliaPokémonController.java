@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
-public class ArenaMaghiFXMLController {
+public class BattagliaPokémonController {
 
     @FXML
     private Label ContaTurniLabel;

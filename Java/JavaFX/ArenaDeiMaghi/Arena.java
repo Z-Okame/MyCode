@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Arena {
-    ArrayList<Wizard> wizards = new ArrayList<>();
+    ArrayList<Pokemon> wizards = new ArrayList<>();
     AIController AIController = new AIController();
     Random random;
     int turno;
 
     //Costruttore
-    public Arena(ArrayList<Wizard> wizards) {
+    public Arena(ArrayList<Pokemon> wizards) {
         this.wizards = wizards;
         this.random = new Random();
         this.turno = 1;
@@ -32,11 +32,11 @@ public class Arena {
      */
     void playTurn() {
         System.out.println("\n===== TURNO " + turno + " =====");
-        ArrayList<Wizard> alive = getAliveWizards();
+        ArrayList<Pokemon> alive = getAliveWizards();
         System.out.println("Maghi vivi a inizio turno: " + alive.size());
 
         //Stampo le statistiche di ogni mago 
-        for (Wizard w : alive) {
+        for (Pokemon w : alive) {
             System.out.println("\n- Azione di " + w.getAlias()
                     + " [HP " + w.getHp() + "/" + w.getHpmax()
                     + ", Mana " + w.getMana() + "/" + w.getManamax() + "]");
@@ -50,7 +50,7 @@ public class Arena {
                             + ", Mana " + w.getMana() + "/" + w.getManamax());
                 } else {
                     //Il mago ha ancora abbastanza HP per attaccare
-                    Wizard target = AIController.cercaMagoConPochiHp(alive, w);
+                    Pokemon target = AIController.cercaMagoConPochiHp(alive, w);
                     
                     //Il ControllerAI sceglie la spell d'attacco migliore e la usa, altrimenti il mago si riposa
                     if (target != null) {
@@ -86,9 +86,9 @@ public class Arena {
      * Restituisce una lista dei maghi ancora vivi, ordinati per velocità (dal più veloce al più lento)
      * @return lista dei maghi vivi ordinati per velocità
      */
-    ArrayList<Wizard> getAliveWizards() {
-        ArrayList<Wizard> alive = new ArrayList<>();
-        for (Wizard w : wizards) {
+    ArrayList<Pokemon> getAliveWizards() {
+        ArrayList<Pokemon> alive = new ArrayList<>();
+        for (Pokemon w : wizards) {
             if (w.isAlive()) {
                 alive.add(w);
             }
@@ -101,8 +101,8 @@ public class Arena {
      * Restituisce il vincitore della partita, ovvero l'unico mago ancora vivo, oppure null se non c'è un vincitore chiaro (ad esempio se tutti i maghi sono morti nello stesso turno)
      * @return il mago vincitore o null se non c'è un vincitore chiaro
      */
-    Wizard getWinner() {
-        ArrayList<Wizard> alive = getAliveWizards();
+    Pokemon getWinner() {
+        ArrayList<Pokemon> alive = getAliveWizards();
         if (alive.size() == 1) {
             return alive.get(0);
         } else {
@@ -110,7 +110,7 @@ public class Arena {
         }
     }
 
-    ArrayList<Wizard> sortForSpeed(ArrayList<Wizard> wizards) {   
+    ArrayList<Pokemon> sortForSpeed(ArrayList<Pokemon> wizards) {   
         //Bubble sort per ordinare i maghi in base alla velocità
         //Il primo ciclo serve a tenere il conto dei maghi già ordinati
         for (int i = 0; i < wizards.size(); i++) {
@@ -120,7 +120,7 @@ public class Arena {
                 int speedJ1 = wizards.get(j + 1).getVelocità();
                 
                 if (speedJ < speedJ1) {
-                    Wizard temp = wizards.get(j);
+                    Pokemon temp = wizards.get(j);
                     wizards.set(j, wizards.get(j + 1));
                     wizards.set(j + 1, temp);
                 }
