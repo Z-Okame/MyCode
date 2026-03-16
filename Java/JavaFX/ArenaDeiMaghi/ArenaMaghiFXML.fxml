@@ -13,7 +13,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <TilePane fx:id="tilePane" prefHeight="200.0" prefWidth="200.0"/>
+            <TilePane fx:id="tilePane" prefHeight="200.0" prefWidth="800.0"/>
          </content>
       </ScrollPane>
    </center>
