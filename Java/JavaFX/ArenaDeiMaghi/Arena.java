@@ -28,9 +28,10 @@ public class Arena {
      * Simula un turno di gioco, dove ogni mago vivo decide se attaccare o curarsi in base alla propria situazione, e agisce di conseguenza
       * I maghi agiscono in ordine di velocità.
       * Ogni azione è decisa dal ControllerAI
+      * Il metodo restituisce un log del turno, che viene passato a BattagliaPokèmonController
      */
     public ArrayList<String> playTurn() {
-        ArrayList<String> log = new ArrayList<>();
+        ArrayList<String> log = new ArrayList<>(); //Array list da passare alla textArea per mostrare le azioni del turno
 
         log.add("\n===== TURNO " + turno + " =====");
         ArrayList<Pokemon> alive = getAliveWizards();
@@ -66,7 +67,7 @@ public class Arena {
                     log.add("  Dopo azione: HP " + w.getHp() + "/" + w.getHpmax()
                             + ", Mana " + w.getMana() + "/" + w.getManamax());
                 } else {
-                    Pokemon target = AIController.cercaMagoConPochiHp(alive, w);
+                    Pokemon target = AIController.cercaMagoConMenoVelocita(alive, w);
 
                     if (target != null) {
                         log.add("  Scelta AI: ATTACCO -> bersaglio previsto: " + target.getNome() + " ("
@@ -96,7 +97,7 @@ public class Arena {
         log.add("===== FINE TURNO " + turno + " =====");
         turno++;
 
-        return log;
+        return log; 
     }
 
     /**
@@ -114,14 +115,6 @@ public class Arena {
         return alive;
     }
 
-    public int getTurno() {
-        return turno;
-    }
-
-    public ArrayList<Pokemon> getWizards() {
-        return wizards;
-    }
-
     /**
      * Restituisce il vincitore della partita, ovvero l'unico mago ancora vivo, oppure null se non c'è un vincitore chiaro (ad esempio se tutti i maghi sono morti nello stesso turno)
      * @return il mago vincitore o null se non c'è un vincitore chiaro
@@ -135,6 +128,11 @@ public class Arena {
         }
     }
 
+    /**
+     * Ordina una lista di maghi in base alla loro velocità, dal più veloce al più lento
+     * @param wizards la lista di maghi da ordinare
+     * @return la lista di maghi ordinata per velocità
+     */
     ArrayList<Pokemon> sortForSpeed(ArrayList<Pokemon> wizards) {   
         //Bubble sort per ordinare i maghi in base alla velocità
         //Il primo ciclo serve a tenere il conto dei maghi già ordinati
@@ -151,6 +149,22 @@ public class Arena {
                 }
             }
         }
+        return wizards;
+    }
+
+        /**
+     * Restituisce il numero del turno corrente
+     * @return il numero del turno corrente
+     */
+    public int getTurno() {
+        return turno;
+    }
+
+    /**
+     * Restituisce la lista completa dei maghi presenti nell'arena, indipendentemente dal loro stato di salute
+     * @return la lista dei maghi presenti nell'arena
+     */
+    public ArrayList<Pokemon> getWizards() {
         return wizards;
     }
 }

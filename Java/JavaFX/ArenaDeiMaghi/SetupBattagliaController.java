@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,12 +25,13 @@ public class SetupBattagliaController {
 
     private Pokemon pokemonGiocatore;
 
-    @FXML
-    void initialize() {
-        numeroPokemonField.setText("6");
-    }
 
     @FXML
+    /**
+     * Metodo per passare alla schermata della battaglia, con il Pokemon scelto dal giocatore
+     * @param event Evento di click sul bottone "Continua"
+     * @throws IOException Eccezione in caso di problemi con il caricamento del file FXML della schermata della battaglia
+     */
     void continuaVersoBattaglia(ActionEvent event) throws IOException {
         int numeroPokemon = parseNumeroPokemon();
         ArrayList<Pokemon> roster = creaRosterCasuale(numeroPokemon);
@@ -54,45 +54,60 @@ public class SetupBattagliaController {
         }
     }
 
+    /**
+     * Metodo per leggere il numero di Pokemon da inserire nella battaglia
+     * @return Il numero di Pokemon scelto dal giocatore, o un valore di default se il campo è vuoto o non valido
+     */
     private int parseNumeroPokemon() {
-        int defaultValue = 6;
+        //Valore di default se il campo è vuoto o non è un numero valido
+        int defaultValue = 2;
         String text = numeroPokemonField.getText();
 
+        //Se il campo è vuoto o contiene solo spazi, ritorna il valore di default
         if (text == null || text.isBlank()) {
             return defaultValue;
         }
 
+        //Se il campo non ha un numero valido, ritorna il valore di default
         try {
-            return Integer.parseInt(text.trim());
+            int value = Integer.parseInt(text.trim());
+            if (value < 2) {
+                return 2; // Il numero minimo di Pokemon per la battaglia è 2
+            }
+            if (value > 151) {
+                return 151; // Il numero massimo di Pokemon disponibili è 151
+            }
+            return value;
         } catch (NumberFormatException ex) {
             return defaultValue;
         }
     }
 
+    /**
+     * Metodo per creare un roster di Pokemon nemici casuale per la battaglia
+     * @param numeroPokemon numero specificato dal giocatore nel setup
+     * @return
+     */
     private ArrayList<Pokemon> creaRosterCasuale(int numeroPokemon) {
+       
+        //Crea una lista con tutti i Pokemon e un'altra con i pokemon candidati (escludendo quello del giocatore)
         ArrayList<Pokemon> allPokemon = Main.getPokemonList();
-        ArrayList<Pokemon> candidates = new ArrayList<>();
+        ArrayList<Pokemon> roster = new ArrayList<>();
 
-        for (Pokemon p : allPokemon) {
-            if (pokemonGiocatore == null || p.getId() != pokemonGiocatore.getId()) {
-                candidates.add(p);
+        Collections.shuffle(allPokemon); // Mescola la lista di tutti i Pokemon per ottenere una selezione casuale
+
+        //Aggiunge sempre il Pokemon del giocatore, cosi in battaglia puo essere marcato correttamente
+        roster.add(pokemonGiocatore);
+        
+
+        //Aggiunge alla lista dei candidati il numero di pokemon specificato dal giocatore, escludendo quello scelto da lui
+        for (int i = 0; i < allPokemon.size() && roster.size() < numeroPokemon; i++) {
+            Pokemon p = allPokemon.get(i);
+            if (p.getId() != pokemonGiocatore.getId()) {
+                roster.add(p);
             }
         }
 
-        Collections.shuffle(candidates);
-
-        int count = Math.max(2, numeroPokemon);
-        count = Math.min(count, allPokemon.size());
-
-        ArrayList<Pokemon> roster = new ArrayList<>();
-        if (pokemonGiocatore != null) {
-            roster.add(pokemonGiocatore);
-        }
-
-        int neededOpponents = Math.max(1, count - roster.size());
-        for (int i = 0; i < neededOpponents && i < candidates.size(); i++) {
-            roster.add(candidates.get(i));
-        }
 
         return roster;
     }

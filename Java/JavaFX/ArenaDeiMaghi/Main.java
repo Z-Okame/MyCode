@@ -1,27 +1,30 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import javafx.application.Application;
 /**
  * TO DO:
- * - Implementa istanzazione dinamica dei maghi (Quanti Pokémon vuoi?)
- * - Implementa la grafica dell'arena
- * - Modifica criterio del target
- * - Implementa ereditarietà nelle spell per dare PP solo alle cure
- * - fai il codice per l'arena
  * - Aggiorna i valori random sballati
  *  -------------------------------------------------------------------
  */
 public class Main {
 
+	//Pool di spell disponibili per tutti i Pokémon
+	private static final ArrayList<Spell> spellPool = createSpellPool();
+
+	//Creo la lista con tutti i 151 Pokémon
 	private static final ArrayList<Pokemon> pokemonList = createPokemonList();
 
+	//Metodo per avviare l'applicazione JavaFX
 	public static void main(String[] args) {
-		Application.launch(ArenaDeiMaghiFXML.class, args);
+		Application.launch(SelezionePokemon.class, args);
 	}
 
+	//Metodo per passare la lista dei Pokémon agli altri controller
 	public static ArrayList<Pokemon> getPokemonList() {
 		return new ArrayList<>(pokemonList);
 	}
 
+	//Metodo per creare la lista dei Pokémon con i loro nomi e le spell iniziali
 	private static ArrayList<Pokemon> createPokemonList() {
 		ArrayList<Pokemon> maghi = new ArrayList<>();
 
@@ -180,16 +183,45 @@ public class Main {
 		return maghi;
 	}
 
+	//Metodo per aggiungere un Pokémon alla lista con le spell iniziali
 	private static void addPokemon(ArrayList<Pokemon> maghi, String nome) {
 		Pokemon pokemon = new Pokemon(nome, nome);
 		inizializzaSpell(pokemon);
 		maghi.add(pokemon);
 	}
 
+	private static ArrayList<Spell> createSpellPool() {
+		ArrayList<Spell> pool = new ArrayList<>();
+		// Attacchi
+		pool.add(new Spell("Ruotafuoco", 10, 10, "ATTACCO", 99));
+		pool.add(new Spell("Fulmine", 9, 5, "ATTACCO", 99));
+		pool.add(new Spell("Surf", 11, 8, "ATTACCO", 99));
+		pool.add(new Spell("Botta", 8, 2, "ATTACCO", 99));
+		pool.add(new Spell("Turbine", 13, 12, "ATTACCO", 99));
+		pool.add(new Spell("Pistolacqua", 7, 4, "ATTACCO", 99));
+		pool.add(new Spell("Iper Raggio", 12, 9, "ATTACCO", 99));
+		pool.add(new Spell("Psichico", 10, 7, "ATTACCO", 99));
+		pool.add(new Spell("Terremoto", 14, 11, "ATTACCO", 99));
+		pool.add(new Spell("Gela", 9, 6, "ATTACCO", 99));
+		// Cure
+		pool.add(new Spell("Cura Minore", 7, 7, "CURA", 3));
+		pool.add(new Spell("Cura Maggiore", 12, 11, "CURA", 2));
+		pool.add(new Spell("Ripresa", 15, 15, "CURA", 1));
+		return pool;
+	}
+
+	/**
+	 * Metodo che assegna 4 mosse ad ogni Pokemon
+	 * @param pokemon Il Pokemon a cui assegnare le mosse
+	 */
 	private static void inizializzaSpell(Pokemon pokemon) {
-		pokemon.getSpells().add(new Spell("Palla di Fuoco", 10, 20, "ATTACCO", 99));
-		pokemon.getSpells().add(new Spell("Lancia Fulminea", 8, 15, "ATTACCO", 99));
-		pokemon.getSpells().add(new Spell("Cura Minore", 7, 7, "CURA", 3));
-		pokemon.getSpells().add(new Spell("Cura Maggiore", 12, 11, "CURA", 2));
+		// Crea una copia della pool di spell, la mescola, e assegna le prime 4 al Pokémon
+		ArrayList<Spell> shuffledSpells = new ArrayList<>(spellPool);
+		Collections.shuffle(shuffledSpells);
+		
+		// Assegna le prime 4 mosse
+		for (int i = 0; i < 4 && i < shuffledSpells.size(); i++) {
+			pokemon.getSpells().add(shuffledSpells.get(i)); //Aggiungo allo spellbook del Pokemon la spell
+		}
 	}
 }

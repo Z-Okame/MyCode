@@ -4,17 +4,17 @@ public class AIController {
     //metodi
 
     /**
-     * Cerca il mago con meno HP tra quelli vivi, per decidere chi attaccare
+     * Cerca il mago con meno velocità tra quelli vivi, per decidere chi attaccare
      * @param wizards lista di maghi vivi
-     * @return il mago con meno HP
+     * @return il mago con meno velocità
      */
-    public Pokemon cercaMagoConPochiHp(ArrayList<Pokemon> wizards, Pokemon caster) { //passeremo la lista dei maghi vivi
+    public Pokemon cercaMagoConMenoVelocita(ArrayList<Pokemon> wizards, Pokemon caster) { //passeremo la lista dei maghi vivi
         Pokemon target = null;
         for (Pokemon w : wizards) {
             if (w == caster || !w.isAlive()) {
                 continue;
             }
-            if (target == null || w.getHp() < target.getHp()) { //per la prima iterazione, target è null, quindi viene assegnato il primo mago. Per le iterazioni successive, se il mago corrente ha meno hp del target attuale, diventa il nuovo target    
+            if (target == null || w.getVelocità() < target.getVelocità()) { //per la prima iterazione, target è null, quindi viene assegnato il primo mago. Per le iterazioni successive, se il mago corrente ha meno velocità del target attuale, diventa il nuovo target    
                 target = w;
             }
         }

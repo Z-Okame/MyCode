@@ -12,20 +12,20 @@ public class Pokemon  {
     private int velocità;
     private boolean player;
     public static int ID = 0;
-    private final int id;
+    private final int id; // ID univoco per ogni Pokemon 
     ArrayList<Spell> spellList = new ArrayList<>();
 
     //Costruttore  
     public Pokemon(String nome, String alias) {
         this.nome = nome;
         this.alias = alias;
-        this.hp = (int) (Math.random() * 40 + 60) + 40; 
+        this.hp = (int) (Math.random() * 40) + 20; //da 40 a 60
         this.hpmax = this.hp;
-        this.mana = (int) (Math.random() * 20 + 40) + 20; 
+        this.mana = (int) (Math.random() * 20) + 20; //da 20 a 40 
         this.manamax = this.mana;
-        this.potenzaMagica = (int) (Math.random() * 5 + 10); 
-        this.difesa = (int) (Math.random() * 3 + 8); 
-        this.velocità = (int) (Math.random() * 1 + 10); 
+        this.potenzaMagica = (int) (Math.random() * 5) + 5; //da 5 a 10 
+        this.difesa = (int) (Math.random() * 6) + 3;  // da 3 a 8
+        this.velocità = (int) (Math.random() * 10) + 1; // da 1 a 10 
         this.player = false;
         ID++;
         this.id = ID;

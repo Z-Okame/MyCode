@@ -15,7 +15,7 @@ import javafx.geometry.Insets;
 import java.util.ArrayList;
 import java.io.IOException;
 
-public class ArenaMaghiFXMLController {
+public class SelezionePokemonController {
 
     @FXML
     private Button CloseButton;
@@ -23,13 +23,16 @@ public class ArenaMaghiFXMLController {
     @FXML
     private TilePane tilePane;
 
-    private ArrayList<Pokemon> maghiDisponibili = new ArrayList<>();
-
     @FXML
     void CloseStage(ActionEvent event) {
         System.exit(0);
     }
 
+    /**
+     * Metodo per passare alla schermata di setup della battaglia, con il Pokemon scelto dal giocatore
+     * @param pokemonGiocatore il Pokemon scelto dal giocatore
+     * @throws IOException Eccezione in caso di problemi con il caricamento del file FXML della schermata di setup della battaglia
+     */
     private void goToSetupConPokemonGiocatore(Pokemon pokemonGiocatore) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SetupBattaglia.fxml"));
         Parent root = loader.load();
@@ -46,8 +49,6 @@ public class ArenaMaghiFXMLController {
      * Metodo per creare dinamicamente HBOX per ogni mago 
      */
     public void initialize(ArrayList<Pokemon> maghi) {
-        tilePane.getChildren().clear();
-        maghiDisponibili = new ArrayList<>(maghi);
 
         for (Pokemon mago : maghi) {
             // Creo un HBox per ogni mago
@@ -75,19 +76,20 @@ public class ArenaMaghiFXMLController {
                 new Label("Mana: " + mago.getMana() + "/" + mago.getManamax()),
                 new Label("Potenza Magica: " + mago.getPotenzaMagica()),
                 new Label("Difesa: " + mago.getDifesa()),
-                new Label("Velocità: " + mago.getVelocità())
+                new Label("Velocità: " + mago.getVelocità()),
+                new Label( "Clicca per selezionare questo Pokemon")
             );
 
-            Label hint = new Label("Click per selezionare questo Pokemon");
-            attributi.getChildren().add(hint);
-
+        //Lambda expression assegnata ad ogni box
+        //Gestisce il click portando al setup della battaglia con il Pokemon scelto
             MagoBox.setOnMouseClicked(e -> {
                 try {
-                    goToSetupConPokemonGiocatore(mago);
+                goToSetupConPokemonGiocatore(mago);
                 } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                throw new RuntimeException(ex);
                 }
-            });
+            }
+            );
 
             // metto assieme 
             MagoBox.getChildren().addAll(imageView, attributi);
