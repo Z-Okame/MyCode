@@ -21,7 +21,6 @@ public class Arena {
     void playMatch() {
         while (getAliveWizards().size() > 1) {
             playTurn();
-            turno++;
         }
     }
 
@@ -30,56 +29,74 @@ public class Arena {
       * I maghi agiscono in ordine di velocità.
       * Ogni azione è decisa dal ControllerAI
      */
-    void playTurn() {
-        System.out.println("\n===== TURNO " + turno + " =====");
-        ArrayList<Pokemon> alive = getAliveWizards();
-        System.out.println("Maghi vivi a inizio turno: " + alive.size());
+    public ArrayList<String> playTurn() {
+        ArrayList<String> log = new ArrayList<>();
 
-        //Stampo le statistiche di ogni mago 
+        log.add("\n===== TURNO " + turno + " =====");
+        ArrayList<Pokemon> alive = getAliveWizards();
+        log.add("Maghi vivi a inizio turno: " + alive.size());
+
         for (Pokemon w : alive) {
-            System.out.println("\n- Azione di " + w.getAlias()
+            log.add("\n- Azione di " + w.getAlias()
                     + " [HP " + w.getHp() + "/" + w.getHpmax()
                     + ", Mana " + w.getMana() + "/" + w.getManamax() + "]");
-            //Controllo se il mago è vivo, perché potrebbe essere stato ucciso da un mago precedente in questo turno
+
             if (w.isAlive()) {
-                //Se gli HP del mago sono sotto il 30%, il ControllerAI decide di curarsi, altrimenti decide di attaccare
                 if (w.getHp() < w.getHpmax() * 0.3) {
-                    System.out.println("  Scelta AI: HP sotto 30% -> tenta CURA");
-                    AIController.curaSeHpBasso(w); 
-                    System.out.println("  Dopo azione: HP " + w.getHp() + "/" + w.getHpmax()
-                            + ", Mana " + w.getMana() + "/" + w.getManamax());
-                } else {
-                    //Il mago ha ancora abbastanza HP per attaccare
-                    Pokemon target = AIController.cercaMagoConPochiHp(alive, w);
-                    
-                    //Il ControllerAI sceglie la spell d'attacco migliore e la usa, altrimenti il mago si riposa
-                    if (target != null) {
-                        System.out.println("  Scelta AI: ATTACCO -> bersaglio previsto: " + target.getNome() + " (" + target.getAlias() + ") con HP " + target.getHp() + "/" + target.getHpmax() );
-                        
-                        Spell bestAttack = AIController.attaccaConMiglioreSpeell(w, target);
-                        if (bestAttack != null) {
-                            System.out.println("  Spell usata: " + bestAttack.getNome()
-                                    + " [PP " + bestAttack.getPpAttuali() + "/" + bestAttack.getPpMassimi() + "]");
-                            System.out.println("  Stato bersaglio dopo attacco: " + target.getAlias()
-                                    + " HP " + target.getHp() + "/" + target.getHpmax());
-                        } else {
-                            System.out.println("  Nessuna spell ATTACCO disponibile: riposo");
+                    log.add("  Scelta AI: HP sotto 30% -> tenta CURA");
+
+                    Spell bestHeal = null;
+                    for (Spell s : w.getSpells()) {
+                        if (w.canCast(s) && s.getTipo().equals("CURA")) {
+                            if (bestHeal == null || s.getValoreBase() > bestHeal.getValoreBase()) {
+                                bestHeal = s;
+                            }
                         }
-                    } else {
-                        System.out.println("  Nessun bersaglio disponibile.");
                     }
 
-                    //Stampa a schermo delle statistiche aggiornate
-                    System.out.println("  Stato attaccante dopo azione: HP " + w.getHp() + "/" + w.getHpmax()
+                    if (bestHeal != null) {
+                        w.castSpell(bestHeal, w);
+                        log.add("  Spell usata: " + bestHeal.getNome()
+                                + " [PP " + bestHeal.getPpAttuali() + "/" + bestHeal.getPpMassimi() + "]");
+                    } else {
+                        w.rest();
+                        log.add("  Nessuna spell CURA disponibile: riposo");
+                    }
+
+                    log.add("  Dopo azione: HP " + w.getHp() + "/" + w.getHpmax()
+                            + ", Mana " + w.getMana() + "/" + w.getManamax());
+                } else {
+                    Pokemon target = AIController.cercaMagoConPochiHp(alive, w);
+
+                    if (target != null) {
+                        log.add("  Scelta AI: ATTACCO -> bersaglio previsto: " + target.getNome() + " ("
+                                + target.getAlias() + ") con HP " + target.getHp() + "/" + target.getHpmax());
+
+                        Spell bestAttack = AIController.attaccaConMiglioreSpeell(w, target);
+                        if (bestAttack != null) {
+                            log.add("  Spell usata: " + bestAttack.getNome()
+                                    + " [PP " + bestAttack.getPpAttuali() + "/" + bestAttack.getPpMassimi() + "]");
+                            log.add("  Stato bersaglio dopo attacco: " + target.getAlias()
+                                    + " HP " + target.getHp() + "/" + target.getHpmax());
+                        } else {
+                            log.add("  Nessuna spell ATTACCO disponibile: riposo");
+                        }
+                    } else {
+                        log.add("  Nessun bersaglio disponibile.");
+                    }
+
+                    log.add("  Stato attaccante dopo azione: HP " + w.getHp() + "/" + w.getHpmax()
                             + ", Mana " + w.getMana() + "/" + w.getManamax());
                 }
-            //Il mago è morto prima, quindi salta il turno.
             } else {
-                System.out.println("  Saltato: mago non vivo.");
+                log.add("  Saltato: mago non vivo.");
             }
         }
-    
-        System.out.println("===== FINE TURNO " + turno + " =====");
+
+        log.add("===== FINE TURNO " + turno + " =====");
+        turno++;
+
+        return log;
     }
 
     /**
@@ -95,6 +112,14 @@ public class Arena {
         }
         alive = sortForSpeed(alive);
         return alive;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public ArrayList<Pokemon> getWizards() {
+        return wizards;
     }
 
     /**

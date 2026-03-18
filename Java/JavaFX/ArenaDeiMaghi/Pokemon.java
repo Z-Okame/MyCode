@@ -10,6 +10,7 @@ public class Pokemon  {
     private int potenzaMagica;
     private int difesa;
     private int velocità;
+    private boolean player;
     public static int ID = 0;
     private final int id;
     ArrayList<Spell> spellList = new ArrayList<>();
@@ -25,6 +26,7 @@ public class Pokemon  {
         this.potenzaMagica = (int) (Math.random() * 5 + 10); 
         this.difesa = (int) (Math.random() * 3 + 8); 
         this.velocità = (int) (Math.random() * 1 + 10); 
+        this.player = false;
         ID++;
         this.id = ID;
     }
@@ -68,6 +70,14 @@ public class Pokemon  {
 
     public int getVelocità() {
         return velocità;
+    }
+
+    public boolean isPlayer() {
+        return player;
+    }
+
+    public void setPlayer(boolean player) {
+        this.player = player;
     }
 
     public ArrayList<Spell> getSpells() {

@@ -11,16 +11,14 @@ public class ArenaDeiMaghiFXML extends Application {
     public void start(Stage stage) throws Exception {
         ArrayList<Pokemon> maghi = Main.getPokemonList();
 
-        // Spezzo il loader, così posso passare i maghi al controller
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ArenaMaghiFXML.fxml"));
-        Parent root = loader.load(); // carica la scena come Parent
-        
-        // Estraggo il controller e passo i maghi
+        Parent root = loader.load();
+
         ArenaMaghiFXMLController controller = loader.getController();
         controller.initialize(maghi);
         
         stage.setTitle("Arena dei Maghi");
-        stage.setScene(new Scene(root, 620, 420));
+        stage.setScene(new Scene(root, 920, 600));
         stage.show();
     }
 

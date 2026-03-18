@@ -1,5 +1,8 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -7,32 +10,51 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import java.util.ArrayList;
+import java.io.IOException;
 
 public class ArenaMaghiFXMLController {
 
     @FXML
     private Button CloseButton;
-    
+
     @FXML
     private TilePane tilePane;
+
+    private ArrayList<Pokemon> maghiDisponibili = new ArrayList<>();
 
     @FXML
     void CloseStage(ActionEvent event) {
         System.exit(0);
+    }
+
+    private void goToSetupConPokemonGiocatore(Pokemon pokemonGiocatore) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SetupBattaglia.fxml"));
+        Parent root = loader.load();
+
+        SetupBattagliaController controller = loader.getController();
+        controller.setPokemonGiocatore(pokemonGiocatore);
+
+        Stage stage = (Stage) tilePane.getScene().getWindow();
+        stage.setScene(new Scene(root, 420, 260));
+        stage.show();
     }
     
     /**
      * Metodo per creare dinamicamente HBOX per ogni mago 
      */
     public void initialize(ArrayList<Pokemon> maghi) {
+        tilePane.getChildren().clear();
+        maghiDisponibili = new ArrayList<>(maghi);
 
         for (Pokemon mago : maghi) {
             // Creo un HBox per ogni mago
             HBox MagoBox = new HBox();
             MagoBox.setPadding(new Insets(10));
             MagoBox.setStyle("-fx-border-color: #333; -fx-border-width: 1; -fx-background-color: #f0f0f0;");
+            MagoBox.setSpacing(10);
 
             // ImageView placeholder da sostituire
             ImageView imageView = new ImageView();
@@ -55,6 +77,17 @@ public class ArenaMaghiFXMLController {
                 new Label("Difesa: " + mago.getDifesa()),
                 new Label("Velocità: " + mago.getVelocità())
             );
+
+            Label hint = new Label("Click per selezionare questo Pokemon");
+            attributi.getChildren().add(hint);
+
+            MagoBox.setOnMouseClicked(e -> {
+                try {
+                    goToSetupConPokemonGiocatore(mago);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
 
             // metto assieme 
             MagoBox.getChildren().addAll(imageView, attributi);
