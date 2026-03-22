@@ -4,9 +4,10 @@ class Domanda:
         self.attributo = attributo
         self.valore_atteso = valore_atteso
         
-    #metodo controlla
-    def controlla(self,personaggio):
-        return personaggio == self.valore_atteso
+    #metodo che controlla se l'attributo passato è uguale al valore atteso della domanda
+    #ritorna True o False in base al controllo
+    def controlla(self,valore_personaggio):
+        return valore_personaggio == self.valore_atteso
     
     
     
