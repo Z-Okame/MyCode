@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the button to add a background color to the second child node(index 1) of div.</p>
+    <button onclick="myFunction()">Try it</button>
+    <div id="myDIV">
+        <p>First p element</p>
+        <p>Second p element</p>
+    </div>
+    <p><strong>Note:</strong>Whitespace inside elements is considered as text, and text is considered as nodes.</p>
+    <script>
+        function myFunction() {
+            let dati= document.getElementById("myDIV");
+            for (let i = 0; i < dati.children.length; i++) {
+                dati.children[i].style.backgroundColor = "yellow"
+            }
+        }
+    </script>
+</body>
+</html>
