@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genera Tabella</title>
+    <style>
+        th {
+            border: 1px solid #333;
+            padding: 10px 20px;
+            min-width: 80px;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generatore Tabella</h1>
+    
+    <div>
+        <label>Inserisci numero di colonne:</label>
+        <input type="text" id="colonne"> <br>
+        
+        <label>Inserisci numero di righe:</label>
+        <input type="text" id="righe">
+    </div>
+
+    <button id="genera">Genera</button>
+
+    <div id="tabella-container"></div>
+    <script src=main.js></script>
+</body>
+</html>
