@@ -16,7 +16,7 @@ Mauro = Turtle()
 Mauro.shape("circle")
 Mauro.speed('fastest')
 window.bgcolor("black")
-spazio = 0.1
+spazio = 1
 
 for n in range(0, int(360 / spazio)):
     Mauro.pencolor(random_color())
