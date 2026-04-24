@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genera Tabella</title>
+    <title>Tabella Pitagorica</title>
     <style>
-        th {
+            th {
             border: 1px solid #333;
             padding: 10px 20px;
             min-width: 20px;
             min-height: 20px;
-        }
+            }
+            .even {
+                background-color: blue;
+            }
+            .odd {
+                background-color: rgb(255, 40, 219);
+            }
+            .empty {
+                color: white
+            }
     </style>
 </head>
 <body>
-    <h1>Generatore Tabella</h1>
-    
     <div>
         <label>Inserisci numero di colonne:</label>
         <input type="text" id="colonne"> <br>
@@ -25,9 +32,10 @@
     </div>
 
     <button id="genera">Genera</button>
-    <button id="colora">Colora Negativi</button>
 
     <div id="tabella-container"></div>
+
+    <div id="somma"></div>
     <script src=main.js></script>
 </body>
 </html>
