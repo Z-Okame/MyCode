@@ -56,7 +56,7 @@ void main() {
   //Se sei sicuro che una variabile nullable non è `null`, puoi forzare il
   //compilatore a trattarla come non-nullable usando l'operatore `!` (modo assertivo)
   int? numero3=9; // prova a non valorizzare
-  print(numero3! + 5); // Stampa 14, perché numero non è null
+  print(numero3 + 5); // Stampa 14, perché numero non è null
 
   //ATTENZIONE: se usi `!` su una variabile che è effettivamente `null`,
   //il programma genererà un'eccezione (runtime error).
