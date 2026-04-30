@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!---->
+</head>
+<body>
+    <ul>
+        <li id="uno" class="hot">figs</li>
+        <li id="due" class="hot">pine <em>nuts</em></li>
+        <li id="tre" class="hot">honey</li>
+    </ul>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        function myFunction() {
+            let due = document.getElementById("due");
+            due.children[0].className = "cool";
+            }
+    </script>
+</body>
+</html>

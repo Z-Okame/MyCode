@@ -20,7 +20,7 @@ for i in range(0, nr_numbers):
     password_list.append(random.choice(numbers))
 password = "".join(password_list)
 
-print("La password generata e' ",password)
+print("La password generata e' " +password)
 
 password_list = list(password)
 random.shuffle(password_list)

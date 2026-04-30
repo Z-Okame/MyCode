@@ -16,3 +16,4 @@ LICENSE*
 *.md
 *.jar
 *.properties
+Flutter/widget_state/
