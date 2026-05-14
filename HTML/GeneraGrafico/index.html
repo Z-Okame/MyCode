@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genera Grafico</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <h1>Generatore di Grafico</h1>
-    <h2>Imposta i 3 valori</h2>
+
+    <label>Tipo:
+        <select id="tipo">
+            <option value="retta">Retta (y = Ax + B)</option>
+            <option value="parabola">Parabola (y = Ax² + Bx + C)</option>
+        </select>
+    </label>
+
+    <h2>Inserisci i valori</h2>
     <div id="InserisciValori">
-        <input type="text" placeholder="A"> <br>
-        <input type="text" placeholder="B"> <br>
-        <input type="text" placeholder="C">       
+        <label>A: <input type="number" id="valA" value="1"></label><br>
+        <label>B: <input type="number" id="valB" value="0"></label><br>
+        <label>C: <input type="number" id="valC" value="0"></label>
     </div>
+    <br>
+    <button id="generaGrafico">Genera Grafico</button>
+
     <div id="VisualizzaGrafico"></div>
+
+    <script src="main.js"></script>
 </body>
 </html>
