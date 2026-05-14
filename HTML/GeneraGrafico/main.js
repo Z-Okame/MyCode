@@ -51,7 +51,7 @@ class UIController {
 
     /**
      * metodo che legge i valori in input
-     * @returns float A, float B, float C, String tipo
+     * @returns oggetto con float A, float B, float C, String tipo
      */
     leggiInput() {
         return {
