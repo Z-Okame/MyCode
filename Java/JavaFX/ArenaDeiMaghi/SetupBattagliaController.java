@@ -101,7 +101,7 @@ public class SetupBattagliaController {
         
 
         //Aggiunge alla lista dei candidati il numero di pokemon specificato dal giocatore, escludendo quello scelto da lui
-        for (int i = 0; i < allPokemon.size() && roster.size() < numeroPokemon; i++) {
+        for (int i = 0; i < numeroPokemon; i++) {
             Pokemon p = allPokemon.get(i);
             if (p.getId() != pokemonGiocatore.getId()) {
                 roster.add(p);

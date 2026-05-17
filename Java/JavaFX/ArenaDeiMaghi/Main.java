@@ -1,11 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import javafx.application.Application;
-/**
- * TO DO:
- * - Aggiorna i valori random sballati
- *  -------------------------------------------------------------------
- */
+
 public class Main {
 
 	//Pool di spell disponibili per tutti i Pokémon
