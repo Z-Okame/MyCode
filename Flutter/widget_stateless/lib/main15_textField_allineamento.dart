@@ -33,75 +33,75 @@ class LoginSemplice extends StatelessWidget {
 class _LoginSemplice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Login Senza Stato")),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            /*
-            Una Row con un semplice TextField contenuto causa un errore di layout 
-            perché il motore flutter non sa come espandere in direzione orizzontale,
-            quindi dobbiamo vincolare la larghezza del TextField inserendolo in un 
-            contenitore, ci sono almeno 3 modi per farlo..
+      return Scaffold(
+        appBar: AppBar(title: Text("Login Senza Stato")),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              /*
+              Una Row con un semplice TextField contenuto causa un errore di layout 
+              perché il motore flutter non sa come espandere in direzione orizzontale,
+              quindi dobbiamo vincolare la larghezza del TextField inserendolo in un 
+              contenitore, ci sono almeno 3 modi per farlo..
 
-            Use Expanded
-            Row(
-              children: <Widget>[
-                Expanded(child: TextField()),
-                OtherWidget(),
-              ],
-            )
-            Use Flexible
-            Row(
-              children: <Widget>[
-                Flexible(child: TextField()),
-                OtherWidget(),
-              ],
-            )
-            Wrap it in Container or SizedBox and provide width
-            Row(
-              children: <Widget>[
-                SizedBox(width: 100, child: TextField()),
-                OtherWidget(),
-              ],
-            )
-            https://itnext.io/flutter-responsive-apps-flexible-vs-expanded-ff8cc92b468f
-            */
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Icon(Icons.login, color: Colors.pink),
-                ),
-                Expanded(  // PROVA A RIMUOVERE QUESTO WIDGET E VEDI COSA SUCCEDE
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "Inserisci l'utente",
+              Use Expanded
+              Row(
+                children: <Widget>[
+                  Expanded(child: TextField()),
+                  OtherWidget(),
+                ],
+              )
+              Use Flexible
+              Row(
+                children: <Widget>[
+                  Flexible(child: TextField()),
+                  OtherWidget(),
+                ],
+              )
+              Wrap it in Container or SizedBox and provide width
+              Row(
+                children: <Widget>[
+                  SizedBox(width: 100, child: TextField()),
+                  OtherWidget(),
+                ],
+              )
+              https://itnext.io/flutter-responsive-apps-flexible-vs-expanded-ff8cc92b468f
+              */
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Icon(Icons.login, color: Colors.pink),
+                  ),
+                  Expanded(  // PROVA A RIMUOVERE QUESTO WIDGET E VEDI COSA SUCCEDE
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: "Inserisci l'utente",
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Icon(Icons.visibility_off, color: Colors.pink),
-                ),
-                Flexible(
-                  fit: FlexFit.loose, //default (riempie lo spazio disponibile)
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "Inserisci la password",
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Icon(Icons.visibility_off, color: Colors.pink),
+                  ),
+                  Flexible(
+                    fit: FlexFit.loose, //default (riempie lo spazio disponibile)
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: "Inserisci la password",
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
     );
   }
 }
