@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Tris bello bellissimo'),
+      home: const MyHomePage(title: 'Scopri il numero'),
     );
   }
 }
@@ -54,6 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
     _numeroDaIndovinare = _numeri[Random().nextInt(9)];
   }
 
+  void noPress() {
+    return;
+  }
+
   void _handleButtonPress(int index) {
     if (_giocoFinito || _tentativi <= 0) return;
 
@@ -61,9 +65,13 @@ class _MyHomePageState extends State<MyHomePage> {
       _numeriScoperti[index] = true;
       if (checkNumero(index)) {
         _giocoFinito = true;
+        // assicurati che la casella del numero da indovinare sia visibile
+        _numeriScoperti[_numeri.indexOf(_numeroDaIndovinare)] = true;
         print("Hai vinto!!");
       } else if (_tentativi == 0) {
         _giocoFinito = true;
+        // rivelare il numero da indovinare alla fine del gioco
+        _numeriScoperti[_numeri.indexOf(_numeroDaIndovinare)] = true;
         print("Hai perso...");
       } else {
         print("Sbagliato!");
@@ -95,13 +103,18 @@ class _MyHomePageState extends State<MyHomePage> {
           return ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.black,
+              surfaceTintColor:
+                  (_giocoFinito && _numeri[index] == _numeroDaIndovinare)
+                  ? const Color.fromARGB(255, 219, 36, 36) //Numero da indovinare
+                  : (_numeriScoperti[index])
+                  ? const Color.fromARGB(255, 6, 99, 251) //Numero cliccato
+                  : const Color.fromARGB(255, 255, 255, 255), //Non ancora cliccato
               backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-              surfaceTintColor: const Color.fromARGB(255, 121, 93, 220),
               elevation: 12,
             ),
             onPressed:
                 (_numeriScoperti[index] || _giocoFinito || _tentativi <= 0)
-                ? null
+                ? () => noPress()
                 : () => _handleButtonPress(index),
             child: Text(
               _numeriScoperti[index] ? (_numeri[index]).toString() : "?",
