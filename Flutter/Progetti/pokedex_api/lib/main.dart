@@ -182,7 +182,7 @@ class _PokemonDialogState extends State<PokemonDialog> {
       orElse: () => voci.firstWhere((e) => e['language']['name'] == 'en'),
     );
     setState(() {
-      _descrizione = (ita['flavor_text'] as String).replaceAll('\f', ' ');
+      _descrizione = (ita['flavor_text'] as String);
     });
   }
 
@@ -211,7 +211,7 @@ class _PokemonDialogState extends State<PokemonDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(widget.pokemon.nome),
+      title: Text(widget.pokemon.nome + ' (#${widget.pokemon.id})'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -237,11 +237,22 @@ class _PokemonDialogState extends State<PokemonDialog> {
           const SizedBox(height: 12),
           Text(_tipoIta.isEmpty ? 'Caricamento...' : _tipoIta),
           const SizedBox(height: 12),
-          ElevatedButton(
-            onPressed: () => setState(() => _isShiny = !_isShiny),
-            child: Text(_isShiny ? 'Normale' : 'Shiny ✨'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => setState(() => _isShiny = !_isShiny),
+                child: Text(_isShiny ? 'Normale' : 'Shiny ✨'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: ElevatedButton(
+                  onPressed: _riproduciVerso,
+                  child: const Text('🔊'),
+                ),
+              ),
+            ],
           ),
-          ElevatedButton(onPressed: _riproduciVerso, child: const Text('🔊')),
         ],
       ),
     );
