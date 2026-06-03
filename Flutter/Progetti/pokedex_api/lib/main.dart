@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 Future<List<Pokemon>> fetchPokemon() async {
   try {
     final listaRes = await http.get(
-      Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151'),
+      Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=649'),
       headers: {'Accept': 'application/json'},
     );
 
@@ -103,7 +103,19 @@ class _PaginaPokemonState extends State<PaginaPokemon> {
                       child: ListTile(
                         leading: Image.network(p.spriteUrl),
                         title: Text(p.nome),
-                        subtitle: Text(p.tipo),
+                        onTap: () => showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            title: Text(p.nome),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.network(p.spriteAnimatoUrl),
+                                Text(p.tipi.join(' / ')),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },
