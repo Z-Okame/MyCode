@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SpaceInvaders.py</title>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/pyodide/dev/full/pyodide.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>
+    </head>
+    <body>
+        <canvas id="g2d-canvas" style="background: white; border: 1px solid silver"></canvas>
+        <br><textarea id="console" rows="5" cols="50" readonly style="border: 0"></textarea>
+        <script>
+        async function main() {
+        window.languagePluginUrl = "./pyodide/";
+        let pyodide = await loadPyodide();
+        pyodide.runPython(`
+            import base64, io, js, os, shutil, sys, zipfile
+            app_data = '''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'''
+            with zipfile.ZipFile(io.BytesIO(base64.b64decode(app_data)), "r") as zip_ref:
+                zip_ref.extractall()
+            if os.path.exists("g2d_pyodide.py"):
+                shutil.copyfile("g2d_pyodide.py", "g2d.py")
+            sys.path.append(".")
+
+            def write(data):
+                console = js.document.getElementById("console")
+                console.value += str(data)
+                console.scrollTop = console.scrollHeight
+            sys.stdout.write = sys.stderr.write = write
+        `, { globals: pyodide.globals.get("dict")() } );
+        main_py = pyodide.FS.readFile("SpaceInvaders.py", { encoding: "utf8" });
+        pyodide.runPython(main_py);
+        };
+        main();
+        </script>
+    </body>
+</html>
