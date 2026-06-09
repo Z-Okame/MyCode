@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""
-@author  Michele Tomaiuolo - https://tomamic.github.io/
-@license This software is free - https://opensource.org/license/mit
-"""
+'''
+Implementa una posizione minima e massima per le macchine ( e i tronchi)
+per spaziarli allo spawn
+"self.ymin = x0"
+"self.ymax = x0 + 100"
+'''
+
+
 import random
 from Frog import Frog
 
