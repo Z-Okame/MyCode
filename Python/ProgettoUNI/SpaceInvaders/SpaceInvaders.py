@@ -177,9 +177,9 @@ class Player(Actor):
             if isinstance(other, Bomb) or isinstance(other, Alien):
                 self.hit(arena)
         keys = g2d.current_keys()
-        if "ArrowLeft" in keys or "a" in keys and self._x > 0:
+        if ("ArrowLeft" in keys or "a" in keys) and self._x > 0:
             self._x -= self._dx
-        elif "ArrowRight" in keys or "d" in keys and self._x < ARENA_W - 30:
+        elif ("ArrowRight" in keys or "d" in keys) and self._x < ARENA_W - 30:
             self._x += self._dx
 
     def shoot(self):
@@ -224,8 +224,7 @@ class Alien(Actor):
         
         chances = 25000 // (1 + arena.count())
         if random.randrange(chances) == 0:
-            pos = self._x + self._w / 2, self._y + self._h
-            arena.spawn(Bomb(pos))
+            arena.spawn(Bomb(self.pos()))
 
     def pos(self) -> tuple[int, int]:
         return self._x, self._y
