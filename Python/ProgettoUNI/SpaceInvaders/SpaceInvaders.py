@@ -174,7 +174,7 @@ class Player(Actor):
 
     def move(self, arena: Arena):
         for other in arena.collisions():
-            if isinstance(other, AlienShot) or isinstance(other, Alien):
+            if isinstance(other, Bomb) or isinstance(other, Alien):
                 self.hit(arena)
         keys = g2d.current_keys()
         if "ArrowLeft" in keys or "a" in keys and self._x > 0:
@@ -221,6 +221,11 @@ class Alien(Actor):
             self._dx = -self._dx
             self._y += self._dy
         self._count += 1
+        
+        chances = 25000 // (1 + arena.count())
+        if random.randrange(chances) == 0:
+            pos = self._x + self._w / 2, self._y + self._h
+            arena.spawn(Bomb(pos))
 
     def pos(self) -> tuple[int, int]:
         return self._x, self._y
@@ -236,10 +241,6 @@ class Alien(Actor):
 
     def hit(self, arena: Arena):
         arena.kill(self)
-
-    def shoot(self):
-        x, y = self.pos()
-        return AlienShot(x + 10, y - 10)
 #=======================================================================
 #=======================================================================
 '''
@@ -263,7 +264,7 @@ class Obstacle:
     
     def move(self, arena: Arena):
         for other in arena.collisions():
-            if isinstance(other, Projectile) or isinstance(other, AlienShot):
+            if isinstance(other, Projectile) or isinstance(other, Bomb):
                 self.hit(arena)
 
     def sprite(self):
@@ -286,10 +287,11 @@ A shot spawned by an alien in the game.
 '''
 #=======================================================================
 #=======================================================================
-class AlienShot(Actor):
-    def __init__(self, x0, y0):
-        self._x = x0
-        self._y = y0
+class Bomb(Actor):
+    def __init__(self, pos):
+        self._x, self._y = pos
+        self._w = 9
+        self._h = 13
         self._dy = 4
 
     def move(self, arena):
@@ -336,9 +338,6 @@ def tick():
 
     if "ArrowUp" in keys and "ArrowUp" not in prev or "w" in keys and "w" not in prev or "Spacebar" in keys and "Spacebar" not in prev:
         arena.spawn(player.shoot())
-
-    if aliens and random.randrange(0, limit) == 3:
-        arena.spawn(random.choice(aliens).shoot())
 
     arena.tick(keys)
     for o in arena.actors():
