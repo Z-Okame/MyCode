@@ -254,7 +254,7 @@ class Obstacle:
     def __init__(self, x0: int, y0: int):
         self._x = x0
         self._y = y0
-        self._hp = 30
+        self._hp = 50
 
 
     def pos(self) -> tuple[int, int]:
