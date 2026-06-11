@@ -1,6 +1,6 @@
 import g2d
 import random
-ARENA_W, ARENA_H, = 500, 400
+ARENA_W, ARENA_H, = 640, 400
 #=======================================================================
 '''
 CLASS ACTOR
@@ -179,7 +179,7 @@ class Player(Actor):
         keys = g2d.current_keys()
         if ("ArrowLeft" in keys or "a" in keys) and self._x > 0:
             self._x -= self._dx
-        elif ("ArrowRight" in keys or "d" in keys) and self._x < ARENA_W - 30:
+        elif ("ArrowRight" in keys or "d" in keys) and self._x < ARENA_W - 27:
             self._x += self._dx
 
     def shoot(self):
@@ -205,7 +205,7 @@ class Alien(Actor):
     def __init__(self, x0: int, y0: int):
         self._x = x0
         self._y = y0
-        self._xmin = x0
+        self._xmin = x0 - 100
         self._xmax = x0 + 100
         self._dx = 4
         self._dy = 4
@@ -323,15 +323,14 @@ def tick():
     keys = g2d.current_keys()
     prev = g2d.previous_keys()
     g2d.clear_canvas((0,0,0))
-    g2d.set_color((240,245,245))
-    g2d.draw_text(f"Lives: {player._lifes}", (40, 20), 20)
+    g2d.set_color((255,255,255))
+    background = g2d.load_image("img/background.png")
+    g2d.draw_image(background,(0,0))
     
     aliens = [a for a in arena.actors() if isinstance(a, Alien)]
     score = (45 - len(aliens)) * 20
 
-
-    remaining = len(aliens)
-    limit = max(6, 80 - (27 - remaining) * 8)
+    g2d.draw_text(f"Lives: {player._lifes}", (40, 20), 20)
     g2d.draw_text(f"Score: {score}", (43, 40), 15)
 
 
@@ -362,19 +361,19 @@ def main():
  
     arena = Arena((ARENA_W, ARENA_H))
     for i in range(9):
-        arena.spawn(Alien(50 + i * 32, 140))
+        arena.spawn(Alien(180 + i * 32, 180))
     for i in range(9):
-        arena.spawn(Alien(50 + i * 32, 110))
+        arena.spawn(Alien(180 + i * 32, 150))
     for i in range(9):
-        arena.spawn(Alien(50 + i * 32, 80))
+        arena.spawn(Alien(180 + i * 32, 120))
     for i in range(9):
-        arena.spawn(Alien(50 + i * 32, 50))
+        arena.spawn(Alien(180 + i * 32, 90))
     for i in range(9):
-        arena.spawn(Alien(50 + i * 32, 20))
-    player = Player(120, 360)
+        arena.spawn(Alien(180 + i * 32, 60))
+    player = Player(306, 360)
     arena.spawn(player)
     for i in range(5):
-        arena.spawn(Obstacle(50 + i * 80, 280))
+        arena.spawn(Obstacle(136 + i * 80, 280))
 
     g2d.init_canvas((ARENA_W, ARENA_H))
     g2d.main_loop(tick)
