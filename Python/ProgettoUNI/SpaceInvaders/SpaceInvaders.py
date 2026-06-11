@@ -1,7 +1,12 @@
 import g2d
 import random
-ARENA_W, ARENA_H = 500, 400
+ARENA_W, ARENA_H, = 500, 400
 #=======================================================================
+'''
+CLASS ACTOR
+
+An actor in the game arena.
+'''
 #=======================================================================
 class Actor:
     def move(self, arena: "Arena"):
@@ -16,7 +21,11 @@ class Actor:
     def sprite(self) -> tuple[int, int] | None:
         raise NotImplementedError("Abstract method")
 
-
+#=======================================================================
+#=======================================================================
+#CHECK COLLISION METHOD
+#PARAMS: a1 (Actor), a2 (Actor)
+#RETURNS: True if the actors collide, False otherwise
 def check_collision(a1: Actor, a2: Actor) -> bool:
     x1, y1, w1, h1 = a1.pos() + a1.size()
     x2, y2, w2, h2 = a2.pos() + a2.size()
@@ -24,8 +33,12 @@ def check_collision(a1: Actor, a2: Actor) -> bool:
             x2 <= x1 + w1 and x1 <= x2 + w2)
 #=======================================================================
 #=======================================================================
+'''
+CLASS ARENA
 
-
+An arena in the game.
+contains all actors 
+'''
 #=======================================================================
 #=======================================================================
 class Arena:
@@ -100,8 +113,12 @@ class Arena:
         return "playing"
 #=======================================================================
 #=======================================================================
+'''
+CLASS PROJECTILE
 
-
+A projectile in the game.
+spawned by the Player, collides with obstacles or aliens
+'''
 #=======================================================================
 #=======================================================================
 class Projectile(Actor):
@@ -112,7 +129,7 @@ class Projectile(Actor):
 
     def move(self, arena):
         for other in arena.collisions():
-            if isinstance(other, Alien):
+            if isinstance(other, Alien) or isinstance(other, Obstacle):
                 self.hit(arena)
         self._y -= self._dy
 
@@ -129,8 +146,12 @@ class Projectile(Actor):
         arena.kill(self)
 #=======================================================================
 #=======================================================================
+'''
+CLASS PLAYER
 
-
+A player in the game.
+controlled by keyboard, collides with the projectiles spawned by the aliens
+'''
 #=======================================================================
 #=======================================================================
 class Player(Actor):
@@ -139,35 +160,45 @@ class Player(Actor):
         self._y = y0
         self._dx = 4
         self._dy = 4
+        self._lifes = 3
 
     def size(self) -> tuple[int, int]:
-        return (27, 15)
+        return (27, 16)
 
     def sprite(self) -> tuple[int, int]:
         return (348, 364)
+    
 
     def pos(self) -> tuple[int, int]:
         return self._x, self._y
 
     def move(self, arena: Arena):
         for other in arena.collisions():
-            if isinstance(other, AlienShot):
+            if isinstance(other, AlienShot) or isinstance(other, Alien):
                 self.hit(arena)
         keys = g2d.current_keys()
-        if "ArrowLeft" in keys:
+        if "ArrowLeft" in keys or "a" in keys and self._x > 0:
             self._x -= self._dx
-        elif "ArrowRight" in keys:
+        elif "ArrowRight" in keys or "d" in keys and self._x < ARENA_W - 30:
             self._x += self._dx
 
     def shoot(self):
         x, y = self.pos()
-        return Projectile(x + 10, y - 10)
+        return Projectile(x + 12, y - 10)
     
     def hit(self, arena: Arena):
-        arena.kill(self)
+        self._lifes -= 1
+        if self._lifes == 0:
+            arena.kill(self)
+        
 #=======================================================================
 #=======================================================================
+'''
+CLASS ALIEN
 
+An alien in the game.
+collides with the projectiles spawned by the player
+'''
 #=======================================================================
 #=======================================================================
 class Alien(Actor):
@@ -211,8 +242,48 @@ class Alien(Actor):
         return AlienShot(x + 10, y - 10)
 #=======================================================================
 #=======================================================================
+'''
+CLASS OBSTACLE
+
+An obstacle in the game.
+collides with the projectiles spawned by the player and aliens
+'''
+#=======================================================================
+#=======================================================================
+class Obstacle:
+    def __init__(self, x0: int, y0: int):
+        self._x = x0
+        self._y = y0
+        self._hp = 30
 
 
+    def pos(self) -> tuple[int, int]:
+        return self._x, self._y
+    
+    
+    def move(self, arena: Arena):
+        for other in arena.collisions():
+            if isinstance(other, Projectile) or isinstance(other, AlienShot):
+                self.hit(arena)
+
+    def sprite(self):
+        return (196, 302)
+    
+    def size(self):
+        return (48, 32)
+    
+    def hit(self, arena: Arena):
+        self._hp -= 1
+        if self._hp <= 0:
+            arena.kill(self)
+
+#=======================================================================
+#=======================================================================
+'''
+CLASS ALIENSHOT
+
+A shot spawned by an alien in the game.
+'''
 #=======================================================================
 #=======================================================================
 class AlienShot(Actor):
@@ -223,7 +294,7 @@ class AlienShot(Actor):
 
     def move(self, arena):
         for other in arena.collisions():
-            if isinstance(other, Player):
+            if isinstance(other, Player) or isinstance(other, Obstacle):
                 self.hit(arena)
         self._y += self._dy
 
@@ -231,10 +302,10 @@ class AlienShot(Actor):
         return self._x, self._y
 
     def size(self):
-        return (3, 8)
+        return (7, 14)
 
     def sprite(self):
-        return (361, 18)
+        return (54, 116)
 
     def hit(self, arena: Arena):
         arena.kill(self)
@@ -242,25 +313,37 @@ class AlienShot(Actor):
 #=======================================================================
 
 #=======================================================================
+# TICK METHOD
+# UPDATES AND CONTAINS THE GAME LOGIC
 #=======================================================================
 def tick():
-    global arena, player
+    global arena, player, score
     sprites = "https://fondinfo.github.io/sprites/invaders.png"
     keys = g2d.current_keys()
     prev = g2d.previous_keys()
     g2d.clear_canvas((0,0,0))
-
+    g2d.set_color((240,245,245))
+    g2d.draw_text(f"Lives: {player._lifes}", (40, 20), 20)
+    
     aliens = [a for a in arena.actors() if isinstance(a, Alien)]
-    remaining = len(aliens)
-    limit = max(6, 100 - (27 - remaining) * 4)
+    score = (45 - len(aliens)) * 20
 
-    if "ArrowUp" in keys and "ArrowUp" not in prev:
+
+    remaining = len(aliens)
+    limit = max(6, 80 - (27 - remaining) * 8)
+    g2d.draw_text(f"Score: {score}", (43, 40), 15)
+
+
+    if "ArrowUp" in keys and "ArrowUp" not in prev or "w" in keys and "w" not in prev or "Spacebar" in keys and "Spacebar" not in prev:
         arena.spawn(player.shoot())
 
     if aliens and random.randrange(0, limit) == 3:
         arena.spawn(random.choice(aliens).shoot())
 
     arena.tick(keys)
+    for o in arena.actors():
+        if isinstance(o, Obstacle):
+            o.move(arena)
 
     for a in arena.actors():
         g2d.draw_image(sprites, a.pos(), a.sprite(), a.size())
@@ -268,15 +351,14 @@ def tick():
 
     status = arena.game_status()
     if status == "lose":
-        g2d.alert('You Lose!!')
+        g2d.alert(f'GAME OVER!! \nTOTAL SCORE: {score}')
         g2d.close_canvas()
     elif status == "win":
-        g2d.alert('You Win!!')
+        g2d.alert(f'VICTORY!! \nTOTAL SCORE: {score}')
         g2d.close_canvas()
-#=======================================================================     
+#=======================================================================  
+# MAIN   
 #=======================================================================
-
-
 def main():
     global arena, player
  
@@ -287,8 +369,14 @@ def main():
         arena.spawn(Alien(50 + i * 32, 110))
     for i in range(9):
         arena.spawn(Alien(50 + i * 32, 80))
-    player = Player(120, 380)
+    for i in range(9):
+        arena.spawn(Alien(50 + i * 32, 50))
+    for i in range(9):
+        arena.spawn(Alien(50 + i * 32, 20))
+    player = Player(120, 360)
     arena.spawn(player)
+    for i in range(5):
+        arena.spawn(Obstacle(50 + i * 80, 280))
 
     g2d.init_canvas((ARENA_W, ARENA_H))
     g2d.main_loop(tick)
