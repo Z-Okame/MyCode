@@ -213,6 +213,8 @@ class Alien(Actor):
         self.status = "alive"
 
     def move(self, arena):
+        if self.status == "death" and self._count % 28 == 0:
+            arena.kill(self)
         for other in arena.collisions():
             if isinstance(other, Projectile):
                 self.hit(arena)
@@ -231,20 +233,21 @@ class Alien(Actor):
         return self._x, self._y
 
     def sprite(self):
-        if self._count % 28 < 16:
-            return (220, 20)
-        elif self.status == "death":
+        if self.status == "death":
             return (225,54)
+        elif self._count % 28 < 16:
+            return (220, 20)
         else:
             return (196, 20)
 
     def size(self):
-        return (24, 16)
+        if self.status ==  "death":
+            return(27,21)
+        else:
+            return (24, 16)
 
-    def hit(self, arena: Arena):
+    def hit(self):
         self.status = "death"
-        if self._count % 28 < 16 and self.status == "death":
-            arena.kill(self)
 
 #=======================================================================
 #=======================================================================
