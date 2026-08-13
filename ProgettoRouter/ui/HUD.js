@@ -93,7 +93,7 @@ class HUD {
             btn.id = `btn-delete-${i}`
             btn.addEventListener("click", () => {
             router.tdi.removeRoute(i)
-            hud.renderTDI(router)
+            this.renderTDI(router)
             })
 
             tdDest.textContent = `${router.tdi.routes[i].destination}`

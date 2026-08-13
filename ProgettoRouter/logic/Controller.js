@@ -4,19 +4,45 @@ class Controller {
     constructor() {
         this.router = null
         this.hud = new HUD()
+        this.logic = new RoutingLogic()
+        this.jsonManager = new JSONManager()
     }
 
     setup() {
         document.getElementById("btn-create-router").addEventListener("click", () => this.routerCreation())
         document.getElementById("btn-add-int").addEventListener("click", () => this.interfaceCreation())
         document.getElementById("btn-add-route").addEventListener("click", () => this.TDICreation())
-        document.getElementById("btn-show-tdi").addEventListener("click", () => {
-            if (!this.router) {
-                alert("Crea prima un Router!")
-                return
+        document.getElementById("btn-export").addEventListener("click", () => this.exportConfig())
+        document.getElementById("btn-import").addEventListener("click", () => this.importConfig())
+    }
+
+    exportConfig() {
+        if (!this.router) {
+            alert("Crea prima un Router!")
+            return
+        }
+        this.jsonManager.ExportJSON(this.router)
+    }
+
+    importConfig() {
+        const input = document.createElement("input")
+        input.type = "file"
+        input.accept = ".json"
+        input.addEventListener("change", (e) => {
+            const file = e.target.files[0]
+            const reader = new FileReader()
+            reader.onload = (e) => {
+                this.router = this.jsonManager.ImportJSON(e.target.result)
+                this.hud.renderRouter(this.router)
+                for (let i = 0; i < this.router.interfaces.length; i++) {
+                    this.hud.renderInterface(this.router, this.router.interfaces[i])
+                }
+                this.hud.renderTDI(this.router)
+                document.getElementById("router-creation").style.display = "none"
             }
-            this.hud.renderTDI(this.router)
+            reader.readAsText(file)
         })
+        input.click()
     }
 
     routerCreation() {
@@ -73,13 +99,16 @@ class Controller {
         }
         const route = this.routeCreation()
         if (route == null) return
+
+        const nuovaSubnet = this.logic.andMask(route.destination, route.mask)
         for (let i = 0; i < this.router.tdi.routes.length; i++) {
-            if (this.router.tdi.routes[i].destination === route.destination &&
-                this.router.tdi.routes[i].mask === route.mask) {
-                alert("Route già esistente!")
+            const subnetEsistente = this.logic.andMask(this.router.tdi.routes[i].destination, this.router.tdi.routes[i].mask)
+            if (nuovaSubnet === subnetEsistente) {
+                alert("Subnet già esistente!")
                 return
             }
         }
+
         this.router.tdi.addRoute(route)
         this.hud.renderTDI(this.router)
     }
