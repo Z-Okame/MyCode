@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Router Simulator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Router Simulator</h1>
+
+        <!-- Crea Router -->
+        <div id="router-creation">
+            <h2>Crea Router</h2>
+            <input type="text" id="router-name-input" placeholder="Nome Router">
+            <button id="btn-create-router">Crea</button>
+        </div>
+        
+        <div id="routers-container"></div>  
+
+        <!-- Aggiungi Interfaccia -->
+        <div>
+            <h2>Aggiungi Interfaccia</h2>
+            <input type="text" id="int-name-input" placeholder="Nome Interfaccia">
+            <input type="text" id="int-ip-input" placeholder="Indirizzo IP">
+            <button id="btn-add-int">Aggiungi</button>
+            <ul id="interfaces-list"></ul>
+        </div>
+
+        <!-- Aggiungi Route -->
+        <div id="route-creation">
+            <h2>Aggiungi Route</h2>
+            <input type="text" id="route-dest-input" placeholder="Destinazione (es. 192.168.1.0)">
+            <input type="text" id="route-mask-input" placeholder="Maschera (es. 255.255.255.0)">
+            <input type="text" id="route-nexthop-input" placeholder="Next Hop (es. 10.0.0.1)">
+            <button id="btn-add-route">Aggiungi Route</button>
+        </div>
+
+        <div id="tdi-container">
+        </div> <br>
+
+        <script src="classes/Interface.js"></script>
+        <script src="classes/Route.js"></script>
+        <script src="classes/TDI.js"></script>
+        <script src="classes/Router.js"></script>
+        <script src="logic/RoutingLogic.js"></script>
+        <script src="logic/JSONManager.js"></script>
+        <script src="ui/HUD.js"></script>
+        <script src="logic/Controller.js"></script>
+        <script src="main.js"></script>
+    </main>
+</body>
+</html>
