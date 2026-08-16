@@ -8,4 +8,8 @@ class Interface {
     toString() {
         return `${this.name}: ${this.ip}, STATUS: ${this.status ? "UP" : "DOWN"}`;
     }
+
+    switchStatus() {
+        this.status = !this.status
+    }
 }

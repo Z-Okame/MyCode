@@ -45,10 +45,18 @@ class HUD {
             }
         }
 
+        const btnToggle = document.createElement("button")
+        btnToggle.textContent = int.status ? "UP" : "DOWN"
+        btnToggle.addEventListener("click", () => {
+            int.switchStatus()
+            btnToggle.textContent = int.status ? "UP" : "DOWN"
+        })
+
         const nuovaInt = document.createElement("li");
         nuovaInt.id = `${int.name}`
         nuovaInt.textContent = int.toString()
         elencoInterfacce.appendChild(nuovaInt)
+        nuovaInt.appendChild(btnToggle)
     }
 
 
