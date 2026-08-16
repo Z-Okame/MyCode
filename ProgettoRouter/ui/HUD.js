@@ -29,41 +29,45 @@ class HUD {
 
     renderInterface(router, int) {
         const infoDiv = document.getElementById(router.name)
-        let elencoInterfacce = document.getElementById(`${router.name}-interfaces`);
+        let elencoInterfacce = document.getElementById(`${router.name}-interfaces`)
 
         if (elencoInterfacce == null) {
-            elencoInterfacce = document.createElement("ul");
+            elencoInterfacce = document.createElement("ul")
             elencoInterfacce.id = `${router.name}-interfaces`
             infoDiv.appendChild(elencoInterfacce)
         }
 
-        //Controllo interfaccia esistente
+        // Controllo interfaccia esistente
         for (let i = 0; i < elencoInterfacce.children.length; i++) {
             if (elencoInterfacce.children[i].id == int.name) {
-                elencoInterfacce.children[i].textContent = int.toString()
                 return
             }
         }
 
-        const btnToggle = document.createElement("button")
-        btnToggle.textContent = int.status ? "UP" : "DOWN"
-        btnToggle.addEventListener("click", () => {
-            int.switchStatus()
-            btnToggle.textContent = int.status ? "UP" : "DOWN"
+        const nuovaInt = document.createElement("li")
+        nuovaInt.id = int.name
+
+        const span = document.createElement("span")
+        span.textContent = int.toString()
+
+        const btnElimina = document.createElement("button")
+        btnElimina.textContent = "Elimina"
+        btnElimina.style.marginLeft = "10px"
+        btnElimina.addEventListener("click", () => {
+            router.removeInterface(router.interfaces.indexOf(int))
+            nuovaInt.remove()
         })
 
-        const nuovaInt = document.createElement("li");
-        nuovaInt.id = `${int.name}`
-        nuovaInt.textContent = int.toString()
+        nuovaInt.appendChild(span)
+        nuovaInt.appendChild(btnElimina)
         elencoInterfacce.appendChild(nuovaInt)
-        nuovaInt.appendChild(btnToggle)
     }
 
 
     renderTDI(router) {
         let tdiDiv = document.getElementById("tdi-container")
         tdiDiv.innerHTML = ""
-    
+        const h2 = document.createElement("h2")
         const table = document.createElement("table")
         
         const thead = document.createElement("thead")
@@ -118,6 +122,16 @@ class HUD {
 
         table.appendChild(tbody)
         tdiDiv.appendChild(table)
+    }
+
+    renderSimulation(compRoutes, chosenRoute) {
+        const simResultP = document.getElementById("sim-result")
+
+        let strCompRoutes = ""
+        for (let i = 0; i < compRoutes.length; i++) {
+            strCompRoutes += compRoutes[i].toString() + "<br>"
+        }
+        simResultP.innerHTML = `Route Compatibili:<br>${strCompRoutes}<br>Route Scelta per LPM: ${chosenRoute.toString()}`
     }
 
 }

@@ -9,20 +9,20 @@ class JSONManager {
     }
 
     ImportJSON(jsonString) {
-    const data = JSON.parse(jsonString)
-    
-    const tdi = new TDI()
-    for (let i = 0; i < data.tdi.routes.length; i++) {
-        const r = data.tdi.routes[i]
-        tdi.addRoute(new Route(r.destination, r.mask, r.nextHop))
+        const data = JSON.parse(jsonString)
+        
+        const tdi = new TDI()
+        for (let i = 0; i < data.tdi.routes.length; i++) {
+            const r = data.tdi.routes[i]
+            tdi.addRoute(new Route(r.destination, r.mask, r.nextHop))
+        }
+        
+        const router = new Router(data.name, data.status, tdi)
+        for (let i = 0; i < data.interfaces.length; i++) {
+            const iface = data.interfaces[i]
+            router.addInterface(new Interface(iface.name, iface.ip, iface.mask))
+        }
+        
+        return router
     }
-    
-    const router = new Router(data.name, data.status, tdi)
-    for (let i = 0; i < data.interfaces.length; i++) {
-        const iface = data.interfaces[i]
-        router.addInterface(new Interface(iface.name, iface.ip, iface.status))
-    }
-    
-    return router
-}
 }

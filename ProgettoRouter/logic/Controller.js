@@ -14,6 +14,18 @@ class Controller {
         document.getElementById("btn-add-route").addEventListener("click", () => this.TDICreation())
         document.getElementById("btn-export").addEventListener("click", () => this.exportConfig())
         document.getElementById("btn-import").addEventListener("click", () => this.importConfig())
+        document.getElementById("btn-simulate").addEventListener("click", () => this.simulation())
+    }
+
+    simulation() {
+        let ip = document.getElementById("sim-dest-input").value
+        let compRoutes = this.logic.findCompRoutes(this.router,ip)
+        if (compRoutes.length === 0) {
+            document.getElementById("sim-result").textContent = "Nessuna route trovata — pacchetto droppato"
+            return
+        }
+        let chosenRoute = this.logic.choseRoute(compRoutes)
+        this.hud.renderSimulation(compRoutes, chosenRoute)
     }
 
     exportConfig() {
@@ -25,6 +37,7 @@ class Controller {
     }
 
     importConfig() {
+        document.getElementById("routers-container").innerHTML = ""
         const input = document.createElement("input")
         input.type = "file"
         input.accept = ".json"
@@ -64,6 +77,15 @@ class Controller {
         }
         const name = document.getElementById("int-name-input").value
         const ip = document.getElementById("int-ip-input").value
+        const mask = document.getElementById("int-mask-input").value
+        const nuovaSubnet = this.logic.andMask(ip, mask)
+        for (let i = 0; i < this.router.interfaces.length; i++) {
+            const subnetEsistente = this.logic.andMask(this.router.interfaces[i].ip, this.router.interfaces[i].mask)
+            if (nuovaSubnet === subnetEsistente) {
+                alert("Subnet già in uso da un'altra interfaccia!")
+                return
+            }
+        }
         if (name == "" || ip == "") {
             alert("Compila tutti i campi!")
             return

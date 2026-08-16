@@ -1,15 +1,11 @@
 class Interface {
-    constructor(name, ip, status) {
+    constructor(name, ip, mask) {
         this.name = name
         this.ip = ip
-        this.status = status
+        this.mask = mask
     }
 
     toString() {
-        return `${this.name}: ${this.ip}, STATUS: ${this.status ? "UP" : "DOWN"}`;
-    }
-
-    switchStatus() {
-        this.status = !this.status
+        return `${this.name}: ${this.ip}/${this.mask}`
     }
 }

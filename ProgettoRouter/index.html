@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Router Simulator</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.css">
 </head>
 <body>
     <main class="container">
@@ -25,12 +25,24 @@
         </div>
         
         <div id="routers-container"></div>  
+        
+        <div id="tdi-container">
+        </div> <br>
+
+        
+        <div>
+            <h2>Simulazione</h2>
+            <input type="text" id="sim-dest-input" placeholder="Destinazione (es.192.168.1.0)">
+            <button id="btn-simulate">Simula</button>
+            <p id="sim-result"></p>
+        </div>
 
         <!-- Aggiungi Interfaccia -->
         <div>
             <h2>Aggiungi Interfaccia</h2>
             <input type="text" id="int-name-input" placeholder="Nome Interfaccia">
             <input type="text" id="int-ip-input" placeholder="Indirizzo IP">
+            <input type="text" id="int-mask-input" placeholder="Subnet Mask (es. 255.255.255.0)">
             <button id="btn-add-int">Aggiungi</button>
             <ul id="interfaces-list"></ul>
         </div>
@@ -43,9 +55,6 @@
             <input type="text" id="route-nexthop-input" placeholder="Next Hop (es. 10.0.0.1)">
             <button id="btn-add-route">Aggiungi Route</button>
         </div>
-
-        <div id="tdi-container">
-        </div> <br>
 
         <script src="classes/Interface.js"></script>
         <script src="classes/Route.js"></script>
