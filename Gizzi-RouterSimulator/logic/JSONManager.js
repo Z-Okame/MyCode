@@ -1,4 +1,11 @@
 class JSONManager {
+    
+    // methods
+
+    /**
+    * Esporta la configurazione del router in un file JSON scaricabile.
+    * @param {Router} router - Il router da esportare
+    */
     ExportJSON(router) {
         const json = JSON.stringify(router, null, 2)
         const blob = new Blob([json], { type: "application/json" })
@@ -8,6 +15,12 @@ class JSONManager {
         a.click()
     }
 
+    /**
+    * Importa la configurazione di un router da una stringa JSON
+    * e ricostruisce tutti gli oggetti (Router, TDI, Route, Interface).
+    * @param {string} jsonString - Stringa JSON da parsare
+    * @returns {Router} Il router ricostruito con TDI e interfacce
+    */
     ImportJSON(jsonString) {
         const data = JSON.parse(jsonString)
         

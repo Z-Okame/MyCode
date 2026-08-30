@@ -1,6 +1,8 @@
 const ipRegex = /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/
 
 class Controller {
+
+    // constructor
     constructor() {
         this.router = null
         this.hud = new HUD()
@@ -8,6 +10,11 @@ class Controller {
         this.jsonManager = new JSONManager()
     }
 
+    // methods
+
+    /**
+    * Registra tutti i listener sui pulsanti dell'interfaccia utente.
+    */
     setup() {
         document.getElementById("btn-create-router").addEventListener("click", () => this.routerCreation())
         document.getElementById("btn-add-int").addEventListener("click", () => this.interfaceCreation())
@@ -17,6 +24,10 @@ class Controller {
         document.getElementById("btn-simulate").addEventListener("click", () => this.simulation())
     }
 
+    /**
+    * Avvia la simulazione di instradamento per un IP di destinazione inserito dall'utente.
+    * Cerca le route compatibili e seleziona quella con il prefisso più lungo (LPM).
+    */
     simulation() {
         let ip = document.getElementById("sim-dest-input").value
         let compRoutes = this.logic.findCompRoutes(this.router,ip)
@@ -28,6 +39,9 @@ class Controller {
         this.hud.renderSimulation(compRoutes, chosenRoute)
     }
 
+    /**
+    * Esporta la configurazione corrente del router in un file JSON.
+    */
     exportConfig() {
         if (!this.router) {
             alert("Crea prima un Router!")
@@ -36,6 +50,10 @@ class Controller {
         this.jsonManager.ExportJSON(this.router)
     }
 
+    /**
+    * Apre un file JSON dal filesystem e importa la configurazione del router,
+    * ricostruendo tutti gli oggetti e aggiornando la UI.
+    */
     importConfig() {
         document.getElementById("routers-container").innerHTML = ""
         const input = document.createElement("input")
@@ -58,6 +76,9 @@ class Controller {
         input.click()
     }
 
+    /**
+    * Legge il nome dal form, crea un nuovo Router con TDI vuota e aggiorna la UI.
+    */
     routerCreation() {
         const name = document.getElementById("router-name-input").value
         if (name == "") {
@@ -70,6 +91,10 @@ class Controller {
         document.getElementById("router-creation").style.display = "none"
     }
 
+    /**
+    * Legge i campi del form, valida l'IP e controlla che la subnet non sia già in uso,
+    * poi crea una nuova Interface e la aggiunge al router.
+    */
     interfaceCreation() {
         if (!this.router) {
             alert("Crea prima un Router!")
@@ -94,11 +119,15 @@ class Controller {
             alert("IP non valido!")
             return
         }
-        const iface = new Interface(name, ip, true)
+        const iface = new Interface(name, ip, mask)
         this.router.addInterface(iface)
         this.hud.renderInterface(this.router, iface)
     }
 
+    /**
+    * Legge e valida i campi del form per creare una nuova Route.
+    * @returns {Route|null} La Route creata, oppure null se i dati non sono validi
+    */
     routeCreation() {
         const dest = document.getElementById("route-dest-input").value
         const mask = document.getElementById("route-mask-input").value
@@ -114,6 +143,10 @@ class Controller {
         return new Route(dest, mask, nextHop)
     }
 
+    /**
+    * Crea una nuova Route tramite routeCreation(), verifica che la subnet
+    * non sia già presente nella TDI e infine aggiorna la tabella nella UI.
+    */
     TDICreation() {
         if (!this.router) {
             alert("Crea prima un Router!")

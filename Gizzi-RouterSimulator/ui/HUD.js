@@ -1,5 +1,11 @@
 class HUD {
+    
+    // methods
 
+    /**
+    * Crea e inserisce nel DOM la card grafica del router.
+    * @param {Router} router - Il router da visualizzare
+    */
     renderRouter(router) {
         let routerDiv = document.createElement("article") //Card di PicoCSS
         routerDiv.id = router.name
@@ -27,6 +33,12 @@ class HUD {
         
     }
 
+    /**
+    * Aggiunge un'interfaccia alla lista visuale del router nel DOM.
+    * Se la lista non esiste ancora, la crea. Evita duplicati controllando gli id.
+    * @param {Router} router - Il router a cui appartiene l'interfaccia
+    * @param {Interface} int - L'interfaccia da visualizzare
+    */
     renderInterface(router, int) {
         const infoDiv = document.getElementById(router.name)
         let elencoInterfacce = document.getElementById(`${router.name}-interfaces`)
@@ -37,7 +49,6 @@ class HUD {
             infoDiv.appendChild(elencoInterfacce)
         }
 
-        // Controllo interfaccia esistente
         for (let i = 0; i < elencoInterfacce.children.length; i++) {
             if (elencoInterfacce.children[i].id == int.name) {
                 return
@@ -64,6 +75,11 @@ class HUD {
     }
 
 
+    /**
+    * Ridisegna completamente la tabella della TDI nel DOM.
+    * Viene richiamata ogni volta che una route viene aggiunta o rimossa.
+    * @param {Router} router - Il router di cui visualizzare la TDI
+    */
     renderTDI(router) {
         let tdiDiv = document.getElementById("tdi-container")
         tdiDiv.innerHTML = ""
@@ -124,6 +140,11 @@ class HUD {
         tdiDiv.appendChild(table)
     }
 
+    /**
+    * Mostra nel DOM le route compatibili trovate e la route scelta tramite LPM.
+    * @param {Route[]} compRoutes - Array delle route compatibili trovate
+    * @param {Route} chosenRoute - La route selezionata dal Longest Prefix Match
+    */
     renderSimulation(compRoutes, chosenRoute) {
         const simResultP = document.getElementById("sim-result")
 
