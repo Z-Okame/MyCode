@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\GestioneParcoVeicoliAziendale\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55AC7502-8BCA-2F08-A02A-78DF9C9FFAE9}|GestioneParcoVeicoliAziendale.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\gestioneparcoveicoliaziendale\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AC7502-8BCA-2F08-A02A-78DF9C9FFAE9}|GestioneParcoVeicoliAziendale.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\GestioneParcoVeicoliAziendale\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\GestioneParcoVeicoliAziendale\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-27T18:23:33.359Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
