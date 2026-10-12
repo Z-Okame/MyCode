@@ -1,0 +1,13 @@
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\bin\Debug\net10.0-windows\WinFormsLibraryScuola.deps.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\bin\Debug\net10.0-windows\WinFormsLibraryScuola.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\bin\Debug\net10.0-windows\WinFormsLibraryScuola.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.AssemblyInfoInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.AssemblyInfo.cs
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.csproj.CoreCompileInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.sourcelink.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\refint\WinFormsLibraryScuola.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinFormsLibraryScuola.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\ref\WinFormsLibraryScuola.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsAppScuola\WinFormsLibraryScuola\obj\Debug\net10.0-windows\WinForms.7B6DAB04.Up2Date

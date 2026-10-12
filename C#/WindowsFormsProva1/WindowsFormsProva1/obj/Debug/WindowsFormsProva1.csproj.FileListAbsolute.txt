@@ -1,0 +1,10 @@
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\bin\Debug\WindowsFormsProva1.exe.config
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\bin\Debug\WindowsFormsProva1.exe
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\bin\Debug\WindowsFormsProva1.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.csproj.AssemblyReference.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.FormInizio.resources
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.Properties.Resources.resources
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.csproj.GenerateResource.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.csproj.CoreCompileInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.exe
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WindowsFormsProva1\WindowsFormsProva1\obj\Debug\WindowsFormsProva1.pdb

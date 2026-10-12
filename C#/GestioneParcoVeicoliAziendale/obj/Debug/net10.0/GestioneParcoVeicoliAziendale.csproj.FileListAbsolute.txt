@@ -1,0 +1,16 @@
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\bin\Debug\net10.0\GestioneParcoVeicoliAziendale.exe
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\bin\Debug\net10.0\GestioneParcoVeicoliAziendale.deps.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\bin\Debug\net10.0\GestioneParcoVeicoliAziendale.runtimeconfig.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\bin\Debug\net10.0\GestioneParcoVeicoliAziendale.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\bin\Debug\net10.0\GestioneParcoVeicoliAziendale.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.AssemblyInfoInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.AssemblyInfo.cs
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.csproj.CoreCompileInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.sourcelink.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\refint\GestioneParcoVeicoliAziendale.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\GestioneParcoVeicoliAziendale.genruntimeconfig.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\ref\GestioneParcoVeicoliAziendale.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\GestioneParcoVeicoliAziendale\obj\Debug\net10.0\Gestione.7A09DBFD.Up2Date

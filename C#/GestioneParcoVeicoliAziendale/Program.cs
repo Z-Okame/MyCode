@@ -143,12 +143,7 @@ public class Flotta
     /// </summary>
     public string VisualizzaFlotta()
     {
-        string InfoFlotta = "";
-        foreach (Veicolo v in veicoli)
-        {
-            InfoFlotta += "\n- " + (v.StampaDettagli());
-        }
-        return InfoFlotta;
+        return string.Join(", ", veicoli.Select(v => v.StampaDettagli()));
     }
 
     /// <summary>
@@ -157,14 +152,7 @@ public class Flotta
     /// <returns> Costo totale di manutenzione </returns>
     public double CalcolaCostoTotaleManutenzione()
     {
-        double costoTotale = 0;
-
-        foreach (Veicolo v in veicoli)
-        {
-            costoTotale += v.CalcolaCostoManutenzione();
-        }
-
-        return costoTotale;
+        return veicoli.Sum(v => v.CalcolaCostoManutenzione()); 
     }
 }
 // ============================================================================================================
