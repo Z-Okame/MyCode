@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\",
+  "WorkspaceRootPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsappscuolainserisci\\winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsappscuolainserisci\\winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DFEA7B5-28E4-0EA3-B4CF-DB7BB057273E}|WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsappscuolainserisci\\winformslibraryscuola\\studente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DFEA7B5-28E4-0EA3-B4CF-DB7BB057273E}|WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj|solutionrelative:winformslibraryscuola\\studente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformsappscuola\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsappscuolainserisci\\winformsappscuola\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformsappscuola\\winformsappscuola.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\winformsappscuola.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformsappscuola\\formvoti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\formvoti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformsappscuola\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56795D16-D253-6420-A637-7B1092986EFA}|WinFormsAppScuola\\WinFormsAppScuola.csproj|solutionrelative:winformsappscuola\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DFEA7B5-28E4-0EA3-B4CF-DB7BB057273E}|WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsappscuolainserisci\\winformslibraryscuola\\studente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DFEA7B5-28E4-0EA3-B4CF-DB7BB057273E}|WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj|solutionrelative:winformslibraryscuola\\studente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,28 +38,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Studente.cs",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\Studente.cs",
-              "RelativeDocumentMoniker": "WinFormsLibraryScuola\\Studente.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\Studente.cs",
-              "RelativeToolTip": "WinFormsLibraryScuola\\Studente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormsAppScuola\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
+              "RelativeToolTip": "WinFormsAppScuola\\FormInizio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T07:44:12.061Z",
+              "WhenOpened": "2026-10-12T07:25:54.949Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WinFormsAppScuola",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
+              "RelativeDocumentMoniker": "WinFormsAppScuola\\WinFormsAppScuola.csproj",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
+              "RelativeToolTip": "WinFormsAppScuola\\WinFormsAppScuola.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-12T15:48:56.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormInizio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsAppScuola\\FormInizio.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.Designer.cs",
+              "RelativeToolTip": "WinFormsAppScuola\\FormInizio.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T07:26:53.216Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FormInizio.cs [Progettazione]",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
               "RelativeDocumentMoniker": "WinFormsAppScuola\\FormInizio.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs [Progettazione]",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs [Progettazione]",
               "RelativeToolTip": "WinFormsAppScuola\\FormInizio.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-12T07:27:06.184Z",
@@ -55,28 +94,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormInizio.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.Designer.cs",
-              "RelativeDocumentMoniker": "WinFormsAppScuola\\FormInizio.Designer.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.Designer.cs",
-              "RelativeToolTip": "WinFormsAppScuola\\FormInizio.Designer.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAcwKUAAAApAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FormVoti.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormVoti.cs",
+              "RelativeDocumentMoniker": "WinFormsAppScuola\\FormVoti.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormVoti.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsAppScuola\\FormVoti.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T07:26:53.216Z",
+              "WhenOpened": "2026-10-12T15:48:55.008Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsAppScuola\\Program.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\Program.cs",
+              "RelativeToolTip": "WinFormsAppScuola\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T15:48:49.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormInizio.cs",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
-              "RelativeDocumentMoniker": "WinFormsAppScuola\\FormInizio.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\FormInizio.cs",
-              "RelativeToolTip": "WinFormsAppScuola\\FormInizio.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAADwvyAAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Studente.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\Studente.cs",
+              "RelativeDocumentMoniker": "WinFormsLibraryScuola\\Studente.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\Studente.cs",
+              "RelativeToolTip": "WinFormsLibraryScuola\\Studente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T07:25:54.949Z",
+              "WhenOpened": "2026-10-12T07:44:12.061Z",
               "EditorCaption": ""
             }
           ]

@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\",
+  "WorkspaceRootPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{379360F5-7A0A-4520-8824-FDF9A74A5016}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsparcoveicoli\\winformsparcoveicoli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{379360F5-7A0A-4520-8824-FDF9A74A5016}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\Form1.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\Form1.cs [Design]",
-              "RelativeToolTip": "WinFormsParcoVeicoli\\Form1.cs [Design]",
+              "Title": "FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T08:17:16.574Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-10-12T15:26:47.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormInizio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAADgv7EAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T15:23:46.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormInizio.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T14:57:28.872Z"
             }
           ]
         }

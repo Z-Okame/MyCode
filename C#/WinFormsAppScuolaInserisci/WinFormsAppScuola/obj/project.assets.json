@@ -30,24 +30,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pietr\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pietr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
+      "projectUniqueName": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
       "projectName": "WinFormsAppScuola",
-      "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
+      "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\WinFormsAppScuola.csproj",
       "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\obj\\",
+      "outputPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsAppScuola\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,7 +50,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -63,8 +57,8 @@
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj": {
-              "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj"
+            "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj": {
+              "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppScuolaInserisci\\WinFormsLibraryScuola\\WinFormsLibraryScuola.csproj"
             }
           }
         }

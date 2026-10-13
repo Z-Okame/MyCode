@@ -1,0 +1,35 @@
+﻿using System.ComponentModel;
+using WinFormsLibraryVeicoli;
+
+namespace WinFormsParcoVeicoli
+{
+    public partial class FormInizio : Form
+    {
+        BindingList<Veicolo> veicoli;
+        public FormInizio()
+        {
+            InitializeComponent();
+            dataGridViewVeicoli.DataSource = veicoli;
+        }
+
+        private void dataGridViewVeicoli_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Veicolo veicolo = veicoli[e.RowIndex];
+            textBoxTarga.Text = veicolo.Targa.ToString();
+            textBoxMarca.Text = veicolo.Marca.ToString();
+            textBoxModello.Text = veicolo.Modello.ToString();
+            textBoxChilometriPercorsi.Text = veicolo.ChilometriPercorsi.ToString();
+            textBoxProprietà.Text = veicolo is Auto auto ? auto.NumeroPorte.ToString() : veicolo is Camion camion ? camion.CapacitaCarico.ToString() : string.Empty;
+        }
+
+        private void buttonElimina_Click(object sender, EventArgs e)
+        {
+            veicoli.RemoveAt(1);
+        }
+
+        private void buttonInserisci_Click(object sender, EventArgs e)
+        {
+            Veico
+        }
+    }
+}

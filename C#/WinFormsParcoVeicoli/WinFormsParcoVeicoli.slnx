@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="WinFormsLibraryVeicoli/WinFormsLibraryVeicoli.csproj" Id="8cd57044-45ef-4c4b-b3b2-c2bfdf767e64" />
   <Project Path="WinFormsParcoVeicoli/WinFormsParcoVeicoli.csproj" />
 </Solution>
