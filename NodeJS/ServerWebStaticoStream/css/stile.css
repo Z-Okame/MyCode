@@ -1,0 +1,64 @@
+/* Reset semplice per togliere i margini di default */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Impostazioni generali del corpo pagina */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Contenitore centrale */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Titoli e testo */
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Link */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Immagini responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Pulsante semplice */
+button, .btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover, .btn:hover {
+  background-color: #004b99;
+}
