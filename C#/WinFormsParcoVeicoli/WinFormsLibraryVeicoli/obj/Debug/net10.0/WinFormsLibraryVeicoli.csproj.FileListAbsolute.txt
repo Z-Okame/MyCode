@@ -1,0 +1,13 @@
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\bin\Debug\net10.0\WinFormsLibraryVeicoli.deps.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\bin\Debug\net10.0\WinFormsLibraryVeicoli.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\bin\Debug\net10.0\WinFormsLibraryVeicoli.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.AssemblyInfoInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.AssemblyInfo.cs
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.csproj.CoreCompileInputs.cache
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.sourcelink.json
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\refint\WinFormsLibraryVeicoli.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinFormsLibraryVeicoli.pdb
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\ref\WinFormsLibraryVeicoli.dll
+C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsLibraryVeicoli\obj\Debug\net10.0\WinForms.00D66C3B.Up2Date

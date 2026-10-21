@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj": {}
+    "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
+    "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
+        "projectUniqueName": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
         "projectName": "WinFormsLibraryVeicoli",
-        "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
+        "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
         "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\obj\\",
+        "outputPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -341,17 +346,21 @@
         }
       }
     },
-    "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj": {
+    "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
+        "projectUniqueName": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
         "projectName": "WinFormsParcoVeicoli",
-        "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
+        "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
         "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\obj\\",
+        "outputPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -359,6 +368,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -366,8 +376,8 @@
             "framework": "net10.0-windows7.0",
             "targetAlias": "net10.0-windows",
             "projectReferences": {
-              "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
-                "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj"
+              "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
+                "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj"
               }
             }
           }

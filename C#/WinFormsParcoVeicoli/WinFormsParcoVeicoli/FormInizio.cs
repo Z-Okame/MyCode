@@ -42,7 +42,7 @@ namespace WinFormsParcoVeicoli
         }
 
         private void buttonModifica_Click(object sender, EventArgs e)
-        {
+        {                   
             Veicolo v = veicoli.FirstOrDefault(x => x.Targa.ToString() == textBoxTarga.Text);
             v.Marca = textBoxMarca.Text;
             v.Modello = textBoxModello.Text;
@@ -57,6 +57,11 @@ namespace WinFormsParcoVeicoli
                 camion.CapacitaCarico = Convert.ToDouble(textBoxProprietà.Text);
             }
             dataGridViewVeicoli.Refresh();
+        }
+
+        private void FormInizio_Load(object sender, EventArgs e)
+        {
+                        
         }
     }
 }

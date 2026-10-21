@@ -175,7 +175,6 @@
             comboBoxScelta.Name = "comboBoxScelta";
             comboBoxScelta.Size = new Size(75, 23);
             comboBoxScelta.TabIndex = 15;
-            comboBoxScelta.SelectedIndex = 0;
             // 
             // labelTipoVeicolo
             // 
@@ -209,6 +208,7 @@
             Controls.Add(dataGridViewVeicoli);
             Name = "FormInizio";
             Text = "Form1";
+            Load += FormInizio_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewVeicoli).EndInit();
             ResumeLayout(false);
             PerformLayout();
