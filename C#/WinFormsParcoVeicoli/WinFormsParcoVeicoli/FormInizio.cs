@@ -58,10 +58,5 @@ namespace WinFormsParcoVeicoli
             }
             dataGridViewVeicoli.Refresh();
         }
-
-        private void FormInizio_Load(object sender, EventArgs e)
-        {
-                        
-        }
     }
 }

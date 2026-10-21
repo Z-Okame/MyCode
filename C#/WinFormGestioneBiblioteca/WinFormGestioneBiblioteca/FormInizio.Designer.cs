@@ -84,6 +84,7 @@
             buttonElimina.TabIndex = 3;
             buttonElimina.Text = "Elimina";
             buttonElimina.UseVisualStyleBackColor = true;
+            buttonElimina.Click += buttonElimina_Click;
             // 
             // labelCodice
             // 

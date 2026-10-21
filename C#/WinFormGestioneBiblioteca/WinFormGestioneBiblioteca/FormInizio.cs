@@ -8,6 +8,8 @@ namespace WinFormGestioneBiblioteca
         public FormInizio()
         {
             InitializeComponent();
+            risorse = new BindingList<Risorsa>();
+            dataGridViewGestione.DataSource = risorse;
         }
 
         private void buttonInserisci_Click(object sender, EventArgs e)
@@ -37,11 +39,24 @@ namespace WinFormGestioneBiblioteca
 
         private void dataGridViewGestione_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if  (e.ColumnIndex == 0)
+            if (e.ColumnIndex == -1 && e.RowIndex != 0)
             {
-
+                Risorsa r = risorse[e.RowIndex];
+                textBoxTitolo.Text = r.Titolo.ToString();
+                textBoxAutore.Text = r.Autore.ToString();
+                textBoxGiorniPrestito.Text = r.GiorniPrestito.ToString();
+                textBoxCodice.Text = r.Codice.ToString();
+                textBoxProprietà.Text = r is Libro libro ? libro.NumeroPagine.ToString() : r is AudioLibro audiolibro ? audiolibro.DurataMinuti.ToString() : string.Empty;
+                if (r is Libro)
+                    radioButtonLibro.Checked = true;
+                else
+                    radioButtonAudiolibro.Checked = true;
             }
         }
 
+        private void buttonElimina_Click(object sender, EventArgs e)
+        {
+            risorse.RemoveAt(dataGridViewGestione.CurrentCell.RowIndex);
+        }
     }
 }

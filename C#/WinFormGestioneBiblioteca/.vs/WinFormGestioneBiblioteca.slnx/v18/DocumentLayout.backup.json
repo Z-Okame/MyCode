@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormGestioneBiblioteca\\",
+  "WorkspaceRootPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7CCEF6D-D20D-44CB-8123-4FB0EF2B29C2}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformgestionebiblioteca\\winformgestionebiblioteca\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C7CCEF6D-D20D-44CB-8123-4FB0EF2B29C2}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|solutionrelative:winformgestionebiblioteca\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformgestionebiblioteca\\winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|solutionrelative:winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformgestionebiblioteca\\winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|solutionrelative:winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7CCEF6D-D20D-44CB-8123-4FB0EF2B29C2}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C7CCEF6D-D20D-44CB-8123-4FB0EF2B29C2}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|solutionrelative:winformgestionebiblioteca\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformgestionebiblioteca\\winformgestionebiblioteca\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE9279BC-5D2C-61BC-FFA6-B6F58F6AA3DF}|WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca.csproj|solutionrelative:winformgestionebiblioteca\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D9819E-1365-549D-AFFB-6305D92752B9}|WinFormsLibraryGestioneBiblioteca\\WinFormsLibraryGestioneBiblioteca.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformgestionebiblioteca\\winformslibrarygestionebiblioteca\\gestionebiblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D9819E-1365-549D-AFFB-6305D92752B9}|WinFormsLibraryGestioneBiblioteca\\WinFormsLibraryGestioneBiblioteca.csproj|solutionrelative:winformslibrarygestionebiblioteca\\gestionebiblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormGestioneBiblioteca\\Form1.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\Form1.cs [Design]",
-              "RelativeToolTip": "WinFormGestioneBiblioteca\\Form1.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "FormInizio.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormGestioneBiblioteca\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs [Progettazione]",
+              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\Desktop\\Compiti\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T07:15:40.84Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-10-19T08:21:46.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormGestioneBiblioteca\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs",
+              "RelativeToolTip": "WinFormGestioneBiblioteca\\FormInizio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T08:17:07.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormInizio.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs",
+              "RelativeDocumentMoniker": "WinFormGestioneBiblioteca\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.cs [Progettazione]",
+              "RelativeToolTip": "WinFormGestioneBiblioteca\\FormInizio.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T15:02:50.332Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormInizio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormGestioneBiblioteca\\FormInizio.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormGestioneBiblioteca\\FormInizio.Designer.cs",
+              "RelativeToolTip": "WinFormGestioneBiblioteca\\FormInizio.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAApwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T08:16:11.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestioneBiblioteca.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormsLibraryGestioneBiblioteca\\GestioneBiblioteca.cs",
+              "RelativeDocumentMoniker": "WinFormsLibraryGestioneBiblioteca\\GestioneBiblioteca.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormGestioneBiblioteca\\WinFormsLibraryGestioneBiblioteca\\GestioneBiblioteca.cs",
+              "RelativeToolTip": "WinFormsLibraryGestioneBiblioteca\\GestioneBiblioteca.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAADwv1gAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T07:19:00.323Z"
             }
           ]
         }

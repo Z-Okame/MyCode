@@ -208,7 +208,6 @@
             Controls.Add(dataGridViewVeicoli);
             Name = "FormInizio";
             Text = "Form1";
-            Load += FormInizio_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewVeicoli).EndInit();
             ResumeLayout(false);
             PerformLayout();
