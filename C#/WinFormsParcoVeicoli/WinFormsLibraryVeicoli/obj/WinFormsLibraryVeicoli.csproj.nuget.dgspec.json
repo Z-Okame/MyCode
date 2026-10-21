@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {}
+    "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
+    "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
+        "projectUniqueName": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
         "projectName": "WinFormsLibraryVeicoli",
-        "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
+        "projectPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj",
         "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\obj\\",
+        "outputPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",

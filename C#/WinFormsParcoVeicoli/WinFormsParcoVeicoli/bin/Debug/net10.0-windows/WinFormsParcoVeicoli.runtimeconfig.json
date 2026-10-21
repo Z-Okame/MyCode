@@ -11,14 +11,9 @@
         "version": "10.0.0"
       }
     ],
-    "additionalProbingPaths": [
-      "C:\\Users\\pietr\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\pietr\\.nuget\\packages"
-    ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
-      "CSWINRT_USE_WINDOWS_UI_XAML_PROJECTIONS": false,
-      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+      "CSWINRT_USE_WINDOWS_UI_XAML_PROJECTIONS": false
     }
   }
 }

@@ -175,6 +175,7 @@
             comboBoxScelta.Name = "comboBoxScelta";
             comboBoxScelta.Size = new Size(75, 23);
             comboBoxScelta.TabIndex = 15;
+            comboBoxScelta.SelectedIndex = 0;
             // 
             // labelTipoVeicolo
             // 

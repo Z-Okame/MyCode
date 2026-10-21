@@ -1,8 +1,20 @@
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.AssemblyReference.cache
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.AssemblyInfoInputs.cache
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.AssemblyInfo.cs
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.CoreCompileInputs.cache
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.sourcelink.json
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.FormInizio.resources
-C:\Users\pietr\OneDrive\Desktop\Compiti\C#\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.GenerateResource.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsParcoVeicoli.exe
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsParcoVeicoli.deps.json
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsParcoVeicoli.runtimeconfig.json
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsParcoVeicoli.dll
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsParcoVeicoli.pdb
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsLibraryVeicoli.dll
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\bin\Debug\net10.0-windows\WinFormsLibraryVeicoli.pdb
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.AssemblyReference.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.FormInizio.resources
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.GenerateResource.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.AssemblyInfoInputs.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.AssemblyInfo.cs
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.csproj.CoreCompileInputs.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinForms.2D538E66.Up2Date
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.dll
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\refint\WinFormsParcoVeicoli.dll
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.pdb
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\WinFormsParcoVeicoli.genruntimeconfig.cache
+D:\C# Verifica 22-10\WinFormsParcoVeicoli\WinFormsParcoVeicoli\obj\Debug\net10.0-windows\ref\WinFormsParcoVeicoli.dll
