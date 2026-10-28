@@ -1,17 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\",
+  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|d:\\c# verifica 22-10\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsLibraryAlbum\\Album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum.slnx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|d:\\c# verifica 22-10\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsparcoveicoli\\winformsparcoveicoli\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{011BA53C-8987-3CF6-159E-B3024357873B}|WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj|solutionrelative:winformsparcoveicoli\\forminizio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -27,10 +39,62 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Album.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsLibraryAlbum\\Album.cs",
+              "RelativeDocumentMoniker": "..\\WinFormsAlbum\\WinFormsLibraryAlbum\\Album.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsLibraryAlbum\\Album.cs",
+              "RelativeToolTip": "..\\WinFormsAlbum\\WinFormsLibraryAlbum\\Album.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T14:34:53.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WinFormsAlbum.slnx",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum.slnx",
+              "RelativeDocumentMoniker": "..\\WinFormsAlbum\\WinFormsAlbum.slnx",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum.slnx",
+              "RelativeToolTip": "..\\WinFormsAlbum\\WinFormsAlbum.slnx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002855|",
+              "WhenOpened": "2026-10-28T14:34:53.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormInizio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.Designer.cs",
+              "RelativeDocumentMoniker": "..\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.Designer.cs",
+              "RelativeToolTip": "..\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T14:34:53.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FormInizio.cs",
-              "DocumentMoniker": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.cs",
+              "RelativeDocumentMoniker": "..\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.cs",
+              "RelativeToolTip": "..\\WinFormsAlbum\\WinFormsAlbum\\FormInizio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T14:34:53.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
               "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.cs",
-              "ToolTip": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
               "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwB4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -39,28 +103,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormInizio.Designer.cs",
-              "DocumentMoniker": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
               "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.Designer.cs",
-              "ToolTip": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.Designer.cs",
               "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T15:23:46.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-12T15:23:46.488Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "FormInizio.cs [Design]",
-              "DocumentMoniker": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs",
               "RelativeDocumentMoniker": "WinFormsParcoVeicoli\\FormInizio.cs",
               "ToolTip": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\FormInizio.cs [Design]",
-              "RelativeToolTip": "WinFormsParcoVeicoli\\FormInizio.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T14:57:28.872Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-10-12T14:57:28.872Z"
             }
           ]
         }

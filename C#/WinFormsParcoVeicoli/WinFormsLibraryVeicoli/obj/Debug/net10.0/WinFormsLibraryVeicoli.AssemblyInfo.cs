@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinFormsLibraryVeicoli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749bee7b27c1e06282aa3207cb941341639a1ff2")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinFormsLibraryVeicoli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinFormsLibraryVeicoli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

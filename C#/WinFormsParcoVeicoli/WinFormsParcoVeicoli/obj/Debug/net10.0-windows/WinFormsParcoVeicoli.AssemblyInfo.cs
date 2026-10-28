@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinFormsParcoVeicoli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749bee7b27c1e06282aa3207cb941341639a1ff2")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinFormsParcoVeicoli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinFormsParcoVeicoli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

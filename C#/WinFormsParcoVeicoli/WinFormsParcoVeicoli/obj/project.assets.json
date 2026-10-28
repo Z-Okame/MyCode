@@ -27,19 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pietr\\.nuget\\packages\\": {}
+    "C:\\Users\\pietr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
+      "projectUniqueName": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
       "projectName": "WinFormsParcoVeicoli",
-      "projectPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
+      "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli.csproj",
       "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-      "outputPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\obj\\",
+      "outputPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsParcoVeicoli\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -47,6 +52,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -54,8 +60,8 @@
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
-              "projectPath": "D:\\C# Verifica 22-10\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj"
+            "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj": {
+              "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsParcoVeicoli\\WinFormsLibraryVeicoli\\WinFormsLibraryVeicoli.csproj"
             }
           }
         }
