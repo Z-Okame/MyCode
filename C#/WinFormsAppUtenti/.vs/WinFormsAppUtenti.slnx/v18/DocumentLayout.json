@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{849BD9AF-4F7A-4AEC-BE9A-4D457B65638A}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{849BD9AF-4F7A-4AEC-BE9A-4D457B65638A}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|solutionrelative:winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Anagrafica.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
+              "RelativeDocumentMoniker": "WinFormsLibraryUtenti\\Anagrafica.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
+              "RelativeToolTip": "WinFormsLibraryUtenti\\Anagrafica.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAUwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T10:45:06.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormUtenti.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T10:40:49.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormUtenti.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.cs",
+              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T10:40:06.476Z",
+              "EditorCaption": " [Progettazione]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
