@@ -1,0 +1,65 @@
+﻿using System.Data;
+using WinFormsLibraryUtenti;
+
+
+namespace WinFormsAppUtenti
+
+{
+    public partial class FormUtenti : Form
+    {
+        public FormUtenti()
+        {
+            InitializeComponent();
+            Dati d = new Dati();
+            dataGridViewUtenti.DataSource = d.GetUtentiCompleti();
+            dataGridViewAnagrafica.DataSource = d.GetAnagrafica();
+        }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            FormLogin f = new FormLogin(Utente.GetSampleData());
+            f.ShowDialog();
+        }
+
+        private void buttonAnagrafica_Click(object sender, EventArgs e)
+        {
+            string nome = textBoxNome.Text.Trim();
+            string cognome = textBoxCognome.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cognome))
+            {
+                MessageBox.Show("Inserisci nome e cognome.");
+                return;
+            }
+
+            DataTable anagrafica = (DataTable)dataGridViewAnagrafica.DataSource;
+            int id;
+            do
+            {
+                id = Random.Shared.Next(100000, 1000000);
+            }
+            while (IdGiaPresente(anagrafica, id));
+
+            Anagrafica nuovaAnagrafica = new Anagrafica(id, cognome, nome);
+            anagrafica.Rows.Add(
+                nuovaAnagrafica.Id,
+                nuovaAnagrafica.Nome,
+                nuovaAnagrafica.Cognome);
+            textBoxNome.Clear();
+            textBoxCognome.Clear();
+        }
+
+        private bool IdGiaPresente(DataTable anagrafica, int id)
+        {
+            foreach (DataRow riga in anagrafica.Rows)
+            {
+                if ((int)riga["ID"] == id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+}

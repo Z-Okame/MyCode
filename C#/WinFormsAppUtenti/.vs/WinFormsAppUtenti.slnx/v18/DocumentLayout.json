@@ -1,17 +1,55 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\",
+  "WorkspaceRootPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{849BD9AF-4F7A-4AEC-BE9A-4D457B65638A}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{849BD9AF-4F7A-4AEC-BE9A-4D457B65638A}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|solutionrelative:winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC2BF58D-B27E-6D07-E3F9-845D1C11619B}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC2BF58D-B27E-6D07-E3F9-845D1C11619B}|WinFormsLibraryUtenti\\WinFormsLibraryUtenti.csproj|solutionrelative:winformslibraryutenti\\anagrafica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\onedrive\\desktop\\compiti\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formareapersonale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formareapersonale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formareapersonale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formareapersonale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formutenti.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MardownSecureEdit"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formareapersonale.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formareapersonale.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|c:\\users\\pietr\\desktop\\mycode\\c#\\winformsapputenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2DA1475-0438-7266-8B45-7ACA0E515268}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{33D00D44-1996-4C06-B794-2362C9D5ADB2}|WinFormsAppUtenti\\WinFormsAppUtenti.csproj|solutionrelative:winformsapputenti\\formutenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -22,17 +60,143 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "plan-aggiunta-anagrafica.md",
+              "DocumentMoniker": "C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "ToolTip": "C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "RelativeToolTip": "..\\..\\..\\..\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-04T13:54:23.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "plan-aggiunta-anagrafica.md [Anteprima]",
+              "DocumentMoniker": "C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.copilot\\plans\\plan-aggiunta-anagrafica.md",
+              "ToolTip": "C:\\Users\\pietr\\.copilot\\plans\\plan-aggiunta-anagrafica.md [Anteprima]",
+              "RelativeToolTip": "..\\..\\..\\..\\.copilot\\plans\\plan-aggiunta-anagrafica.md [Anteprima]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-04T13:54:22.978Z",
+              "EditorCaption": " [Anteprima]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormUtenti.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.Designer.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.Designer.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAawKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:52:42.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormAreaPersonale.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormAreaPersonale.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.Designer.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormAreaPersonale.Designer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAcwEUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:48:10.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormLogin.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormLogin.Designer.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.Designer.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormLogin.Designer.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:38:56.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:37:40.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormAreaPersonale.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:21:03.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormAreaPersonale.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormAreaPersonale.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormAreaPersonale.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormAreaPersonale.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:13:58.117Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormLogin.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormLogin.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormLogin.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T13:12:22.655Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormUtenti.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
+              "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T12:52:10.604Z",
+              "EditorCaption": " [Progettazione]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Anagrafica.cs",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
               "RelativeDocumentMoniker": "WinFormsLibraryUtenti\\Anagrafica.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsLibraryUtenti\\Anagrafica.cs",
               "RelativeToolTip": "WinFormsLibraryUtenti\\Anagrafica.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAUwGAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwEAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-29T10:45:06.224Z",
               "EditorCaption": ""
@@ -41,26 +205,25 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FormUtenti.cs",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
               "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.cs",
-              "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "ToolTip": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
               "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-29T10:40:49.055Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "FormUtenti.cs [Progettazione]",
-              "DocumentMoniker": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
+              "DocumentMoniker": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs",
               "RelativeDocumentMoniker": "WinFormsAppUtenti\\FormUtenti.cs",
               "ToolTip": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
-              "RelativeToolTip": "WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
+              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppUtenti\\WinFormsAppUtenti\\FormUtenti.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-29T10:40:06.476Z",
-              "EditorCaption": " [Progettazione]"
+              "WhenOpened": "2026-10-29T10:40:06.476Z"
             }
           ]
         }

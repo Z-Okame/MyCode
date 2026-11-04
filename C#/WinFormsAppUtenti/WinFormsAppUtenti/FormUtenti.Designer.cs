@@ -28,12 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            dataGridViewUtenti = new DataGridView();
+            dataGridViewAnagrafica = new DataGridView();
+            labelUtentiTitolo = new Label();
+            labelAnagraficaTitolo = new Label();
+            buttonLogIn = new Button();
+            buttonAnagrafica = new Button();
+            textBoxNome = new TextBox();
+            textBoxCognome = new TextBox();
+            labelNome = new Label();
+            labelCognome = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUtenti).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAnagrafica).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridViewUtenti
+            // 
+            dataGridViewUtenti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUtenti.Location = new Point(58, 53);
+            dataGridViewUtenti.Name = "dataGridViewUtenti";
+            dataGridViewUtenti.Size = new Size(520, 540);
+            dataGridViewUtenti.TabIndex = 0;
+            // 
+            // dataGridViewAnagrafica
+            // 
+            dataGridViewAnagrafica.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAnagrafica.Location = new Point(675, 53);
+            dataGridViewAnagrafica.Name = "dataGridViewAnagrafica";
+            dataGridViewAnagrafica.Size = new Size(565, 540);
+            dataGridViewAnagrafica.TabIndex = 1;
+            // 
+            // labelUtentiTitolo
+            // 
+            labelUtentiTitolo.AutoSize = true;
+            labelUtentiTitolo.Location = new Point(282, 29);
+            labelUtentiTitolo.Name = "labelUtentiTitolo";
+            labelUtentiTitolo.Size = new Size(39, 15);
+            labelUtentiTitolo.TabIndex = 2;
+            labelUtentiTitolo.Text = "Utenti";
+            // 
+            // labelAnagraficaTitolo
+            // 
+            labelAnagraficaTitolo.AutoSize = true;
+            labelAnagraficaTitolo.Location = new Point(935, 29);
+            labelAnagraficaTitolo.Name = "labelAnagraficaTitolo";
+            labelAnagraficaTitolo.Size = new Size(64, 15);
+            labelAnagraficaTitolo.TabIndex = 3;
+            labelAnagraficaTitolo.Text = "Anagrafica";
+            // 
+            // buttonLogIn
+            // 
+            buttonLogIn.Location = new Point(271, 611);
+            buttonLogIn.Name = "buttonLogIn";
+            buttonLogIn.Size = new Size(75, 44);
+            buttonLogIn.TabIndex = 4;
+            buttonLogIn.Text = "Log In";
+            buttonLogIn.UseVisualStyleBackColor = true;
+            buttonLogIn.Click += buttonLogIn_Click;
+            // 
+            // buttonAnagrafica
+            // 
+            buttonAnagrafica.Location = new Point(935, 620);
+            buttonAnagrafica.Name = "buttonAnagrafica";
+            buttonAnagrafica.Size = new Size(75, 44);
+            buttonAnagrafica.TabIndex = 5;
+            buttonAnagrafica.Text = "Aggiungi Anagrafica";
+            buttonAnagrafica.UseVisualStyleBackColor = true;
+            buttonAnagrafica.Click += buttonAnagrafica_Click;
+            // 
+            // textBoxNome
+            // 
+            textBoxNome.Location = new Point(778, 632);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(100, 23);
+            textBoxNome.TabIndex = 7;
+            // 
+            // textBoxCognome
+            // 
+            textBoxCognome.Location = new Point(1064, 632);
+            textBoxCognome.Name = "textBoxCognome";
+            textBoxCognome.Size = new Size(100, 23);
+            textBoxCognome.TabIndex = 8;
+            // 
+            // labelNome
+            // 
+            labelNome.AutoSize = true;
+            labelNome.Location = new Point(811, 614);
+            labelNome.Name = "labelNome";
+            labelNome.Size = new Size(40, 15);
+            labelNome.TabIndex = 9;
+            labelNome.Text = "Nome";
+            // 
+            // labelCognome
+            // 
+            labelCognome.AutoSize = true;
+            labelCognome.Location = new Point(1080, 614);
+            labelCognome.Name = "labelCognome";
+            labelCognome.Size = new Size(60, 15);
+            labelCognome.TabIndex = 10;
+            labelCognome.Text = "Cognome";
+            // 
+            // FormUtenti
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1297, 721);
+            Controls.Add(labelCognome);
+            Controls.Add(labelNome);
+            Controls.Add(textBoxCognome);
+            Controls.Add(textBoxNome);
+            Controls.Add(buttonAnagrafica);
+            Controls.Add(buttonLogIn);
+            Controls.Add(labelAnagraficaTitolo);
+            Controls.Add(labelUtentiTitolo);
+            Controls.Add(dataGridViewAnagrafica);
+            Controls.Add(dataGridViewUtenti);
+            Name = "FormUtenti";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUtenti).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAnagrafica).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dataGridViewUtenti;
+        private DataGridView dataGridViewAnagrafica;
+        private Label labelUtentiTitolo;
+        private Label labelAnagraficaTitolo;
+        private Button buttonLogIn;
+        private Button buttonAnagrafica;
+        private TextBox textBoxNome;
+        private TextBox textBoxCognome;
+        private Label labelNome;
+        private Label labelCognome;
     }
 }
