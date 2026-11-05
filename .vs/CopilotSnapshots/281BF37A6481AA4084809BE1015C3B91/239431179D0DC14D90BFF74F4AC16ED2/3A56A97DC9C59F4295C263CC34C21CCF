@@ -1,0 +1,55 @@
+﻿using System.Collections.Generic;
+using System.Data;
+using WinFormsLibraryUtenti;
+
+
+namespace WinFormsAppUtenti
+
+{
+    public partial class FormUtenti : Form
+    {
+        private readonly List<Anagrafica> anagrafiche;
+
+        public FormUtenti()
+        {
+            InitializeComponent();
+            Dati d = new Dati();
+            anagrafiche = Anagrafica.GetSampleData();
+            dataGridViewUtenti.DataSource = d.GetUtentiCompleti();
+            dataGridViewAnagrafica.DataSource = anagrafiche;
+        }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            FormLogin f = new FormLogin(Utente.GetSampleData());
+            f.ShowDialog();
+        }
+
+        private void buttonAnagrafica_Click(object sender, EventArgs e)
+        {
+            string nome = textBoxNome.Text.Trim();
+            string cognome = textBoxCognome.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cognome))
+            {
+                MessageBox.Show("Inserisci nome e cognome.");
+                return;
+            }
+
+            int id;
+            do
+            {
+                id = Random.Shared.Next(100000, 1000000);
+            }
+            while (anagrafiche.Exists(anagrafica => anagrafica.Id == id));
+
+            Anagrafica nuovaAnagrafica = new Anagrafica(id, cognome, nome);
+            anagrafiche.Add(nuovaAnagrafica);
+
+            dataGridViewAnagrafica.DataSource = null;
+            dataGridViewAnagrafica.DataSource = anagrafiche;
+            textBoxNome.Clear();
+            textBoxCognome.Clear();
+        }
+    }
+}

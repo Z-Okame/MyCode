@@ -25,9 +25,9 @@ namespace WinFormsLibraryUtenti
         {
             List<Anagrafica> anagrafiche = new List<Anagrafica>
                 {
-                    new Anagrafica(190290, "Bianchi", "Mirko"),
-                    new Anagrafica(193460, "Verdi", "Marco"),
-                    new Anagrafica(234746, "Verdi", "Marco")
+                    new Anagrafica(1, "Bianchi", "Mirko"),
+                    new Anagrafica(2, "Verdi", "Marco"),
+                    new Anagrafica(3, "Verdi", "Marco")
                 };
             return anagrafiche;
         }
@@ -57,9 +57,9 @@ namespace WinFormsLibraryUtenti
         {
             List<Utente> utenti = new List<Utente>
             {
-                new Utente(190290, "mirko.bianchi", "kjn4_2", "mirko.bianchi@itis.pr.it"),
-                new Utente(193460, "marco.verdi", "poi9_A", "marco.verdi@itis.pr.it"),
-                new Utente(234746, "marco.verdi1", "asAwL_c", "marco.verdi1@itis.pr.it")
+                new Utente(1, "mirko.bianchi", "kjn4_2", "mirko.bianchi@itis.pr.it"),
+                new Utente(2, "marco.verdi", "poi9_A", "marco.verdi@itis.pr.it"),
+                new Utente(3, "marco.verdi1", "asAwL_c", "marco.verdi1@itis.pr.it")
             };
 
             return utenti;
@@ -92,6 +92,30 @@ namespace WinFormsLibraryUtenti
         }
 
         public DataTable GetUtenti()
+        {
+            DataTable utenti = new DataTable();
+
+            utenti.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(int)),
+                new DataColumn("User", typeof(string)),
+                new DataColumn("Password", typeof(string)),
+                new DataColumn("Email", typeof(string))
+            });
+
+            foreach (Utente utente in Utente.GetSampleData())
+            {
+                utenti.Rows.Add(
+                    utente.Id,
+                    utente.User,
+                    utente.Password,
+                    utente.Email);
+            }
+
+            return utenti;
+        }
+
+        public DataTable GetUtentiCompleti()
         {
             DataTable utenti = new DataTable();
 
