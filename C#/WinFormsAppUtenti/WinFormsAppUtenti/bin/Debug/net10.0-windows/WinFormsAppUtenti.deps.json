@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "WinFormsAppUtenti/1.0.0": {
+        "dependencies": {
+          "WinFormsLibraryUtenti": "1.0.0"
+        },
+        "runtime": {
+          "WinFormsAppUtenti.dll": {}
+        }
+      },
+      "WinFormsLibraryUtenti/1.0.0": {
+        "runtime": {
+          "WinFormsLibraryUtenti.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WinFormsAppUtenti/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WinFormsLibraryUtenti/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
