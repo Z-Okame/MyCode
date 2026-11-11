@@ -1,31 +1,48 @@
 {
   "version": 4,
   "targets": {
-    "net10.0-windows": {}
+    "net10.0-windows": {
+      "WinFormsLibraryOrdini/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/WinFormsLibraryOrdini.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WinFormsLibraryOrdini.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WinFormsLibraryOrdini/1.0.0": {
+      "type": "project",
+      "path": "../WinFormsLibraryOrdini/WinFormsLibraryOrdini.csproj",
+      "msbuildProject": "../WinFormsLibraryOrdini/WinFormsLibraryOrdini.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0-windows": []
+    "net10.0-windows": [
+      "WinFormsLibraryOrdini >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\pietr\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pietr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\WinFormsAppOrdini.csproj",
+      "projectUniqueName": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\WinFormsAppOrdini.csproj",
       "projectName": "WinFormsAppOrdini",
-      "projectPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\WinFormsAppOrdini.csproj",
+      "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\WinFormsAppOrdini.csproj",
       "packagesPath": "C:\\Users\\pietr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pietr\\OneDrive\\Desktop\\Compiti\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\obj\\",
+      "outputPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppOrdini\\WinFormsAppOrdini\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\pietr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,14 +50,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0-windows": {
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppOrdini\\WinFormsLibraryOrdini\\WinFormsLibraryOrdini.csproj": {
+              "projectPath": "C:\\Users\\pietr\\Desktop\\MyCode\\C#\\WinFormsAppOrdini\\WinFormsLibraryOrdini\\WinFormsLibraryOrdini.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

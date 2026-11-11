@@ -1,0 +1,13 @@
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\bin\Debug\net10.0-windows\WinFormsLibraryOrdini.deps.json
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\bin\Debug\net10.0-windows\WinFormsLibraryOrdini.dll
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\bin\Debug\net10.0-windows\WinFormsLibraryOrdini.pdb
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.AssemblyInfoInputs.cache
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.AssemblyInfo.cs
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.csproj.CoreCompileInputs.cache
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.sourcelink.json
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.dll
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\refint\WinFormsLibraryOrdini.dll
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinFormsLibraryOrdini.pdb
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\ref\WinFormsLibraryOrdini.dll
+C:\Users\pietr\Desktop\MyCode\C#\WinFormsAppOrdini\WinFormsLibraryOrdini\obj\Debug\net10.0-windows\WinForms.45D9F992.Up2Date
