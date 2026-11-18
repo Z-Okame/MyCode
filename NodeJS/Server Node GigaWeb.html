@@ -1,0 +1,1449 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Server Node GigaWeb</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* layout: colonna unica larga, legenda colori per concetto che torna in ogni sezione */
+:root {
+  --bg: #f5f6fb;
+  --panel: #ffffff;
+  --ink: #151a2e;
+  --muted: #5b6280;
+  --line: #dde0ee;
+  --soft: #eceef8;
+  --base: #4a45d6;
+  --stream: #0b8f80;
+  --readfile: #a85f00;
+  --get: #2160e0;
+  --post: #7a35e8;
+  --regex: #c92b67;
+  --ok: #17884a;
+  --bad: #c93728;
+  --code-bg: #0f1226;
+  --code-ink: #e6e9ff;
+  --code-k: #ff9ac1;
+  --code-s: #9be3a8;
+  --code-n: #ffcf7a;
+  --font-head: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0f1e;
+    --panel: #151a30;
+    --ink: #e8ebf8;
+    --muted: #9aa2c4;
+    --line: #272d4c;
+    --soft: #1d2340;
+    --base: #9aa0ff;
+    --stream: #3fd8c5;
+    --readfile: #f6b94d;
+    --get: #7ba6ff;
+    --post: #b796ff;
+    --regex: #ff7fab;
+    --ok: #55d38f;
+    --bad: #ff8a7c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c0f1e;
+  --panel: #151a30;
+  --ink: #e8ebf8;
+  --muted: #9aa2c4;
+  --line: #272d4c;
+  --soft: #1d2340;
+  --base: #9aa0ff;
+  --stream: #3fd8c5;
+  --readfile: #f6b94d;
+  --get: #7ba6ff;
+  --post: #b796ff;
+  --regex: #ff7fab;
+  --ok: #55d38f;
+  --bad: #ff8a7c;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 64px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-head); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -0.02em; }
+h2 { font-size: 26px; letter-spacing: -0.01em; }
+h3 { font-size: 17px; }
+p { margin: 0; }
+code, pre { font-family: var(--font-mono); }
+.inline { font-size: 0.88em; background: var(--soft); padding: 1px 6px; border-radius: 4px; }
+
+.hero { display: flex; flex-direction: column; gap: 14px; padding-bottom: 8px; }
+.eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.lead { max-width: 68ch; color: var(--muted); font-size: 16px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav { display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 8px; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; }
+.nav a:hover { color: var(--base); text-decoration: underline; }
+
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); white-space: nowrap; }
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
+.t-base { --c: var(--base); }
+.t-stream { --c: var(--stream); }
+.t-readfile { --c: var(--readfile); }
+.t-get { --c: var(--get); }
+.t-post { --c: var(--post); }
+.t-regex { --c: var(--regex); }
+
+section { margin-top: 56px; display: flex; flex-direction: column; gap: 18px; }
+.sec-head { display: flex; flex-direction: column; gap: 6px; }
+.sec-head p { color: var(--muted); max-width: 70ch; }
+
+.lanes { display: flex; flex-direction: column; gap: 14px; }
+.lane { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.lane-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.steps { display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: stretch; margin: 0; padding: 0; list-style: none; }
+.step { background: color-mix(in srgb, var(--c) 10%, var(--panel)); border: 1px solid color-mix(in srgb, var(--c) 40%, var(--line)); border-radius: 8px; padding: 8px 12px; font-size: 13px; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.step b { font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; color: var(--c); overflow-wrap: anywhere; }
+.step span { color: var(--muted); font-size: 12.5px; }
+.step.end { border-style: dashed; }
+.steps li + li::before { content: none; }
+.arrow { align-self: center; color: var(--muted); font-weight: 600; }
+
+.progress { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 14px; }
+.bar { flex: 1; height: 8px; background: var(--soft); border-radius: 99px; overflow: hidden; max-width: 360px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--ok); transition: width 0.25s; }
+.checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 18px; }
+.group { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.group h3 { display: flex; align-items: center; gap: 8px; }
+.group { --c: var(--base); }
+.group ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.group label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-size: 14px; }
+.group input { margin-top: 5px; accent-color: var(--ok); flex: none; width: 16px; height: 16px; }
+.group input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 18px; align-items: start; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card.wide { grid-column: 1 / -1; }
+.card-head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.where { color: var(--muted); font-size: 13px; }
+.notes { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.notes li { padding-left: 18px; position: relative; }
+.notes li::before { content: "*"; position: absolute; left: 4px; color: var(--c); font-weight: 700; }
+.remember { font-size: 14px; background: color-mix(in srgb, var(--c) 9%, var(--panel)); border-left: 3px solid var(--c); padding: 8px 12px; border-radius: 0 8px 8px 0; }
+.remember b { color: var(--c); }
+
+.codebox { position: relative; min-width: 0; }
+.codebox pre { margin: 0; background: var(--code-bg); color: var(--code-ink); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: 12.5px; line-height: 1.55; tab-size: 4; max-height: 560px; overflow-y: auto; }
+.codebox code { font-family: var(--font-mono); white-space: pre; }
+.codebox .k { color: var(--code-k); }
+.codebox .s { color: var(--code-s); }
+.codebox .n { color: var(--code-n); }
+.copy { position: absolute; top: 8px; right: 8px; z-index: 1; font: 600 11px var(--font-body); color: var(--code-ink); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.copy:hover { background: rgba(255,255,255,0.22); }
+.copy:focus-visible, .tab:focus-visible, .nav a:focus-visible, .group input:focus-visible { outline: 2px solid var(--base); outline-offset: 2px; }
+
+.tablewrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 640px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); background: var(--soft); }
+tr:last-child td { border-bottom: 0; }
+td code { font-size: 12px; overflow-wrap: anywhere; }
+.ok { color: var(--ok); font-weight: 600; }
+.ko { color: var(--bad); font-weight: 600; }
+
+.versus { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; }
+.vs { background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.vs h3 { color: var(--c); }
+.vs h4 { margin: 4px 0 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+.issues { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.issue { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--bad); border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.issue.mine { border-left-color: var(--readfile); }
+.issue b { font-weight: 600; }
+.issue .src { font-family: var(--font-mono); font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { font: 600 13px var(--font-mono); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--base); color: #fff; border-color: var(--base); }
+.panel-meta { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+.tree { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 13px; overflow-x: auto; line-height: 1.5; }
+
+.rule { background: var(--base); color: #fff; border-radius: 12px; padding: 18px 20px; font-family: var(--font-head); font-size: 18px; line-height: 1.4; }
+:root[data-theme="dark"] .rule { color: #0c0f1e; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rule { color: #0c0f1e; } }
+
+.sources { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.sources a { color: var(--base); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Verifica di domani - HTML, CSS, Node.js</span>
+  <h1>Server Node GigaWeb</h1>
+  <p class="lead">Foglio di ripasso con checklist, pezzi di codice chiave e sorgente completo del progetto: home fantoccio, pagina contatti, validazione POST con regex, stream e readFile. Tutto il codice qui sotto è quello collaudato in locale.</p>
+  <div class="legend" aria-label="Legenda colori">
+    <span class="chip t-readfile">readFile</span>
+    <span class="chip t-stream">stream</span>
+    <span class="chip t-get">GET</span>
+    <span class="chip t-post">POST</span>
+    <span class="chip t-regex">regex / validazione</span>
+    <span class="chip t-base">base</span>
+  </div>
+  <nav class="nav" aria-label="Sezioni">
+    <a href="#flusso">Flusso</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#codice">Pezzi di codice</a>
+    <a href="#regex">Regex</a>
+    <a href="#confronti">Confronti</a>
+    <a href="#errori">Errori da evitare</a>
+    <a href="#sorgente">Sorgente completo</a>
+    <a href="#fonti">Fonti</a>
+  </nav>
+</header>
+
+<section id="flusso">
+  <div class="sec-head">
+    <h2>Flusso di una richiesta</h2>
+    <p>Un solo punto d'ingresso: <code class="inline">requestHandler</code> → legge il path → <code class="inline">switch</code> sceglie come rispondere. Tre percorsi da saper disegnare.</p>
+  </div>
+  <div class="lanes">
+    <div class="lane t-readfile">
+      <div class="lane-title"><span class="chip t-readfile">readFile</span><h3>Pagina HTML: Home e contatti</h3></div>
+      <ol class="steps">
+        <li class="step"><b>GET /contatti.html</b><span>il browser chiede</span></li><li class="arrow">→</li>
+        <li class="step"><b>new URL(...).pathname</b><span>path senza query</span></li><li class="arrow">→</li>
+        <li class="step"><b>case "/contatti.html"</b><span>switch</span></li><li class="arrow">→</li>
+        <li class="step"><b>fs.readFile(file, cb)</b><span>file intero in memoria</span></li><li class="arrow">→</li>
+        <li class="step"><b>writeHead(200, text/html)</b><span>poi res.end(data)</span></li><li class="arrow">→</li>
+        <li class="step end"><b>Pagina mostrata</b><span>il browser trova &lt;link href="/stile"&gt;</span></li>
+      </ol>
+    </div>
+    <div class="lane t-stream">
+      <div class="lane-title"><span class="chip t-stream">stream</span><h3>CSS e immagini: nuove richieste GET</h3></div>
+      <ol class="steps">
+        <li class="step"><b>GET /stile</b><span>seconda richiesta, automatica</span></li><li class="arrow">→</li>
+        <li class="step"><b>case "/stile"</b><span>una route per ogni risorsa</span></li><li class="arrow">→</li>
+        <li class="step"><b>createReadStream(file)</b><span>legge a pezzi</span></li><li class="arrow">→</li>
+        <li class="step"><b>on("open") → writeHead(200, text/css)</b><span>header solo se il file esiste</span></li><li class="arrow">→</li>
+        <li class="step"><b>readable.pipe(response)</b><span>pipe chiude da sola la risposta</span></li><li class="arrow">→</li>
+        <li class="step end"><b>on("error") → 404</b><span>file mancante</span></li>
+      </ol>
+    </div>
+    <div class="lane t-post">
+      <div class="lane-title"><span class="chip t-post">POST</span><span class="chip t-regex">regex</span><h3>Invio del form: /recuperadati</h3></div>
+      <ol class="steps">
+        <li class="step"><b>POST /recuperadati</b><span>dati nel corpo, non nell'URL</span></li><li class="arrow">→</li>
+        <li class="step"><b>request.on("data")</b><span>corpo += chunk</span></li><li class="arrow">→</li>
+        <li class="step"><b>request.on("end")</b><span>corpo completo</span></li><li class="arrow">→</li>
+        <li class="step"><b>qs.parse(corpo)</b><span>stringa → oggetto</span></li><li class="arrow">→</li>
+        <li class="step"><b>valida(dati)</b><span>regex → oggetto esito</span></li><li class="arrow">→</li>
+        <li class="step"><b>esito.valido ?</b><span>sì: conferma · no: form rigenerato con errori</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head">
+    <h2>Checklist: cosa DEVE esserci</h2>
+    <p>Spunta man mano che ripassi. Se anche una sola voce del server manca, qualcosa nel browser non funziona.</p>
+  </div>
+  <div class="progress"><span id="prog-text">0 / 0</span><div class="bar"><i id="prog-bar"></i></div></div>
+  <div class="checks" id="checks"></div>
+</section>
+
+<section id="codice">
+  <div class="sec-head">
+    <h2>Pezzi di codice chiave</h2>
+    <p>Gli estratti sono presi dal sorgente reale (stesse righe di <code class="inline">server.js</code>). Il pulsante Copia funziona su ogni blocco.</p>
+  </div>
+  <div class="cards">
+
+    <article class="card t-base">
+      <div class="card-head"><span class="chip t-base">base</span><h3>Avvio del server</h3><p class="where">server.js, in fondo al file</p></div>
+      <div class="codebox"><pre><code data-lang="js">const http = require("http");
+const fs = require("fs");
+const qs = require("querystring");
+
+const hostname = "127.0.0.1";
+const port = 3000;
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, hostname, function () {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});</code></pre></div>
+      <ul class="notes">
+        <li><code class="inline">createServer</code>: riceve la funzione che gestisce ogni richiesta</li>
+        <li><code class="inline">listen(port, hostname, callback)</code>: la callback parte quando il server è pronto</li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> i file si leggono relativi alla cartella da cui lanci <code class="inline">node server.js</code>. Lancialo dentro la cartella del progetto.</p>
+    </article>
+
+    <article class="card t-base">
+      <div class="card-head"><span class="chip t-base">base</span><h3>Routing con URL + switch</h3><p class="where">server.js, requestHandler (estratto)</p></div>
+      <div class="codebox"><pre><code data-lang="js">function requestHandler(request, response) {
+    const oggettoUrl = new URL(request.url, "http://localhost");
+    const path = oggettoUrl.pathname;
+    console.log(request.method, path);
+
+    switch (path) {
+        case "/":
+        case "/Home.html":
+            inviaPagina(response, "Home.html");
+            break;
+
+        case "/contatti.html":
+            inviaPagina(response, "contatti.html");
+            break;
+
+        case "/stile":
+            inviaStream(response, "./css/stile.css", "text/css; charset=utf-8");
+            break;
+
+        case "/immagini/pic_trulli.jpg":
+            inviaStream(response, "./immagini/pic_trulli.jpg", "image/jpeg");
+            break;
+
+        ...
+
+        default:
+            response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+            response.end("404 Not Found");
+    }
+}</code></pre></div>
+      <ul class="notes">
+        <li><code class="inline">pathname</code> → solo il percorso. <code class="inline">request.url</code> include anche <code class="inline">?nome=...</code></li>
+        <li>una <code class="inline">case</code> per ogni risorsa: pagina, CSS, ogni immagine</li>
+        <li><code class="inline">default</code> → 404, altrimenti la richiesta resta appesa</li>
+      </ul>
+    </article>
+
+    <article class="card t-readfile">
+      <div class="card-head"><span class="chip t-readfile">readFile</span><h3>Pagine HTML con fs.readFile</h3><p class="where">server.js, funzione inviaPagina</p></div>
+      <div class="codebox"><pre><code data-lang="js">function inviaPagina(response, percorso) {
+    fs.readFile(percorso, function (error, data) {
+        if (error) {
+            response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+            response.end("Errore interno del server");
+        } else {
+            response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+            response.end(data);
+        }
+    });
+}</code></pre></div>
+      <ul class="notes">
+        <li>callback <code class="inline">(error, data)</code>: prima controlli l'errore, poi rispondi</li>
+        <li>errore → 500 con testo semplice; ok → 200 + <code class="inline">text/html</code></li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> <code class="inline">readFile</code> carica tutto il file in memoria e poi lo manda. Va bene per HTML piccoli.</p>
+    </article>
+
+    <article class="card t-stream">
+      <div class="card-head"><span class="chip t-stream">stream</span><h3>CSS e immagini con createReadStream + pipe</h3><p class="where">server.js, funzione inviaStream</p></div>
+      <div class="codebox"><pre><code data-lang="js">function inviaStream(response, percorso, contentType) {
+    const readable = fs.createReadStream(percorso);
+
+    readable.on("open", () =&gt; {
+        response.writeHead(200, { "Content-Type": contentType });
+        readable.pipe(response);
+    });
+
+    readable.on("error", err =&gt; {
+        console.error("Errore stream:", err.message);
+        if (!response.headersSent) {
+            response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+        }
+        response.end("File non trovato");
+    });
+}</code></pre></div>
+      <ul class="notes">
+        <li><code class="inline">open</code> → il file esiste → solo ora scrivi gli header e fai partire la pipe</li>
+        <li><code class="inline">pipe(response)</code> gestisce i chunk e chiude la risposta alla fine</li>
+        <li><code class="inline">error</code> → 404; controlla <code class="inline">headersSent</code> prima di riscrivere gli header</li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> il Content-Type cambia con il file: <code class="inline">text/css</code>, <code class="inline">image/jpeg</code>, <code class="inline">text/html</code>.</p>
+    </article>
+
+    <article class="card t-stream">
+      <div class="card-head"><span class="chip t-stream">stream</span><h3>Copia di un file con stream</h3><p class="where">dal tuo serverCopiaConStream.js</p></div>
+      <div class="codebox"><pre><code data-lang="js">const fs = require("fs");
+
+const readable = fs.createReadStream("input.txt");
+const writable = fs.createWriteStream("output.txt");
+
+readable.pipe(writable);
+
+writable.on("finish", () =&gt; {
+    console.log("Copia completata: input.txt -&gt; output.txt");
+});
+
+readable.on("error", err =&gt; console.error("Errore lettura:", err));
+writable.on("error", err =&gt; console.error("Errore scrittura:", err));</code></pre></div>
+      <ul class="notes">
+        <li>lettura e scrittura a pezzi → <code class="inline">readable.pipe(writable)</code></li>
+        <li><code class="inline">finish</code> sul writable = copia completata</li>
+        <li>un handler <code class="inline">error</code> per ogni stream</li>
+      </ul>
+    </article>
+
+    <article class="card t-get">
+      <div class="card-head"><span class="chip t-get">GET</span><h3>Leggere i dati dalla query string</h3><p class="where">variante: in questo progetto il form usa POST. Tecnica presa da serverDinamico.js / serverGetDinamico.js</p></div>
+      <div class="codebox"><pre><code data-lang="js">function requestHandler(request, response) {
+    const oggettoUrl = new URL(request.url, "http://localhost");
+
+    if (oggettoUrl.pathname === "/recuperadati" &amp;&amp; request.method === "GET") {
+        const nome = oggettoUrl.searchParams.get("nome");
+        const dati = Object.fromEntries(oggettoUrl.searchParams);
+        const esito = valida(dati);
+        response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        response.end(esito.valido ? generaConferma(esito) : generaHtml(esito));
+    }
+}</code></pre></div>
+      <ul class="notes">
+        <li>GET → dati nell'URL: <code class="inline">/recuperadati?cognome=Rossi&amp;nome=Anna</code></li>
+        <li>nessun evento <code class="inline">data</code>/<code class="inline">end</code>: sono già nell'URL</li>
+        <li><code class="inline">searchParams.get("nome")</code> per un campo, <code class="inline">Object.fromEntries(...)</code> per tutti</li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> la consegna impone POST. Il GET lo tieni pronto se il prof cambia idea.</p>
+    </article>
+
+    <article class="card t-post">
+      <div class="card-head"><span class="chip t-post">POST</span><h3>Ricevere il corpo del POST</h3><p class="where">server.js, funzione riceviForm</p></div>
+      <div class="codebox"><pre><code data-lang="js">function riceviForm(request, response) {
+    let corpo = "";
+
+    request.on("data", function (chunk) {
+        corpo += chunk;
+    });
+
+    request.on("end", function () {
+        const esito = valida(qs.parse(corpo));
+        response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        response.end(esito.valido ? generaConferma(esito) : generaHtml(esito));
+    });
+}</code></pre></div>
+      <ul class="notes">
+        <li>il corpo arriva a pezzi: accumuli in <code class="inline">corpo</code> con <code class="inline">data</code></li>
+        <li>solo in <code class="inline">end</code> hai tutto → <code class="inline">qs.parse</code> → <code class="inline">valida</code></li>
+        <li>rispondi dentro <code class="inline">end</code>, mai prima</li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> la chiave arriva dall'attributo <code class="inline">name</code> dell'input, non dall'<code class="inline">id</code>.</p>
+    </article>
+
+    <article class="card t-regex wide">
+      <div class="card-head"><span class="chip t-regex">regex</span><h3>Funzione valida(): un oggetto esito con un booleano per campo</h3><p class="where">server.js, regex in alto + funzione valida</p></div>
+      <div class="codebox"><pre><code data-lang="js">const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
+const regexMatricola = /^\d{5}$/;
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const regexTelefono = /^\+?\d{6,15}$/;</code></pre></div>
+      <div class="codebox"><pre><code data-lang="js">function valida(dati) {
+    const cognome = leggi(dati, "cognome").trim();
+    const nome = leggi(dati, "nome").trim();
+    const matricola = leggi(dati, "matricola").trim();
+    const regione = leggi(dati, "regione");
+    const email = leggi(dati, "email").trim();
+    const telefono = leggi(dati, "telefono").replace(/\s/g, "");
+    const richieste = leggi(dati, "richieste");
+
+    const esito = {
+        cognome, nome, matricola, regione, email, telefono, richieste,
+        cognomeOk: regexNome.test(cognome),
+        nomeOk: regexNome.test(nome),
+        matricolaOk: regexMatricola.test(matricola),
+        regioneOk: regioni.includes(regione),
+        contattoPresente: email !== "" || telefono !== "",
+        emailOk: email === "" || regexEmail.test(email),
+        telefonoOk: telefono === "" || regexTelefono.test(telefono)
+    };
+
+    esito.valido = esito.cognomeOk &amp;&amp; esito.nomeOk &amp;&amp; esito.matricolaOk &amp;&amp;
+        esito.regioneOk &amp;&amp; esito.contattoPresente &amp;&amp; esito.emailOk &amp;&amp; esito.telefonoOk;
+
+    return esito;
+}</code></pre></div>
+      <ul class="notes">
+        <li><code class="inline">.trim()</code> prima del test: altrimenti "   " (solo spazi) passa come nome valido</li>
+        <li>regione controllata con <code class="inline">regioni.includes()</code>, non solo "non vuota"</li>
+        <li>contatto: almeno uno tra email e telefono, e quelli compilati devono essere validi</li>
+        <li><code class="inline">leggi()</code> evita il crash se arriva un campo ripetuto (array al posto di stringa)</li>
+      </ul>
+    </article>
+
+    <article class="card t-regex wide">
+      <div class="card-head"><span class="chip t-regex">regex</span><h3>HTML dinamico con errori ed escape</h3><p class="where">server.js, esc + campoTesto (generaHtml li richiama per ogni campo)</p></div>
+      <div class="codebox"><pre><code data-lang="js">function esc(testo) {
+    return String(testo)
+        .replace(/&amp;/g, "&amp;amp;")
+        .replace(/&lt;/g, "&amp;lt;")
+        .replace(/&gt;/g, "&amp;gt;")
+        .replace(/"/g, "&amp;quot;");
+}</code></pre></div>
+      <div class="codebox"><pre><code data-lang="js">function campoTesto(etichetta, nome, valore, lunghezza, valido, messaggio) {
+    const classe = valido ? "campo" : "campo errore";
+    const errore = valido ? "" : `&lt;span class="messaggio"&gt;${messaggio}&lt;/span&gt;`;
+    return `
+            &lt;div class="${classe}"&gt;
+                &lt;label for="${nome}"&gt;${etichetta}&lt;/label&gt;
+                &lt;input type="text" id="${nome}" name="${nome}" size="${lunghezza}" maxlength="${lunghezza}" value="${esc(valore)}"&gt;
+                ${errore}
+            &lt;/div&gt;`;
+}</code></pre></div>
+      <ul class="notes">
+        <li>campo non valido → classe <code class="inline">campo errore</code> + <code class="inline">span.messaggio</code>; il CSS lo colora di rosso</li>
+        <li>i valori già scritti tornano nel form: l'utente non deve riscrivere tutto</li>
+      </ul>
+      <p class="remember"><b>Ricorda:</b> tutto ciò che viene dall'utente e torna nell'HTML passa da <code class="inline">esc()</code>. Senza, un campo con <code class="inline">&lt;script&gt;</code> inietta codice nella pagina.</p>
+    </article>
+
+    <article class="card t-base">
+      <div class="card-head"><span class="chip t-base">base</span><h3>HTML del form (estratto)</h3><p class="where">contatti.html</p></div>
+      <div class="codebox"><pre><code data-lang="html">&lt;form action="/recuperadati" method="POST"&gt;
+            &lt;div class="campo"&gt;
+                &lt;label for="cognome"&gt;Cognome&lt;/label&gt;
+                &lt;input type="text" id="cognome" name="cognome" size="40" maxlength="40"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="nome"&gt;Nome&lt;/label&gt;
+                &lt;input type="text" id="nome" name="nome" size="30" maxlength="30"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="matricola"&gt;Matricola&lt;/label&gt;
+                &lt;input type="text" id="matricola" name="matricola" size="12" maxlength="12"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="regione"&gt;Regione di residenza&lt;/label&gt;
+                &lt;select id="regione" name="regione"&gt;
+                    &lt;option value=""&gt;-- Seleziona --&lt;/option&gt;
+                                        ...le 20 regioni...
+&lt;/select&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="email"&gt;Email&lt;/label&gt;
+                &lt;input type="text" id="email" name="email" size="30" maxlength="30"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="telefono"&gt;Telefono&lt;/label&gt;
+                &lt;input type="text" id="telefono" name="telefono" size="15" maxlength="15"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="richieste"&gt;Richieste particolari&lt;/label&gt;
+                &lt;textarea id="richieste" name="richieste" rows="12" cols="60"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+
+            &lt;div class="pulsanti"&gt;
+                &lt;input type="submit" value="Invia"&gt;
+                &lt;input type="reset" value="Reset"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;</code></pre></div>
+      <ul class="notes">
+        <li><code class="inline">method="POST"</code> e <code class="inline">action="/recuperadati"</code> uguale alla route del server</li>
+        <li><code class="inline">size</code> e <code class="inline">maxlength</code> da consegna: 40, 30, 12, 30, 15</li>
+        <li>textarea 12 righe × 60 colonne; submit + reset</li>
+      </ul>
+    </article>
+
+    <article class="card t-base">
+      <div class="card-head"><span class="chip t-base">base</span><h3>CSS: solo classi ed elementi (estratto)</h3><p class="where">css/stile.css</p></div>
+      <div class="codebox"><pre><code data-lang="css">.intestazione {
+    background: #0a0acc;
+    padding: 16px 24px;
+}
+
+.colonne {
+    display: flex;
+    gap: 24px;
+}
+
+.principale {
+    flex: 3;
+}
+
+.laterale {
+    flex: 1;
+}
+
+.campo {
+    margin-bottom: 14px;
+}
+
+.errore label {
+    color: #cc0000;
+}
+
+.messaggio {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #cc0000;
+}</code></pre></div>
+      <ul class="notes">
+        <li>nessun <code class="inline">#id</code> nel CSS: classi per i blocchi, elementi per il resto</li>
+        <li>layout a colonne con <code class="inline">display: flex</code>; <code class="inline">flex: 3</code> e <code class="inline">flex: 1</code></li>
+        <li>il server serve il CSS su <code class="inline">/stile</code>, quindi <code class="inline">&lt;link href="/stile"&gt;</code></li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section id="regex">
+  <div class="sec-head">
+    <h2>Regole di validazione</h2>
+    <p>Ogni riga della consegna → una regola nel codice, con un esempio che passa e uno che no.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Campo</th><th>Consegna</th><th>Codice</th><th>Passa</th><th>Non passa</th></tr></thead>
+      <tbody>
+        <tr><td>cognome</td><td>non vuoto, non numerico</td><td><code>regexNome.test(cognome)</code></td><td class="ok">Rossi · D'Angelo</td><td class="ko">(vuoto) · 123 · R0ssi</td></tr>
+        <tr><td>nome</td><td>non vuoto, non numerico</td><td><code>regexNome.test(nome)</code></td><td class="ok">Anna Maria</td><td class="ko">(vuoto) · 42 · Mario2</td></tr>
+        <tr><td>matricola</td><td>numero di 5 cifre</td><td><code>/^\d{5}$/</code></td><td class="ok">00123 · 54321</td><td class="ko">123 · 12a45 · 123456</td></tr>
+        <tr><td>regione</td><td>una regione selezionata</td><td><code>regioni.includes(regione)</code></td><td class="ok">Lazio</td><td class="ko">(vuoto) · Narnia</td></tr>
+        <tr><td>email</td><td>valida, se compilata</td><td><code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></td><td class="ok">a@b.it</td><td class="ko">a@b · a b@c.it</td></tr>
+        <tr><td>telefono</td><td>numero valido, se compilato</td><td><code>/^\+?\d{6,15}$/</code> (spazi tolti prima)</td><td class="ok">+39 333 1234567</td><td class="ko">12ab · 123</td></tr>
+        <tr><td>contatto</td><td>email o telefono non vuoti</td><td><code>email !== "" || telefono !== ""</code></td><td class="ok">solo email · solo telefono</td><td class="ko">entrambi vuoti</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="confronti">
+  <div class="sec-head">
+    <h2>Confronti</h2>
+    <p>Domande tipiche di teoria: scegli e giustifica.</p>
+  </div>
+  <div class="versus">
+    <div class="vs t-readfile">
+      <h3>fs.readFile</h3>
+      <h4>Vantaggi</h4>
+      <ul class="notes"><li>una callback sola, codice corto</li><li>sai se il file esiste prima di scrivere gli header</li></ul>
+      <h4>Svantaggi</h4>
+      <ul class="notes"><li>file intero in RAM: male con file grandi</li><li>la risposta parte solo a lettura finita</li></ul>
+    </div>
+    <div class="vs t-stream">
+      <h3>createReadStream + pipe</h3>
+      <h4>Vantaggi</h4>
+      <ul class="notes"><li>legge a chunk, memoria costante</li><li>pipe gestisce flusso e chiusura da sola</li></ul>
+      <h4>Svantaggi</h4>
+      <ul class="notes"><li>errori via evento, header già partiti se fallisce a metà</li><li>più codice per un file di 2 KB</li></ul>
+    </div>
+    <div class="vs t-get">
+      <h3>GET</h3>
+      <h4>Caratteristiche</h4>
+      <ul class="notes"><li>dati nell'URL (query string): visibili, nella cronologia</li><li>lunghezza limitata, richiesta ripetibile</li><li>lettura: <code class="inline">searchParams</code></li></ul>
+    </div>
+    <div class="vs t-post">
+      <h3>POST</h3>
+      <h4>Caratteristiche</h4>
+      <ul class="notes"><li>dati nel corpo: non compaiono nell'URL</li><li>arrivano a chunk → <code class="inline">data</code> + <code class="inline">end</code></li><li>giusto per form con dati personali</li></ul>
+    </div>
+  </div>
+  <p class="remember" style="--c: var(--readfile)"><b>Scelta di progetto:</b> readFile per gli HTML (piccoli) e stream per CSS e immagini. La consegna non chiede stream: l'ho usato perché volevi vederli. Se il prof ti chiede solo readFile, sostituisci <code class="inline">inviaStream</code> con <code class="inline">readFile</code> e <code class="inline">response.end(data)</code>: nel resto del codice non cambia nulla.</p>
+</section>
+
+<section id="errori">
+  <div class="sec-head">
+    <h2>Errori da evitare</h2>
+    <p>Trovati nei tuoi file allegati (bordo rosso) e limiti delle mie scelte (bordo arancio). Utile anche come lista "cosa controllo prima di consegnare".</p>
+  </div>
+  <ul class="issues">
+    <li class="issue"><b>Template string con apici singoli: non interpola nulla.</b><span>In <code class="inline">console.log('Server running at https.//${hostname}:${port}/')</code> stampa le parole <code class="inline">${hostname}</code> alla lettera, e il protocollo è scritto <code class="inline">https.//</code>. Servono i backtick e <code class="inline">http://</code>.</span><span class="src">Server_Url.js, riga 27</span></li>
+    <li class="issue"><b>Tag non chiuso e MIME incompleto.</b><span><code class="inline">&lt;h1&gt;...&lt;h1&gt;</code> manca la <code class="inline">/</code> del tag di chiusura; la risposta HTML non dichiara <code class="inline">text/html</code>. Per JSON la convenzione è <code class="inline">application/json</code> minuscolo (con la J maiuscola in genere funziona, ma non è lo standard).</span><span class="src">Server_Url.js, righe 15 e 19</span></li>
+    <li class="issue"><b>Switch senza default: richieste appese.</b><span>Un path diverso da <code class="inline">/</code> e <code class="inline">/recuperadati</code> non riceve mai risposta, il browser gira a vuoto. Anche il <code class="inline">&amp;nbsp</code> senza punto e virgola è scritto male.</span><span class="src">serverGetDinamico.js, righe 70-103 e 41, 51</span></li>
+    <li class="issue"><b>Metodo non gestito → nessuna risposta.</b><span>Se il metodo non è GET né POST (es. PUT), l'<code class="inline">else if</code> non risponde. Serve un ramo finale con 405.</span><span class="src">serverDinamico.js, righe 37-55</span></li>
+    <li class="issue"><b>Regex con \s: "   " risulta un nome valido.</b><span><code class="inline">/^[a-zA-Z\s]+$/</code> accetta una stringa di soli spazi. Soluzione: <code class="inline">.trim()</code> prima del test. Rifiuta anche accenti e apostrofi (D'Angelo, Sarà).</span><span class="src">serverGetDinamico.js riga 10, serverValidazione.js riga 17</span></li>
+    <li class="issue"><b>Regione "valida" se non è vuota.</b><span><code class="inline">regione !== ""</code> accetta qualunque stringa inviata a mano (basta un POST con curl). Meglio controllare che sia nell'elenco.</span><span class="src">serverValidazione.js, riga 33</span></li>
+    <li class="issue"><b>Valori rimessi nell'HTML senza escape.</b><span><code class="inline">value="${esito.email}"</code> e il testo della textarea finiscono nella pagina così come arrivano: un utente può inserire HTML o attributi. Qui lo risolve <code class="inline">esc()</code>.</span><span class="src">serverValidazione.js, righe 131, 144, 148</span></li>
+    <li class="issue"><b>Chunk scritti a mano.</b><span><code class="inline">response.write(chunk)</code> in un handler <code class="inline">data</code> non rispetta la contropressione; <code class="inline">pipe</code> sì ed è più corto.</span><span class="src">serverStaticoStream.js, righe 11-14</span></li>
+    <li class="issue"><b>url.parse è API legacy.</b><span>La documentazione Node la marca come deprecata a favore della WHATWG URL API (<code class="inline">new URL(...)</code>), che uso nel progetto. Funziona ancora, quindi se il prof insegna <code class="inline">url.parse</code> puoi usarlo senza paura.</span><span class="src">serverGetDinamico.js, riga 65 - fonte: nodejs.org/api/url.html</span></li>
+    <li class="issue mine"><b>Il controllo non verifica la lunghezza massima.</b><span><code class="inline">maxlength</code> è solo nel browser: con una richiesta manuale un cognome di 500 caratteri passa. La consegna non lo chiede; se hai tempo aggiungi <code class="inline">cognome.length &lt;= 40</code>.</span><span class="src">mio progetto, server.js</span></li>
+    <li class="issue mine"><b>La regex dell'email è volutamente semplice.</b><span>Accetta <code class="inline">a@b.c</code>. Per la verifica basta; la validità vera si prova solo mandando una mail.</span><span class="src">mio progetto, server.js</span></li>
+    <li class="issue mine"><b>Il nome "GigaWeb" è una mia lettura della slide.</b><span>Nella slide il titolo è poco leggibile. Le immagini sono segnaposto generati da me: sostituiscile con quelle della lezione tenendo gli stessi nomi (<code class="inline">pic_trulli.jpg</code>, <code class="inline">img_chania.jpg</code>) oppure aggiorna le route.</span><span class="src">mio progetto, Home.html</span></li>
+  </ul>
+</section>
+
+<section id="sorgente">
+  <div class="sec-head">
+    <h2>Sorgente completo</h2>
+    <p>Struttura da ricreare e avvio. Poi i quattro file, copiabili.</p>
+  </div>
+<pre class="tree">progetto-gigaweb/
+├─ server.js
+├─ Home.html
+├─ contatti.html
+├─ css/
+│  └─ stile.css
+└─ immagini/
+   ├─ pic_trulli.jpg
+   └─ img_chania.jpg
+
+cd progetto-gigaweb
+node server.js
+→ apri http://127.0.0.1:3000/</pre>
+  <div class="tabs" role="tablist" aria-label="File del progetto">
+    <button class="tab" role="tab" aria-selected="true" data-tab="0" type="button">server.js</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="1" type="button">Home.html</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="2" type="button">contatti.html</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="3" type="button">css/stile.css</button>
+  </div>
+  <div id="panels">
+    <div class="panel"><p class="panel-meta">server.js - 250 righe. Server: readFile, stream, GET/POST, regex, HTML dinamico</p><div class="codebox"><pre><code data-lang="js">const http = require("http");
+const fs = require("fs");
+const qs = require("querystring");
+
+const hostname = "127.0.0.1";
+const port = 3000;
+
+const regioni = [
+    "Abruzzo", "Basilicata", "Calabria", "Campania", "Emilia-Romagna",
+    "Friuli-Venezia Giulia", "Lazio", "Liguria", "Lombardia", "Marche",
+    "Molise", "Piemonte", "Puglia", "Sardegna", "Sicilia", "Toscana",
+    "Trentino-Alto Adige", "Umbria", "Valle d'Aosta", "Veneto"
+];
+
+const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
+const regexMatricola = /^\d{5}$/;
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const regexTelefono = /^\+?\d{6,15}$/;
+
+const intestazione = `
+    &lt;header class="intestazione"&gt;
+        &lt;h1 class="logo"&gt;GigaWeb&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;nav class="menu"&gt;
+        &lt;a href="/contatti.html" class="voce"&gt;Contatti&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Cosa facciamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Chi siamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Novità&lt;/a&gt;
+        &lt;a href="/" class="voce"&gt;Home&lt;/a&gt;
+    &lt;/nav&gt;`;
+
+function esc(testo) {
+    return String(testo)
+        .replace(/&amp;/g, "&amp;amp;")
+        .replace(/&lt;/g, "&amp;lt;")
+        .replace(/&gt;/g, "&amp;gt;")
+        .replace(/"/g, "&amp;quot;");
+}
+
+function leggi(dati, nome) {
+    return typeof dati[nome] === "string" ? dati[nome] : "";
+}
+
+function valida(dati) {
+    const cognome = leggi(dati, "cognome").trim();
+    const nome = leggi(dati, "nome").trim();
+    const matricola = leggi(dati, "matricola").trim();
+    const regione = leggi(dati, "regione");
+    const email = leggi(dati, "email").trim();
+    const telefono = leggi(dati, "telefono").replace(/\s/g, "");
+    const richieste = leggi(dati, "richieste");
+
+    const esito = {
+        cognome, nome, matricola, regione, email, telefono, richieste,
+        cognomeOk: regexNome.test(cognome),
+        nomeOk: regexNome.test(nome),
+        matricolaOk: regexMatricola.test(matricola),
+        regioneOk: regioni.includes(regione),
+        contattoPresente: email !== "" || telefono !== "",
+        emailOk: email === "" || regexEmail.test(email),
+        telefonoOk: telefono === "" || regexTelefono.test(telefono)
+    };
+
+    esito.valido = esito.cognomeOk &amp;&amp; esito.nomeOk &amp;&amp; esito.matricolaOk &amp;&amp;
+        esito.regioneOk &amp;&amp; esito.contattoPresente &amp;&amp; esito.emailOk &amp;&amp; esito.telefonoOk;
+
+    return esito;
+}
+
+function campoTesto(etichetta, nome, valore, lunghezza, valido, messaggio) {
+    const classe = valido ? "campo" : "campo errore";
+    const errore = valido ? "" : `&lt;span class="messaggio"&gt;${messaggio}&lt;/span&gt;`;
+    return `
+            &lt;div class="${classe}"&gt;
+                &lt;label for="${nome}"&gt;${etichetta}&lt;/label&gt;
+                &lt;input type="text" id="${nome}" name="${nome}" size="${lunghezza}" maxlength="${lunghezza}" value="${esc(valore)}"&gt;
+                ${errore}
+            &lt;/div&gt;`;
+}
+
+function campoRegione(esito) {
+    let opzioni = `&lt;option value=""&gt;-- Seleziona --&lt;/option&gt;`;
+    for (let i = 0; i &lt; regioni.length; i++) {
+        const selezionata = regioni[i] === esito.regione ? " selected" : "";
+        opzioni += `&lt;option value="${regioni[i]}"${selezionata}&gt;${regioni[i]}&lt;/option&gt;`;
+    }
+    const classe = esito.regioneOk ? "campo" : "campo errore";
+    const errore = esito.regioneOk ? "" : `&lt;span class="messaggio"&gt;Seleziona una regione&lt;/span&gt;`;
+    return `
+            &lt;div class="${classe}"&gt;
+                &lt;label for="regione"&gt;Regione di residenza&lt;/label&gt;
+                &lt;select id="regione" name="regione"&gt;${opzioni}&lt;/select&gt;
+                ${errore}
+            &lt;/div&gt;`;
+}
+
+function generaHtml(esito) {
+    const emailValida = esito.emailOk &amp;&amp; esito.contattoPresente;
+    const telefonoValido = esito.telefonoOk &amp;&amp; esito.contattoPresente;
+    const messaggioEmail = esito.emailOk ? "Inserisci almeno email o telefono" : "Inserisci un'email valida";
+    const messaggioTelefono = esito.telefonoOk ? "Inserisci almeno email o telefono" : "Inserisci un numero di telefono valido";
+
+    return `&lt;!DOCTYPE html&gt;
+&lt;html lang="it"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Contatti&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/stile"&gt;
+&lt;/head&gt;
+&lt;body&gt;${intestazione}
+    &lt;main class="contenuto-form"&gt;
+        &lt;h2&gt;Contatti&lt;/h2&gt;
+        &lt;p class="avviso"&gt;Controlla i campi evidenziati in rosso.&lt;/p&gt;
+        &lt;form action="/recuperadati" method="POST"&gt;
+            ${campoTesto("Cognome", "cognome", esito.cognome, 40, esito.cognomeOk, "Inserisci un cognome valido (solo lettere)")}
+            ${campoTesto("Nome", "nome", esito.nome, 30, esito.nomeOk, "Inserisci un nome valido (solo lettere)")}
+            ${campoTesto("Matricola", "matricola", esito.matricola, 12, esito.matricolaOk, "La matricola deve avere 5 cifre")}
+            ${campoRegione(esito)}
+            ${campoTesto("Email", "email", esito.email, 30, emailValida, messaggioEmail)}
+            ${campoTesto("Telefono", "telefono", esito.telefono, 15, telefonoValido, messaggioTelefono)}
+            &lt;div class="campo"&gt;
+                &lt;label for="richieste"&gt;Richieste particolari&lt;/label&gt;
+                &lt;textarea id="richieste" name="richieste" rows="12" cols="60"&gt;${esc(esito.richieste)}&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;div class="pulsanti"&gt;
+                &lt;input type="submit" value="Invia"&gt;
+                &lt;input type="reset" value="Reset"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;`;
+}
+
+function generaConferma(esito) {
+    return `&lt;!DOCTYPE html&gt;
+&lt;html lang="it"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Dati ricevuti&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/stile"&gt;
+&lt;/head&gt;
+&lt;body&gt;${intestazione}
+    &lt;main class="contenuto-form"&gt;
+        &lt;h2&gt;Form compilato in modo corretto&lt;/h2&gt;
+        &lt;ul class="riepilogo"&gt;
+            &lt;li&gt;Cognome: ${esc(esito.cognome)}&lt;/li&gt;
+            &lt;li&gt;Nome: ${esc(esito.nome)}&lt;/li&gt;
+            &lt;li&gt;Matricola: ${esc(esito.matricola)}&lt;/li&gt;
+            &lt;li&gt;Regione: ${esc(esito.regione)}&lt;/li&gt;
+            &lt;li&gt;Email: ${esc(esito.email)}&lt;/li&gt;
+            &lt;li&gt;Telefono: ${esc(esito.telefono)}&lt;/li&gt;
+            &lt;li&gt;Richieste: ${esc(esito.richieste)}&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;a href="/contatti.html" class="voce"&gt;Torna al form&lt;/a&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;`;
+}
+
+function inviaPagina(response, percorso) {
+    fs.readFile(percorso, function (error, data) {
+        if (error) {
+            response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+            response.end("Errore interno del server");
+        } else {
+            response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+            response.end(data);
+        }
+    });
+}
+
+function inviaStream(response, percorso, contentType) {
+    const readable = fs.createReadStream(percorso);
+
+    readable.on("open", () =&gt; {
+        response.writeHead(200, { "Content-Type": contentType });
+        readable.pipe(response);
+    });
+
+    readable.on("error", err =&gt; {
+        console.error("Errore stream:", err.message);
+        if (!response.headersSent) {
+            response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+        }
+        response.end("File non trovato");
+    });
+}
+
+function riceviForm(request, response) {
+    let corpo = "";
+
+    request.on("data", function (chunk) {
+        corpo += chunk;
+    });
+
+    request.on("end", function () {
+        const esito = valida(qs.parse(corpo));
+        response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        response.end(esito.valido ? generaConferma(esito) : generaHtml(esito));
+    });
+}
+
+function requestHandler(request, response) {
+    const oggettoUrl = new URL(request.url, "http://localhost");
+    const path = oggettoUrl.pathname;
+    console.log(request.method, path);
+
+    switch (path) {
+        case "/":
+        case "/Home.html":
+            inviaPagina(response, "Home.html");
+            break;
+
+        case "/contatti.html":
+            inviaPagina(response, "contatti.html");
+            break;
+
+        case "/stile":
+            inviaStream(response, "./css/stile.css", "text/css; charset=utf-8");
+            break;
+
+        case "/immagini/pic_trulli.jpg":
+            inviaStream(response, "./immagini/pic_trulli.jpg", "image/jpeg");
+            break;
+
+        case "/immagini/img_chania.jpg":
+            inviaStream(response, "./immagini/img_chania.jpg", "image/jpeg");
+            break;
+
+        case "/recuperadati":
+            if (request.method === "POST") {
+                riceviForm(request, response);
+            } else {
+                response.writeHead(405, { "Content-Type": "text/plain; charset=utf-8", "Allow": "POST" });
+                response.end("Metodo non consentito: usa POST");
+            }
+            break;
+
+        default:
+            response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+            response.end("404 Not Found");
+    }
+}
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, hostname, function () {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});</code></pre></div></div>
+<div class="panel" hidden><p class="panel-meta">Home.html - 75 righe. Home fantoccio: header, menu, due colonne, miniature, box</p><div class="codebox"><pre><code data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="it"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;GigaWeb - Home&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/stile"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="intestazione"&gt;
+        &lt;h1 class="logo"&gt;GigaWeb&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav class="menu"&gt;
+        &lt;a href="/contatti.html" class="voce"&gt;Contatti&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Cosa facciamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Chi siamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Novità&lt;/a&gt;
+        &lt;a href="/" class="voce"&gt;Home&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="pagina"&gt;
+        &lt;p class="percorso"&gt;Home&lt;/p&gt;
+
+        &lt;div class="colonne"&gt;
+            &lt;main class="principale"&gt;
+                &lt;h2&gt;Benvenuti!&lt;/h2&gt;
+                &lt;img class="foto-grande" src="/immagini/pic_trulli.jpg" alt="Foto principale"&gt;
+                &lt;p&gt;
+                    La nostra azienda di fantasia GigaWeb realizza siti web e servizi online.
+                    Questa è una pagina di prova: il testo serve solo a riempire il layout.
+                    Ci occupiamo di:
+                &lt;/p&gt;
+                &lt;ul class="elenco"&gt;
+                    &lt;li&gt;Siti web responsive&lt;/li&gt;
+                    &lt;li&gt;Posizionamento per motori di ricerca&lt;/li&gt;
+                    &lt;li&gt;Web banner statici e dinamici&lt;/li&gt;
+                    &lt;li&gt;Grafica, animazioni e fotoritocco&lt;/li&gt;
+                &lt;/ul&gt;
+
+                &lt;h2&gt;Articolo 1&lt;/h2&gt;
+                &lt;p&gt;
+                    Testo di esempio per il primo articolo. Il contenuto vero non è importante,
+                    conta che la struttura della pagina rispetti il layout richiesto.
+                &lt;/p&gt;
+            &lt;/main&gt;
+
+            &lt;aside class="laterale"&gt;
+                &lt;h3&gt;Immagini con link&lt;/h3&gt;
+                &lt;div class="miniature"&gt;
+                    &lt;a href="#" class="miniatura"&gt;
+                        &lt;img src="/immagini/img_chania.jpg" alt="Anteprima 1"&gt;
+                        &lt;span&gt;Pagina 1&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href="#" class="miniatura"&gt;
+                        &lt;img src="/immagini/pic_trulli.jpg" alt="Anteprima 2"&gt;
+                        &lt;span&gt;Pagina 2&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box"&gt;
+                    &lt;h3&gt;Box&lt;/h3&gt;
+                    &lt;p&gt;
+                        Testo di esempio dentro il box laterale. Serve a mostrare
+                        un blocco con bordo tratteggiato accanto al contenuto principale.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;footer class="piede"&gt;
+        &lt;p&gt;GigaWeb - pagina di esempio&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div>
+<div class="panel" hidden><p class="panel-meta">contatti.html - 89 righe. Form con tutti i campi, method POST, action /recuperadati</p><div class="codebox"><pre><code data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="it"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Contatti&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/stile"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="intestazione"&gt;
+        &lt;h1 class="logo"&gt;GigaWeb&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav class="menu"&gt;
+        &lt;a href="/contatti.html" class="voce"&gt;Contatti&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Cosa facciamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Chi siamo&lt;/a&gt;
+        &lt;a href="#" class="voce"&gt;Novità&lt;/a&gt;
+        &lt;a href="/" class="voce"&gt;Home&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;main class="contenuto-form"&gt;
+        &lt;h2&gt;Contatti&lt;/h2&gt;
+
+        &lt;form action="/recuperadati" method="POST"&gt;
+            &lt;div class="campo"&gt;
+                &lt;label for="cognome"&gt;Cognome&lt;/label&gt;
+                &lt;input type="text" id="cognome" name="cognome" size="40" maxlength="40"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="nome"&gt;Nome&lt;/label&gt;
+                &lt;input type="text" id="nome" name="nome" size="30" maxlength="30"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="matricola"&gt;Matricola&lt;/label&gt;
+                &lt;input type="text" id="matricola" name="matricola" size="12" maxlength="12"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="regione"&gt;Regione di residenza&lt;/label&gt;
+                &lt;select id="regione" name="regione"&gt;
+                    &lt;option value=""&gt;-- Seleziona --&lt;/option&gt;
+                    &lt;option value="Abruzzo"&gt;Abruzzo&lt;/option&gt;
+                    &lt;option value="Basilicata"&gt;Basilicata&lt;/option&gt;
+                    &lt;option value="Calabria"&gt;Calabria&lt;/option&gt;
+                    &lt;option value="Campania"&gt;Campania&lt;/option&gt;
+                    &lt;option value="Emilia-Romagna"&gt;Emilia-Romagna&lt;/option&gt;
+                    &lt;option value="Friuli-Venezia Giulia"&gt;Friuli-Venezia Giulia&lt;/option&gt;
+                    &lt;option value="Lazio"&gt;Lazio&lt;/option&gt;
+                    &lt;option value="Liguria"&gt;Liguria&lt;/option&gt;
+                    &lt;option value="Lombardia"&gt;Lombardia&lt;/option&gt;
+                    &lt;option value="Marche"&gt;Marche&lt;/option&gt;
+                    &lt;option value="Molise"&gt;Molise&lt;/option&gt;
+                    &lt;option value="Piemonte"&gt;Piemonte&lt;/option&gt;
+                    &lt;option value="Puglia"&gt;Puglia&lt;/option&gt;
+                    &lt;option value="Sardegna"&gt;Sardegna&lt;/option&gt;
+                    &lt;option value="Sicilia"&gt;Sicilia&lt;/option&gt;
+                    &lt;option value="Toscana"&gt;Toscana&lt;/option&gt;
+                    &lt;option value="Trentino-Alto Adige"&gt;Trentino-Alto Adige&lt;/option&gt;
+                    &lt;option value="Umbria"&gt;Umbria&lt;/option&gt;
+                    &lt;option value="Valle d'Aosta"&gt;Valle d'Aosta&lt;/option&gt;
+                    &lt;option value="Veneto"&gt;Veneto&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="email"&gt;Email&lt;/label&gt;
+                &lt;input type="text" id="email" name="email" size="30" maxlength="30"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="telefono"&gt;Telefono&lt;/label&gt;
+                &lt;input type="text" id="telefono" name="telefono" size="15" maxlength="15"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="campo"&gt;
+                &lt;label for="richieste"&gt;Richieste particolari&lt;/label&gt;
+                &lt;textarea id="richieste" name="richieste" rows="12" cols="60"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+
+            &lt;div class="pulsanti"&gt;
+                &lt;input type="submit" value="Invia"&gt;
+                &lt;input type="reset" value="Reset"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div>
+<div class="panel" hidden><p class="panel-meta">css/stile.css - 175 righe. Solo classi ed elementi</p><div class="codebox"><pre><code data-lang="css">body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #222;
+    background: #fff;
+}
+
+.intestazione {
+    background: #0a0acc;
+    padding: 16px 24px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 28px;
+    color: #fff;
+}
+
+.menu {
+    background: #eee;
+    text-align: right;
+    padding: 8px 24px;
+}
+
+.voce {
+    margin-left: 16px;
+    font-size: 12px;
+    color: #0a0acc;
+    text-decoration: none;
+}
+
+.voce:hover {
+    text-decoration: underline;
+}
+
+.pagina {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.percorso {
+    font-size: 11px;
+    color: #0a0acc;
+}
+
+.colonne {
+    display: flex;
+    gap: 24px;
+}
+
+.principale {
+    flex: 3;
+}
+
+.laterale {
+    flex: 1;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.foto-grande {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.elenco {
+    padding-left: 20px;
+}
+
+.miniature {
+    display: flex;
+    gap: 8px;
+}
+
+.miniatura {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #222;
+    text-decoration: none;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.box {
+    margin-top: 16px;
+    padding: 0 12px;
+    border: 1px dashed #0a0acc;
+}
+
+.piede {
+    margin-top: 32px;
+    padding: 12px 24px;
+    background: #eee;
+    font-size: 11px;
+    text-align: center;
+}
+
+.contenuto-form {
+    max-width: 640px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.campo {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 4px;
+    border: 1px solid #888;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.errore label {
+    color: #cc0000;
+}
+
+.errore input,
+.errore select {
+    border-color: #cc0000;
+}
+
+.messaggio {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #cc0000;
+}
+
+.avviso {
+    padding: 8px 12px;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+}
+
+.pulsanti input {
+    margin-right: 8px;
+    padding: 4px 16px;
+}
+
+.riepilogo {
+    padding: 12px 12px 12px 32px;
+    border: 1px solid #2e8b2e;
+    background: #f1faf1;
+}
+
+@media (max-width: 700px) {
+    .colonne {
+        flex-direction: column;
+    }
+}</code></pre></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="rule">Regola pratica: ogni route risponde sempre con un solo writeHead + end (o una pipe). Ogni dato che arriva dal client si valida sul server e si escapa prima di rimetterlo nell'HTML.</div>
+</section>
+
+<section id="fonti">
+  <div class="sec-head"><h2>Fonti</h2></div>
+  <ol class="sources">
+    <li>Slide della consegna (immagine allegata): campi del form, misure, requisiti di validazione, metodo POST, layout della home.</li>
+    <li>I tuoi file allegati, da cui ho ripreso tecniche e struttura: <code class="inline">serverStaticoStream.js</code> (stream), <code class="inline">serverStatico.js</code> (readFile e route), <code class="inline">serverValidazione.js</code> (validazione POST e HTML dinamico), <code class="inline">serverGetDinamico.js</code> e <code class="inline">serverDinamico.js</code> (GET, query string), <code class="inline">serverCopiaConStream.js</code> (pipe), <code class="inline">Server_Url.js</code> (routing base).</li>
+    <li><a href="https://nodejs.org/api/url.html" target="_blank" rel="noopener">Node.js - documentazione del modulo url</a>: <code class="inline">url.parse()</code> legacy, WHATWG URL API.</li>
+    <li>Collaudo: server avviato in locale con Node 22, route e POST provati con curl e controllo visivo delle pagine con screenshot.</li>
+  </ol>
+</section>
+
+</div>
+
+<script>
+const CHECKS = [
+  { tag: "t-base", titolo: "Server", voci: [
+    'require di <code class="inline">http</code>, <code class="inline">fs</code> e <code class="inline">querystring</code> in cima',
+    '<code class="inline">http.createServer(requestHandler)</code> e <code class="inline">server.listen(port, hostname, callback)</code>',
+    '<code class="inline">new URL(request.url, ...)</code> e uso di <code class="inline">.pathname</code> per il routing',
+    '<code class="inline">switch(path)</code> con <code class="inline">default</code> che risponde 404',
+    'ogni risposta ha <code class="inline">writeHead(codice, {"Content-Type": ...})</code> corretto'
+  ]},
+  { tag: "t-readfile", titolo: "readFile", voci: [
+    'le pagine HTML (home, contatti) con <code class="inline">fs.readFile</code>',
+    'controllo di <code class="inline">error</code> nella callback → 500',
+    'su successo: 200, <code class="inline">text/html</code>, <code class="inline">response.end(data)</code>'
+  ]},
+  { tag: "t-stream", titolo: "Stream", voci: [
+    'CSS e immagini con <code class="inline">fs.createReadStream</code> + <code class="inline">pipe(response)</code>',
+    'header scritti nell\'evento <code class="inline">open</code>, errore → 404',
+    'una route per il CSS (<code class="inline">/stile</code>) e una per ogni immagine',
+    '<code class="inline">text/css</code> per il foglio di stile e <code class="inline">image/jpeg</code> per le foto'
+  ]},
+  { tag: "t-post", titolo: "POST", voci: [
+    'solo se <code class="inline">request.method === "POST"</code>, altrimenti 405',
+    '<code class="inline">request.on("data")</code> accumula, <code class="inline">request.on("end")</code> elabora',
+    '<code class="inline">qs.parse(corpo)</code> per ottenere l\'oggetto con i campi'
+  ]},
+  { tag: "t-regex", titolo: "Validazione lato server", voci: [
+    'funzione <code class="inline">valida(dati)</code> che restituisce un oggetto esito',
+    'cognome e nome: non vuoti e non numerici (regex + trim)',
+    'matricola 5 cifre · regione scelta · email o telefono valido',
+    'errore → form rigenerato con campi rossi, messaggi e valori già inseriti',
+    'tutto ciò che torna nell\'HTML passa da <code class="inline">esc()</code>',
+    'ok → pagina di conferma'
+  ]},
+  { tag: "t-base", titolo: "HTML e CSS", voci: [
+    '<code class="inline">&lt;form action="/recuperadati" method="POST"&gt;</code>',
+    'ogni campo ha <code class="inline">name</code> (è la chiave che arriva al server) e <code class="inline">label for</code> + <code class="inline">id</code>',
+    'misure: cognome 40, nome 30, matricola 12, email 30, telefono 15; textarea 12×60',
+    'select con le 20 regioni più l\'opzione vuota; bottoni invia e reset',
+    '<code class="inline">&lt;link rel="stylesheet" href="/stile"&gt;</code> uguale alla route del server',
+    'CSS solo con classi ed elementi, nessun <code class="inline">#id</code>',
+    'home: header blu, menu a destra, due colonne (principale + laterale con miniature e box)'
+  ]}
+];
+
+(function () {
+  const root = document.getElementById("checks");
+  const text = document.getElementById("prog-text");
+  const bar = document.getElementById("prog-bar");
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem("gigaweb-checks") || "{}") || {}; } catch (e) { saved = {}; }
+  let totale = 0;
+  CHECKS.forEach((g, gi) => {
+    const box = document.createElement("div");
+    box.className = "group " + g.tag;
+    const h = document.createElement("h3");
+    h.innerHTML = '<span class="chip ' + g.tag + '">' + g.titolo + "</span>";
+    const ul = document.createElement("ul");
+    g.voci.forEach((v, vi) => {
+      totale++;
+      const key = gi + "-" + vi;
+      const li = document.createElement("li");
+      const lab = document.createElement("label");
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.id = "chk-" + key;
+      cb.checked = !!saved[key];
+      cb.addEventListener("change", () => {
+        saved[key] = cb.checked;
+        try { localStorage.setItem("gigaweb-checks", JSON.stringify(saved)); } catch (e) {}
+        aggiorna();
+      });
+      const sp = document.createElement("span");
+      sp.innerHTML = v;
+      lab.appendChild(cb); lab.appendChild(sp);
+      li.appendChild(lab); ul.appendChild(li);
+    });
+    box.appendChild(h); box.appendChild(ul); root.appendChild(box);
+  });
+  function aggiorna() {
+    const fatti = root.querySelectorAll("input:checked").length;
+    text.textContent = fatti + " / " + totale;
+    bar.style.width = (fatti / totale * 100) + "%";
+  }
+  aggiorna();
+})();
+
+(function () {
+  const KW = /^(const|let|function|return|if|else|switch|case|break|default|new|require|for|true|false|null|typeof)$/;
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function hl(t) {
+    const re = /(`(?:\\[\s\S]|[^`\\])*`|"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*')|(\b[A-Za-z_$][\w$]*\b)|(\b\d+\b)/g;
+    let out = "", last = 0, m;
+    while ((m = re.exec(t))) {
+      out += esc(t.slice(last, m.index));
+      if (m[1]) out += '<span class="s">' + esc(m[1]) + "</span>";
+      else if (m[2]) out += KW.test(m[2]) ? '<span class="k">' + m[2] + "</span>" : esc(m[2]);
+      else out += '<span class="n">' + m[3] + "</span>";
+      last = re.lastIndex;
+    }
+    return out + esc(t.slice(last));
+  }
+  document.querySelectorAll('code[data-lang="js"]').forEach(c => { c.innerHTML = hl(c.textContent); });
+
+  document.querySelectorAll(".codebox").forEach(box => {
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.className = "copy"; btn.textContent = "Copia";
+    btn.addEventListener("click", () => {
+      const code = box.querySelector("code");
+      const testo = code.textContent;
+      const fallback = () => {
+        const r = document.createRange(); r.selectNodeContents(code);
+        const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = "Selezionato";
+        setTimeout(() => { btn.textContent = "Copia"; }, 1500);
+      };
+      try {
+        navigator.clipboard.writeText(testo).then(() => {
+          btn.textContent = "Copiato";
+          setTimeout(() => { btn.textContent = "Copia"; }, 1500);
+        }, fallback);
+      } catch (e) { fallback(); }
+    });
+    box.appendChild(btn);
+  });
+
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll("#panels .panel");
+  tabs.forEach(t => t.addEventListener("click", () => {
+    tabs.forEach(x => x.setAttribute("aria-selected", x === t ? "true" : "false"));
+    panels.forEach((p, i) => { p.hidden = String(i) !== t.dataset.tab; });
+  }));
+})();
+</script>
+
+</body></html>

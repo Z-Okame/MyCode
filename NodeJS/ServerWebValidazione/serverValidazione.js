@@ -5,6 +5,15 @@ const querystring = require("querystring");
 
 const hostname = '127.0.0.1';
 const port = 3000;
+const mimeTypes = {
+    '.html': 'text/html; charset=utf-8',
+    '.jpg': 'image/jpeg',
+    '.jfif': 'image/jfif',
+    '.js': 'text/javascript',
+    '.css': 'text/css',
+    '.json': 'application/json',
+    '.png': 'image/png'
+};
 
 const regioni = [
     "Abruzzo", "Basilicata", "Calabria", "Campania", "Emilia-Romagna",
@@ -161,6 +170,27 @@ function requestHandler(request, response) {
 
     switch (path) {
         case '/':
+            fs.readFile('home.html',function(error, data) {
+                if (error) {
+                    response.writeHead(404);
+                } else {
+                    response.writeHead(200, {"Content-Type" : "text/html"});
+                    response.write(data,"utf8");
+                }
+                response.end();
+            })
+            break;
+        case '/style.css':
+            fs.readFile('style.css',function(error,data) {
+                if(error) {
+                    response.writeHead(404);
+                } else {
+                    response.writeHead(200, { "Content-Type" : "text/css"})
+                    response.write(data);
+                }
+                response.end();
+            });
+            break;
         case '/contatti.html':
             fs.readFile('contatti.html', function(error, data) {
                 if (error) {
@@ -172,7 +202,39 @@ function requestHandler(request, response) {
                 response.end();
             });
             break;
-
+        case '/img/twilightTown.png':
+            fs.readFile('img/twilightTown.png', function(error, data) {
+                if (error) {
+                    response.writeHead(404);
+                } else {
+                    response.writeHead(200, { 'Content-Type': 'image/png' });
+                    response.write(data);
+                }
+                response.end();
+            });
+            break;
+        case '/img/twilightTown2.png':
+            fs.readFile('img/twilightTown2.png', function(error, data) {
+                if (error) {
+                    response.writeHead(404);
+                } else {
+                    response.writeHead(200, { 'Content-Type': 'image/png' });
+                    response.write(data);
+                }
+                response.end();
+            });
+            break;
+        case '/img/twilightTown3.png':
+            fs.readFile('img/twilightTown3.png', function(error, data) {
+                if (error) {
+                    response.writeHead(404);
+                } else {
+                    response.writeHead(200, { 'Content-Type': 'image/png' });
+                    response.write(data);
+                }
+                response.end();
+            });
+            break;
         case '/recuperadati':
             let corpo = "";
             request.on('data', function(chunk) {
@@ -193,7 +255,6 @@ function requestHandler(request, response) {
                 }
             });
             break;
-
         default:
             response.writeHead(404);
             response.end();
